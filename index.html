@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grasso – Energy & Infrastructure Advisory</title>
+  <meta name="description" content="Independent advisory firm specialising in energy, infrastructure and EPC project management across international markets.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:   #111820;
+      --white:  #f8f8f6;
+      --mid:    #5a6472;
+      --accent: #c09a50;
+      --rule:   rgba(255,255,255,0.1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      left: 0; top: 0;
+      width: 2px; height: 100vh;
+      background: var(--accent);
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    /* topbar */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.6rem 3.5rem;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      animation: fade 0.8s ease forwards 0.05s;
+    }
+
+    .logo {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .logo span { color: var(--accent); }
+
+    .topbar-contact { font-size: 0.72rem; color: var(--mid); }
+    .topbar-contact a { color: var(--white); text-decoration: none; transition: color 0.2s; }
+    .topbar-contact a:hover { color: var(--accent); }
+
+    /* hero */
+    .hero {
+      padding: 6rem 3.5rem 5rem;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      animation: rise 0.9s ease forwards 0.2s;
+    }
+
+    .hero-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2.2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 400;
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      line-height: 1.12;
+      max-width: 20ch;
+      margin-bottom: 2.4rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: rgba(248,248,246,0.62);
+      max-width: 60ch;
+    }
+
+    /* services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      animation: rise 0.9s ease forwards 0.38s;
+    }
+
+    .service {
+      padding: 2.8rem 2.2rem;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      transition: background 0.3s;
+    }
+    .service:nth-child(3n) { border-right: none; }
+    .service:nth-last-child(-n+3) { border-bottom: none; }
+    .service:hover { background: rgba(192,154,80,0.04); }
+
+    .service-num {
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      margin-bottom: 1.4rem;
+      display: block;
+    }
+
+    .service h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+
+    .service p {
+      font-size: 0.78rem;
+      line-height: 1.85;
+      color: rgba(248,248,246,0.48);
+    }
+
+    /* value strip */
+    .value {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      animation: rise 0.9s ease forwards 0.52s;
+    }
+
+    .value-left {
+      padding: 3rem 2.4rem;
+      border-right: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .value-label {
+      font-size: 0.63rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+    }
+
+    .value-left h3 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    .value-right {
+      padding: 3rem 2.8rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .promise {
+      border-top: 1px solid var(--rule);
+      padding-top: 1.1rem;
+    }
+
+    .promise-title {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.03em;
+    }
+
+    .promise p {
+      font-size: 0.74rem;
+      line-height: 1.75;
+      color: rgba(248,248,246,0.48);
+    }
+
+    /* sectors */
+    .sectors {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0 3.5rem;
+      min-height: 54px;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      animation: fade 0.8s ease forwards 0.65s;
+    }
+
+    .sectors-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-right: 2rem;
+      white-space: nowrap;
+    }
+
+    .sector-item {
+      font-size: 0.67rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(248,248,246,0.38);
+      padding: 0 1.4rem;
+      border-left: 1px solid var(--rule);
+      line-height: 54px;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .sector-item:hover { color: var(--white); }
+
+    /* footer */
+    footer {
+      margin-top: auto;
+      padding: 2rem 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      opacity: 0;
+      animation: fade 0.8s ease forwards 0.75s;
+    }
+
+    .footer-contact { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+    .footer-contact a {
+      font-size: 0.75rem;
+      color: rgba(248,248,246,0.48);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .footer-contact a:hover { color: var(--accent); }
+
+    .footer-geo {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(248,248,246,0.22);
+    }
+
+    /* animations */
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      .topbar, .hero, footer { padding-left: 1.8rem; padding-right: 1.8rem; }
+      .services { grid-template-columns: 1fr 1fr; }
+      .service { border-right: none; }
+      .service:nth-child(odd) { border-right: 1px solid var(--rule); }
+      .service:nth-child(3n) { border-right: none; }
+      .value { grid-template-columns: 1fr; }
+      .value-left { border-right: none; border-bottom: 1px solid var(--rule); }
+      .sectors { padding: 1rem 1.8rem; min-height: auto; }
+      .sector-item { line-height: 2.8; }
+    }
+
+    @media (max-width: 560px) {
+      .services { grid-template-columns: 1fr; }
+      .service:nth-child(odd) { border-right: none; }
+      .value-right { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.2rem; }
+      .topbar-contact { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <a href="/" class="logo">Grasso<span>.aero</span></a>
+    <div class="topbar-contact">
+      <a href="mailto:grasso@grasso.aero">grasso@grasso.aero</a>
+      &ensp;·&ensp;
+      <a href="https://wa.me/393452323111" target="_blank" rel="noopener">WhatsApp IT</a>
+      &ensp;·&ensp;
+      <a href="https://wa.me/218916556045" target="_blank" rel="noopener">WhatsApp LY</a>
+    </div>
+  </div>
+
+  <section class="hero">
+    <p class="hero-label">Engineering &amp; Infrastructure Advisory</p>
+    <h1>Where <em>engineering discipline</em> meets strategic advisory</h1>
+    <p class="hero-desc">
+      Grasso provides independent advisory and project management services to energy developers,
+      infrastructure investors, industrial operators and public institutions engaged in
+      complex international programmes. Our work is rooted in engineering — and extends
+      across the full spectrum of project development, from feasibility and technical structuring
+      through procurement, construction supervision and long-term asset management.
+    </p>
+  </section>
+
+  <section class="services">
+    <div class="service">
+      <span class="service-num">01</span>
+      <h2>Technical Due Diligence &amp; Feasibility</h2>
+      <p>Before capital is committed, the engineering and regulatory basis of a project must be sound. We provide independent technical assessment, feasibility review and site evaluation across energy generation, industrial infrastructure and civil works. Where applicable, this extends to the review of existing supply arrangements and procurement structures — assessing whether the specification, sourcing and qualification of critical equipment meets the standards that the asset class, the operating environment and the financing structure require.</p>
+    </div>
+    <div class="service">
+      <span class="service-num">02</span>
+      <h2>EPC Management &amp; Owner's Engineering</h2>
+      <p>From contract structuring and procurement strategy through construction supervision and commissioning, we represent the owner's technical and commercial interest at every stage. This includes the management of complex supply chains for critical industrial systems — where vendor qualification, technical specification integrity, certification compliance and long-lead item control are as consequential as the works themselves. Our oversight encompasses scope control, quality assurance, schedule management and interface coordination across multidisciplinary contractors.</p>
+    </div>
+    <div class="service">
+      <span class="service-num">03</span>
+      <h2>Asset Management &amp; O&amp;M Advisory</h2>
+      <p>Operational performance over the life of an asset is determined as much by the quality of its management framework as by its design. We support clients in establishing O&amp;M structures, maintenance protocols, performance monitoring systems and regulatory compliance programmes suited to the asset class and operating environment. Where assets depend on complex industrial supply chains — aerospace-grade components, subsea equipment, platform systems or specialised instrumentation — we extend our support to the qualification and management of the supply base, ensuring that procurement decisions through the operational phase maintain the technical and regulatory standards established at project delivery.</p>
+    </div>
+    <div class="service">
+      <span class="service-num">04</span>
+      <h2>Market Entry &amp; Institutional Relations</h2>
+      <p>Operating across jurisdictions with distinct regulatory regimes, procurement cultures and institutional frameworks requires sustained local engagement. We provide the country-level intelligence, permitting support and government interface that credible international project development demands.</p>
+    </div>
+    <div class="service">
+      <span class="service-num">05</span>
+      <h2>Environmental &amp; Industrial Engineering</h2>
+      <p>Complex projects carry environmental obligations that extend well beyond compliance. We advise on environmental impact assessment, site remediation, industrial permitting and the integration of environmental management systems into project governance — across both greenfield development and brownfield rehabilitation.</p>
+    </div>
+    <div class="service">
+      <span class="service-num">06</span>
+      <h2>HSE Governance &amp; Risk Engineering</h2>
+      <p>Safety management in high-hazard and remote environments demands engineering rigour, not administrative routine. We design and implement HSE governance frameworks, conduct risk assessments and support clients in building safety cultures appropriate to the operational complexity they face.</p>
+    </div>
+  </section>
+
+  <section class="value">
+    <div class="value-left">
+      <p class="value-label">Our Approach</p>
+      <h3>Substance over presentation.<br><em>Continuity</em> over delegation.</h3>
+    </div>
+    <div class="value-right">
+      <div class="promise">
+        <p class="promise-title">Engineering at the core</p>
+        <p>Our advisory is grounded in engineering practice — not in management consulting abstraction. Every recommendation we make is informed by technical understanding of what is feasible, what is certifiable and what will actually perform in the field.</p>
+      </div>
+      <div class="promise">
+        <p class="promise-title">Independent by design</p>
+        <p>As an independent firm, our only obligation is to the quality of our work and the interests of our clients. We carry no conflicting mandates, no supply chain relationships, no institutional agendas.</p>
+      </div>
+      <div class="promise">
+        <p class="promise-title">Structured for each engagement</p>
+        <p>We operate as strategic advisors, embedded technical representatives, or interim project directors — in whatever configuration best serves the client's organisational structure and programme objectives.</p>
+      </div>
+      <div class="promise">
+        <p class="promise-title">Present where it matters</p>
+        <p>Effective technical advisory in international markets requires proximity to the project and to the operating environment. We maintain an active presence across our core geographies, ensuring our engagement reflects conditions as they are.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="sectors">
+    <span class="sectors-label">Sectors</span>
+    <span class="sector-item">Oil &amp; Gas</span>
+    <span class="sector-item">Oilfield Services</span>
+    <span class="sector-item">Renewable Energy / PV</span>
+    <span class="sector-item">EPC Infrastructure</span>
+    <span class="sector-item">Industrial Engineering</span>
+    <span class="sector-item">Environmental Engineering</span>
+    <span class="sector-item">Civil &amp; Structural Works</span>
+    <span class="sector-item">Public &amp; Institutional</span>
+  </div>
+
+  <footer>
+    <div class="footer-contact">
+      <a href="mailto:grasso@grasso.aero">grasso@grasso.aero</a>
+      <a href="https://wa.me/393452323111" target="_blank" rel="noopener">WhatsApp IT</a>
+      <a href="https://wa.me/218916556045" target="_blank" rel="noopener">WhatsApp LY</a>
+    </div>
+    <span class="footer-geo">Milan &nbsp;·&nbsp; Rome &nbsp;·&nbsp; Tripoli &nbsp;·&nbsp; Worldwide</span>
+  </footer>
+
+</body>
+</html>
