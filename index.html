@@ -1,401 +1,1541 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grasso – Energy & Infrastructure Advisory</title>
-  <meta name="description" content="Independent advisory firm specialising in energy, infrastructure and EPC project management across international markets.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy:   #111820;
-      --white:  #f8f8f6;
-      --mid:    #5a6472;
-      --accent: #c09a50;
-      --rule:   rgba(255,255,255,0.1);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Studio Legale Avvocato Elena Grasso – Lucera, Foggia. Dal 1996. Diritto penale, civile, lavoro, amministrativo, societario, bancario. Assistenza in tutto il mondo.">
+<title>Studio Legale Avvocato Elena Grasso | Lucera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; }
-    body {
-      background: var(--navy);
-      color: var(--white);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+:root{
+  --navy:#0D1B2A;
+  --navy-mid:#152236;
+  --navy-light:#1E3354;
+  --gold:#A8873A;
+  --gold-light:#C9A84C;
+  --gold-pale:#F2E8D0;
+  --cream:#F8F5EF;
+  --warm-white:#FDFCF9;
+  --text:#1A1410;
+  --text-mid:#4A4035;
+  --text-muted:#7A7068;
+  --rule:rgba(168,135,58,0.22);
+  --serif:'Playfair Display',Georgia,serif;
+  --serif2:'Libre Baskerville',Georgia,serif;
+  --sans:'Source Sans 3',system-ui,sans-serif;
+}
 
-    body::after {
-      content: '';
-      position: fixed;
-      left: 0; top: 0;
-      width: 2px; height: 100vh;
-      background: var(--accent);
-      opacity: 0.35;
-      pointer-events: none;
-    }
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--text);overflow-x:hidden;font-size:16px;line-height:1.6}
 
-    /* topbar */
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.6rem 3.5rem;
-      border-bottom: 1px solid var(--rule);
-      opacity: 0;
-      animation: fade 0.8s ease forwards 0.05s;
-    }
+/* ══ LANGUAGE PILL ══ */
+#lang-pill{
+  position:fixed;top:0;right:0;z-index:500;
+  display:flex;
+  background:var(--navy);
+  border-bottom-left-radius:4px;
+}
+.lbtn{
+  font-family:var(--sans);font-size:0.6rem;font-weight:600;
+  letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.55rem 1rem;cursor:pointer;border:none;
+  background:transparent;color:rgba(255,255,255,0.4);
+  transition:color 0.2s,background 0.2s;
+}
+.lbtn.on{color:var(--gold-light);border-bottom:1.5px solid var(--gold)}
+.lbtn:not(.on):hover{color:rgba(255,255,255,0.7)}
 
-    .logo {
-      font-family: 'Libre Baskerville', serif;
-      font-size: 1.05rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--white);
-      text-decoration: none;
-    }
-    .logo span { color: var(--accent); }
+/* ══ TOP BAR ══ */
+.topbar{
+  background:var(--navy);
+  padding:0.55rem 6vw;
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:0.72rem;color:rgba(255,255,255,0.45);
+  letter-spacing:0.05em;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.topbar a{color:var(--gold-light);text-decoration:none;transition:opacity 0.2s}
+.topbar a:hover{opacity:0.8}
+.topbar-right{display:flex;gap:2rem;align-items:center}
 
-    .topbar-contact { font-size: 0.72rem; color: var(--mid); }
-    .topbar-contact a { color: var(--white); text-decoration: none; transition: color 0.2s; }
-    .topbar-contact a:hover { color: var(--accent); }
+/* ══ NAV ══ */
+header{
+  position:sticky;top:0;z-index:300;
+  background:var(--warm-white);
+  border-bottom:1px solid var(--rule);
+  box-shadow:0 2px 20px rgba(13,27,42,0.06);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6vw;
+  max-width:1400px;margin:0 auto;
+}
 
-    /* hero */
-    .hero {
-      padding: 6rem 3.5rem 5rem;
-      border-bottom: 1px solid var(--rule);
-      opacity: 0;
-      animation: rise 0.9s ease forwards 0.2s;
-    }
+.logo{
+  display:flex;flex-direction:column;
+  padding:1.1rem 0;
+  text-decoration:none;
+  border-right:1px solid var(--rule);
+  padding-right:2rem;
+  margin-right:2rem;
+}
+.logo-name{
+  font-family:var(--serif);font-size:1.3rem;font-weight:700;
+  color:var(--navy);letter-spacing:0.03em;line-height:1.15;
+}
+.logo-sub{
+  font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--gold);margin-top:0.18rem;font-weight:500;
+}
 
-    .hero-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 2.2rem;
-    }
+nav ul{display:flex;gap:0;list-style:none;height:100%}
+nav ul li{position:relative}
+nav ul li a{
+  display:flex;align-items:center;
+  padding:1.35rem 1.1rem;
+  font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--text-mid);text-decoration:none;
+  transition:color 0.2s;white-space:nowrap;
+  border-bottom:2px solid transparent;
+}
+nav ul li a:hover{color:var(--navy);border-bottom-color:var(--gold)}
 
-    .hero h1 {
-      font-family: 'Libre Baskerville', serif;
-      font-weight: 400;
-      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
-      line-height: 1.12;
-      max-width: 20ch;
-      margin-bottom: 2.4rem;
-    }
-    .hero h1 em { font-style: italic; color: var(--accent); }
+.nav-cta{
+  margin-left:1.5rem;
+  background:var(--navy);color:var(--warm-white);
+  padding:0.65rem 1.6rem;
+  font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
+  text-decoration:none;white-space:nowrap;
+  transition:background 0.2s;
+  border-bottom:none!important;
+}
+.nav-cta:hover{background:var(--gold)!important;color:var(--warm-white)!important}
 
-    .hero-desc {
-      font-size: 0.95rem;
-      line-height: 1.9;
-      color: rgba(248,248,246,0.62);
-      max-width: 60ch;
-    }
+/* Mobile hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:0.5rem;background:none;border:none}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--navy)}
 
-    /* services */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-bottom: 1px solid var(--rule);
-      opacity: 0;
-      animation: rise 0.9s ease forwards 0.38s;
-    }
+/* ══ HERO ══ */
+.hero{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:88vh;
+  border-bottom:1px solid var(--rule);
+}
 
-    .service {
-      padding: 2.8rem 2.2rem;
-      border-right: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      transition: background 0.3s;
-    }
-    .service:nth-child(3n) { border-right: none; }
-    .service:nth-last-child(-n+3) { border-bottom: none; }
-    .service:hover { background: rgba(192,154,80,0.04); }
+.hero-content{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:5rem 4rem 5rem 6vw;
+  background:var(--navy);
+  position:relative;overflow:hidden;
+}
+/* Subtle diagonal texture */
+.hero-content::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(
+    -45deg,
+    transparent,transparent 40px,
+    rgba(255,255,255,0.012) 40px,rgba(255,255,255,0.012) 41px
+  );
+  pointer-events:none;
+}
+.hero-content::after{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(to right,var(--gold),var(--gold-light),var(--gold));
+}
 
-    .service-num {
-      font-size: 0.58rem;
-      letter-spacing: 0.22em;
-      color: var(--accent);
-      margin-bottom: 1.4rem;
-      display: block;
-    }
+.hero-tag{
+  display:inline-flex;align-items:center;gap:0.8rem;
+  font-size:0.62rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:1.8rem;
+}
+.hero-tag::before{
+  content:'';width:28px;height:1px;background:var(--gold);display:block;
+}
 
-    .service h2 {
-      font-family: 'Libre Baskerville', serif;
-      font-weight: 400;
-      font-size: 1rem;
-      line-height: 1.4;
-      margin-bottom: 1rem;
-    }
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(2.4rem,4vw,4.2rem);
+  font-weight:400;line-height:1.12;
+  color:var(--warm-white);
+  margin-bottom:0.4rem;
+}
+.hero-title strong{font-weight:700;display:block}
+.hero-title em{font-style:italic;color:var(--gold-light)}
 
-    .service p {
-      font-size: 0.78rem;
-      line-height: 1.85;
-      color: rgba(248,248,246,0.48);
-    }
+.hero-rule{
+  width:60px;height:1px;background:var(--gold);
+  margin:1.8rem 0;
+}
 
-    /* value strip */
-    .value {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      border-bottom: 1px solid var(--rule);
-      opacity: 0;
-      animation: rise 0.9s ease forwards 0.52s;
-    }
+.hero-body{
+  font-size:0.95rem;line-height:1.85;
+  color:rgba(255,255,255,0.62);
+  max-width:40ch;margin-bottom:2.5rem;
+}
 
-    .value-left {
-      padding: 3rem 2.4rem;
-      border-right: 1px solid var(--rule);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-a{
+  display:inline-block;
+  background:var(--gold);color:var(--navy);
+  padding:0.82rem 1.9rem;
+  font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;
+  text-decoration:none;transition:background 0.2s,color 0.2s;
+}
+.btn-a:hover{background:var(--gold-light)}
+.btn-b{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  border:1px solid rgba(168,135,58,0.5);color:rgba(255,255,255,0.7);
+  padding:0.82rem 1.7rem;
+  font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;
+  text-decoration:none;transition:border-color 0.2s,color 0.2s;
+}
+.btn-b:hover{border-color:var(--gold-light);color:var(--gold-light)}
 
-    .value-label {
-      font-size: 0.63rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.2rem;
-    }
+.hero-badges{
+  display:flex;gap:0;
+  margin-top:3rem;
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:1.8rem;
+}
+.hero-badge{
+  flex:1;padding-right:1.5rem;
+  border-right:1px solid rgba(255,255,255,0.08);
+  margin-right:1.5rem;
+}
+.hero-badge:last-child{border-right:none;margin-right:0;padding-right:0}
+.hb-num{
+  font-family:var(--serif);font-size:1.9rem;font-weight:700;
+  color:var(--gold-light);line-height:1;
+}
+.hb-label{
+  font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(255,255,255,0.38);margin-top:0.3rem;
+}
 
-    .value-left h3 {
-      font-family: 'Libre Baskerville', serif;
-      font-size: 1.35rem;
-      font-weight: 400;
-      line-height: 1.4;
-      font-style: italic;
-    }
+/* Hero photo column */
+.hero-visual{
+  position:relative;overflow:hidden;background:var(--navy-light);
+}
+.hero-photo{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=900&q=85') center/cover no-repeat;
+  filter:brightness(0.55) saturate(0.8);
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(13,27,42,0.7) 0%,rgba(13,27,42,0.1) 100%);
+}
+.hero-caption{
+  position:absolute;bottom:2.5rem;left:2.5rem;right:2.5rem;
+  background:rgba(13,27,42,0.85);
+  border-left:3px solid var(--gold);
+  padding:1.2rem 1.5rem;
+  backdrop-filter:blur(6px);
+}
+.hc-label{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-light);margin-bottom:0.3rem}
+.hc-text{
+  font-family:var(--serif2);font-size:0.9rem;font-style:italic;
+  color:rgba(255,255,255,0.85);line-height:1.5;
+}
 
-    .value-right {
-      padding: 3rem 2.8rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
+/* ══ PRACTICES STRIP ══ */
+.practices-strip{
+  background:var(--navy);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+.practices-inner{
+  max-width:1400px;margin:0 auto;
+  display:flex;
+  min-width:600px;
+}
+.prac-item{
+  flex:1;
+  padding:1.1rem 0.8rem;
+  border-right:1px solid rgba(255,255,255,0.08);
+  text-align:center;
+  cursor:pointer;transition:background 0.2s;
+  text-decoration:none;display:flex;
+  align-items:center;justify-content:center;
+}
+.prac-item:last-child{border-right:none}
+.prac-item:hover{background:rgba(168,135,58,0.12)}
+.prac-item:hover .prac-name{color:var(--gold-light)}
+.prac-name{
+  font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.55);line-height:1.3;
+  transition:color 0.2s;
+  white-space:nowrap;
+}
 
-    .promise {
-      border-top: 1px solid var(--rule);
-      padding-top: 1.1rem;
-    }
+/* ══ SECTION COMMONS ══ */
+.section-wrap{max-width:1400px;margin:0 auto;padding:0 6vw}
 
-    .promise-title {
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.03em;
-    }
+.sec-label{
+  display:inline-flex;align-items:center;gap:0.7rem;
+  font-size:0.6rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:0.9rem;
+}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--gold)}
 
-    .promise p {
-      font-size: 0.74rem;
-      line-height: 1.75;
-      color: rgba(248,248,246,0.48);
-    }
+.sec-title{
+  font-family:var(--serif);
+  font-size:clamp(1.7rem,2.8vw,2.8rem);
+  font-weight:400;color:var(--navy);line-height:1.15;
+  margin-bottom:0.6rem;
+}
+.sec-title em{font-style:italic;color:var(--gold)}
+.sec-title strong{font-weight:700}
 
-    /* sectors */
-    .sectors {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      padding: 0 3.5rem;
-      min-height: 54px;
-      border-bottom: 1px solid var(--rule);
-      opacity: 0;
-      animation: fade 0.8s ease forwards 0.65s;
-    }
+.sec-lead{
+  font-size:0.9rem;line-height:1.9;color:var(--text-muted);
+  max-width:52ch;
+}
 
-    .sectors-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--mid);
-      margin-right: 2rem;
-      white-space: nowrap;
-    }
+/* ══ ABOUT ══ */
+.about-section{
+  padding:6rem 0;
+  background:var(--warm-white);
+  border-bottom:1px solid var(--rule);
+}
+.about-grid{
+  display:grid;grid-template-columns:1fr 1.1fr;
+  gap:5rem;align-items:center;
+}
+.about-photo-wrap{position:relative}
+.about-photo{
+  width:100%;aspect-ratio:4/5;
+  object-fit:cover;
+  filter:saturate(0.85);
+  display:block;
+}
+.about-photo-badge{
+  position:absolute;
+  bottom:-1.5rem;right:-1.5rem;
+  background:var(--navy);
+  color:var(--warm-white);
+  padding:1.5rem 1.8rem;
+  text-align:center;
+  border:3px solid var(--warm-white);
+}
+.apb-num{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--gold-light);line-height:1}
+.apb-sub{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:0.3rem}
 
-    .sector-item {
-      font-size: 0.67rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: rgba(248,248,246,0.38);
-      padding: 0 1.4rem;
-      border-left: 1px solid var(--rule);
-      line-height: 54px;
-      white-space: nowrap;
-      transition: color 0.2s;
-    }
-    .sector-item:hover { color: var(--white); }
+.about-text{
+  font-family:var(--serif2);font-size:0.9rem;line-height:1.95;
+  color:var(--text-mid);margin:1.5rem 0;
+}
+.about-text + .about-text{margin-top:0}
 
-    /* footer */
-    footer {
-      margin-top: auto;
-      padding: 2rem 3.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      opacity: 0;
-      animation: fade 0.8s ease forwards 0.75s;
-    }
+.partner-name{
+  font-family:var(--serif);font-size:1.15rem;font-weight:700;
+  color:var(--navy);margin-top:1.8rem;
+}
+.partner-role{
+  font-size:0.68rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--gold);margin-top:0.2rem;
+}
 
-    .footer-contact { display: flex; gap: 2.5rem; flex-wrap: wrap; }
-    .footer-contact a {
-      font-size: 0.75rem;
-      color: rgba(248,248,246,0.48);
-      text-decoration: none;
-      letter-spacing: 0.06em;
-      transition: color 0.2s;
-    }
-    .footer-contact a:hover { color: var(--accent); }
+.bar-list{
+  display:flex;flex-wrap:wrap;gap:0.5rem;
+  margin-top:1.5rem;list-style:none;
+}
+.bar-list li{
+  font-size:0.68rem;font-weight:500;letter-spacing:0.08em;
+  background:var(--navy);color:rgba(255,255,255,0.8);
+  padding:0.35rem 0.9rem;
+}
 
-    .footer-geo {
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(248,248,246,0.22);
-    }
+/* ══ TEAM ══ */
+.team-section{
+  padding:6rem 0;
+  background:var(--cream);
+  border-bottom:1px solid var(--rule);
+}
+.team-header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:3.5rem;gap:2rem;
+}
+.team-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1.5px;background:var(--rule);
+  border:1.5px solid var(--rule);
+}
+.team-card{
+  background:var(--warm-white);
+  position:relative;overflow:hidden;
+  transition:box-shadow 0.3s;
+}
+.team-card:hover{box-shadow:0 8px 32px rgba(13,27,42,0.12);z-index:1}
+.team-photo-wrap{
+  height:280px;overflow:hidden;
+  position:relative;
+}
+.team-photo-wrap::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 50%,rgba(13,27,42,0.7) 100%);
+}
+.team-photo-wrap img{
+  width:100%;height:100%;object-fit:cover;object-position:top;
+  filter:saturate(0.8) brightness(0.92);
+  transition:transform 0.5s ease;
+}
+.team-card:hover .team-photo-wrap img{transform:scale(1.04)}
+.team-card-body{padding:1.4rem 1.4rem 1.6rem}
+.team-name{
+  font-family:var(--serif);font-size:1.15rem;font-weight:700;
+  color:var(--navy);margin-bottom:0.2rem;
+}
+.team-role{
+  font-size:0.62rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:0.8rem;
+}
+.team-spec{
+  font-size:0.76rem;line-height:1.75;color:var(--text-muted);
+}
+.team-divider{
+  width:30px;height:1.5px;background:var(--gold);
+  margin:0.9rem 0;
+}
+/* Managing partner card – highlighted */
+.team-card.lead{background:var(--navy)}
+.team-card.lead .team-name{color:var(--warm-white)}
+.team-card.lead .team-role{color:var(--gold-light)}
+.team-card.lead .team-spec{color:rgba(255,255,255,0.55)}
+.team-card.lead .team-divider{background:var(--gold-light)}
+.team-card.lead .team-card-body{border-top:2px solid var(--gold)}
 
-    /* animations */
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fade {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
+/* ══ PRACTICE AREAS ══ */
+.areas-section{
+  padding:6rem 0;
+  background:var(--navy);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.areas-section .sec-title{color:var(--warm-white)}
+.areas-section .sec-lead{color:rgba(255,255,255,0.5)}
+.areas-section .sec-label{color:var(--gold-light)}
+.areas-section .sec-label::before{background:var(--gold-light)}
 
-    /* responsive */
-    @media (max-width: 900px) {
-      .topbar, .hero, footer { padding-left: 1.8rem; padding-right: 1.8rem; }
-      .services { grid-template-columns: 1fr 1fr; }
-      .service { border-right: none; }
-      .service:nth-child(odd) { border-right: 1px solid var(--rule); }
-      .service:nth-child(3n) { border-right: none; }
-      .value { grid-template-columns: 1fr; }
-      .value-left { border-right: none; border-bottom: 1px solid var(--rule); }
-      .sectors { padding: 1rem 1.8rem; min-height: auto; }
-      .sector-item { line-height: 2.8; }
-    }
+.areas-header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:3.5rem;gap:2rem;
+}
+.areas-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.06);
+}
+.area-card{
+  background:var(--navy-mid);
+  padding:2rem 1.75rem;
+  position:relative;overflow:hidden;
+  transition:background 0.25s;
+}
+.area-card:hover{background:var(--navy-light)}
+.area-card::after{
+  content:'';position:absolute;left:0;top:0;bottom:0;
+  width:0;background:var(--gold);
+  transition:width 0.3s ease;
+}
+.area-card:hover::after{width:3px}
+.area-num{
+  font-family:var(--serif);font-size:2.5rem;font-weight:700;
+  color:rgba(168,135,58,0.18);line-height:1;margin-bottom:0.8rem;
+}
+.area-title{
+  font-family:var(--serif);font-size:1.1rem;font-weight:500;
+  color:var(--warm-white);margin-bottom:0.6rem;
+}
+.area-title.criminal{color:var(--gold-light)}
+.area-desc{
+  font-size:0.78rem;line-height:1.85;
+  color:rgba(255,255,255,0.48);
+}
+.area-tag{
+  display:inline-block;
+  font-size:0.55rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--gold);border:1px solid rgba(168,135,58,0.4);
+  padding:0.22rem 0.6rem;margin-bottom:0.7rem;
+}
 
-    @media (max-width: 560px) {
-      .services { grid-template-columns: 1fr; }
-      .service:nth-child(odd) { border-right: none; }
-      .value-right { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 2.2rem; }
-      .topbar-contact { display: none; }
-    }
-  </style>
+/* ══ VALUES ══ */
+.values-section{
+  padding:5rem 0;
+  background:var(--cream);
+  border-bottom:1px solid var(--rule);
+}
+.values-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;border:1px solid var(--rule);margin-top:3rem;
+}
+.val-item{
+  padding:2rem 1.6rem;border-right:1px solid var(--rule);
+  transition:background 0.2s;
+}
+.val-item:last-child{border-right:none}
+.val-item:hover{background:var(--warm-white)}
+.val-num{
+  font-family:var(--serif);font-size:0.72rem;font-weight:700;
+  color:var(--gold);letter-spacing:0.1em;margin-bottom:0.8rem;
+}
+.val-title{
+  font-family:var(--serif);font-size:1.1rem;font-weight:700;
+  color:var(--navy);margin-bottom:0.6rem;
+}
+.val-text{font-size:0.78rem;line-height:1.85;color:var(--text-muted)}
+
+/* ══ QUOTE ══ */
+.quote-section{
+  padding:5rem 0;
+  background:var(--gold-pale);
+  border-bottom:1px solid var(--rule);
+  text-align:center;
+}
+.quote-mark{
+  font-family:var(--serif);font-size:5rem;font-weight:700;
+  color:var(--gold);opacity:0.4;line-height:0.6;
+  display:block;margin-bottom:1.5rem;
+}
+.quote-text{
+  font-family:var(--serif2);font-size:clamp(1.15rem,1.8vw,1.6rem);
+  font-style:italic;color:var(--navy);
+  max-width:55ch;margin:0 auto 1.5rem;line-height:1.6;
+}
+.quote-attr{
+  font-size:0.62rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold);
+}
+
+/* ══ CONTACT ══ */
+.contact-section{
+  display:grid;grid-template-columns:1fr 1fr;
+  border-bottom:1px solid var(--rule);
+}
+
+.contact-info-col{
+  padding:5.5rem 4rem 5.5rem 6vw;
+  background:var(--navy);
+}
+.contact-info-col .sec-title{color:var(--warm-white)}
+.contact-info-col .sec-label{color:var(--gold-light)}
+.contact-info-col .sec-label::before{background:var(--gold-light)}
+.contact-info-col .sec-lead{color:rgba(255,255,255,0.5);max-width:38ch;margin:1rem 0 2.5rem}
+
+.cinfo-grid{display:flex;flex-direction:column;gap:1.1rem}
+.cinfo-row{display:flex;gap:1.2rem;align-items:flex-start}
+.cinfo-mark{
+  flex:0 0 auto;
+  font-family:var(--serif2);font-size:0.7rem;font-style:italic;
+  color:var(--gold-light);
+  padding-top:0.15rem;
+  min-width:28px;
+  text-align:right;
+  line-height:1.55;
+  letter-spacing:0.02em;
+}
+.cinfo-label{
+  font-size:0.58rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:0.2rem;
+}
+.cinfo-val{font-size:0.85rem;color:rgba(255,255,255,0.72);line-height:1.55}
+
+.contact-form-col{
+  padding:5.5rem 6vw 5.5rem 4rem;
+  background:var(--warm-white);
+}
+.form-title{
+  font-family:var(--serif);font-size:1.5rem;font-weight:700;
+  color:var(--navy);margin-bottom:1.8rem;
+}
+
+.form-2col{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem}
+.fg{margin-bottom:1rem}
+.fg label{
+  display:block;font-size:0.6rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--text-muted);margin-bottom:0.4rem;
+}
+.fg input,.fg select,.fg textarea{
+  width:100%;
+  border:1px solid rgba(26,20,16,0.14);
+  background:var(--cream);
+  padding:0.72rem 0.9rem;
+  font-family:var(--sans);font-size:0.84rem;color:var(--text);
+  outline:none;border-radius:0;appearance:none;
+  transition:border-color 0.2s,background 0.2s;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  border-color:var(--gold);background:var(--warm-white);
+}
+.fg textarea{resize:vertical;min-height:100px}
+.fg select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A8873A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 0.9rem center;
+  padding-right:2.2rem;
+}
+.privacy-note{
+  font-size:0.68rem;line-height:1.65;color:var(--text-muted);
+  margin-bottom:1.1rem;
+  padding:0.8rem 1rem;
+  background:var(--cream);
+  border-left:2px solid var(--gold);
+}
+.form-submit{
+  width:100%;background:var(--navy);color:var(--warm-white);
+  border:none;padding:0.9rem 2rem;
+  font-family:var(--sans);font-size:0.72rem;font-weight:700;
+  letter-spacing:0.18em;text-transform:uppercase;
+  cursor:pointer;transition:background 0.2s;
+}
+.form-submit:hover{background:var(--gold)}
+.form-msg{
+  display:none;margin-top:1rem;padding:0.8rem 1rem;
+  background:#e8f4e8;border-left:3px solid #3a7d35;
+  font-size:0.8rem;color:#2a5d25;
+}
+
+/* ══ FOOTER ══ */
+footer{
+  background:var(--navy-mid);
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.footer-main{
+  max-width:1400px;margin:0 auto;padding:3.5rem 6vw 2rem;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:3rem;
+}
+.footer-brand .logo-name{color:var(--warm-white);font-size:1.1rem}
+.footer-brand .logo-sub{color:var(--gold)}
+.footer-brand p{
+  font-size:0.78rem;line-height:1.8;
+  color:rgba(255,255,255,0.38);margin-top:1rem;max-width:32ch;
+}
+.footer-col-title{
+  font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:1.1rem;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.footer-col ul a{
+  font-size:0.78rem;color:rgba(255,255,255,0.42);
+  text-decoration:none;transition:color 0.2s;
+}
+.footer-col ul a:hover{color:var(--gold-light)}
+.footer-bottom{
+  max-width:1400px;margin:0 auto;
+  padding:1.2rem 6vw;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid rgba(255,255,255,0.06);
+  font-size:0.66rem;color:rgba(255,255,255,0.3);
+  flex-wrap:wrap;gap:0.5rem;
+}
+.footer-bottom a{color:rgba(255,255,255,0.3);text-decoration:none}
+.footer-bottom a:hover{color:var(--gold-light)}
+
+/* ══ WHATSAPP FLOATING BTN ══ */
+.wa-float{
+  position:fixed;bottom:1.8rem;right:1.8rem;z-index:400;
+  display:flex;align-items:center;gap:0.7rem;
+  background:#25D366;color:#fff;
+  padding:0.75rem 1.3rem 0.75rem 1rem;
+  border-radius:50px;
+  text-decoration:none;
+  font-size:0.72rem;font-weight:600;letter-spacing:0.06em;
+  box-shadow:0 4px 20px rgba(37,211,102,0.45);
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(37,211,102,0.55)}
+.wa-icon{width:22px;height:22px;fill:#fff;flex-shrink:0}
+.wa-label-mob{display:none}
+
+/* ══ GOOGLE REVIEWS ══ */
+.reviews-section{
+  padding:4rem 0;
+  background:var(--warm-white);
+  border-bottom:1px solid var(--rule);
+  text-align:center;
+}
+.reviews-inner{max-width:1400px;margin:0 auto;padding:0 6vw}
+.gmap-badge{
+  display:inline-flex;align-items:center;gap:1.4rem;
+  background:var(--cream);
+  border:1px solid var(--rule);
+  padding:1.1rem 2rem;
+  margin-bottom:2.5rem;
+}
+.gmap-logo{font-size:1.5rem}
+.gmap-stars{color:#FBBC04;font-size:1.2rem;letter-spacing:0.06em;line-height:1}
+.gmap-rating{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--navy)}
+.gmap-count{font-size:0.72rem;color:var(--text-muted)}
+.gmap-link{
+  font-size:0.65rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--gold);text-decoration:none;
+  border-bottom:1px solid rgba(168,135,58,0.35);
+  transition:border-color 0.2s;
+}
+.gmap-link:hover{border-color:var(--gold)}
+.reviews-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1rem;margin-top:1.5rem;text-align:left;
+}
+.review-card{
+  background:var(--cream);
+  border:1px solid var(--rule);
+  padding:1.4rem 1.5rem;
+  position:relative;
+}
+.rev-stars{color:#FBBC04;font-size:0.95rem;margin-bottom:0.5rem}
+.rev-text{
+  font-family:var(--serif2);font-size:0.82rem;font-style:italic;
+  line-height:1.75;color:var(--text-mid);margin-bottom:0.9rem;
+}
+.rev-author{
+  font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--text-muted);
+}
+.rev-date{font-size:0.62rem;color:var(--text-muted);opacity:0.7;margin-top:0.15rem}
+
+@media(max-width:860px){
+  .reviews-grid{grid-template-columns:1fr 1fr}
+  .wa-label-mob{display:inline}
+}
+@media(max-width:580px){
+  .reviews-grid{grid-template-columns:1fr}
+  .gmap-badge{flex-wrap:wrap;justify-content:center;text-align:center}
+}
+
+[data-lang]{display:none}
+html[lang="it"] [data-lang="it"]{display:revert}
+html[lang="en"] [data-lang="en"]{display:revert}
+
+/* ══ SCROLL REVEAL ══ */
+.reveal{
+  opacity:0;transform:translateY(20px);
+  transition:opacity 0.6s ease,transform 0.6s ease;
+}
+.reveal.in{opacity:1;transform:none}
+
+/* ══ HERO ANIMS ══ */
+@keyframes hIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.h1{animation:hIn 0.6s 0.1s both}
+.h2{animation:hIn 0.6s 0.25s both}
+.h3{animation:hIn 0.6s 0.4s both}
+.h4{animation:hIn 0.6s 0.55s both}
+.h5{animation:hIn 0.6s 0.7s both}
+
+/* ══ RESPONSIVE ══ */
+
+/* Tablet */
+@media(max-width:1100px){
+  .practices-inner{min-width:0}
+  .prac-name{font-size:0.58rem;letter-spacing:0.1em}
+  .areas-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-main{grid-template-columns:1fr 1fr}
+  .logo-name{font-size:1.1rem}
+}
+
+/* Large mobile / small tablet */
+@media(max-width:860px){
+  /* Hero stacks */
+  .hero{grid-template-columns:1fr}
+  .hero-content{padding:3.5rem 6vw 3rem}
+  .hero-visual{min-height:56vw;position:relative}
+  .hero-photo{position:absolute;inset:0}
+  .hero-caption{left:1.2rem;right:1.2rem;bottom:1.2rem;padding:0.9rem 1.1rem}
+  .hc-text{font-size:0.82rem}
+
+  /* Nav collapses */
+  nav ul{display:none}
+  .hamburger{display:flex}
+  .nav-cta{display:none}
+  .logo-name{font-size:1rem}
+  .logo-sub{font-size:0.55rem}
+
+  /* Top bar: hide studio name on mobile, keep contacts */
+  .topbar>div:first-child{display:none}
+  .topbar{justify-content:flex-end;padding:0.45rem 4vw}
+  .topbar-right{gap:1.2rem;font-size:0.68rem}
+
+  /* About stacks */
+  .about-grid{grid-template-columns:1fr}
+  .about-photo{aspect-ratio:16/9}
+  .about-photo-badge{position:static;margin-top:1.25rem;display:inline-flex;gap:2rem;align-items:center}
+
+  /* Contact stacks */
+  .contact-section{grid-template-columns:1fr}
+  .contact-info-col{padding:3.5rem 6vw}
+  .contact-form-col{padding:3rem 6vw}
+
+  /* Values */
+  .values-grid{grid-template-columns:1fr 1fr}
+  .val-item:nth-child(2n){border-right:none}
+  .val-item:nth-child(n+3){border-top:1px solid var(--rule)}
+
+  /* Reviews */
+  .reviews-grid{grid-template-columns:1fr 1fr}
+  .gmap-badge{flex-wrap:wrap;justify-content:center;text-align:center;gap:0.75rem}
+
+  /* Footer */
+  .footer-main{grid-template-columns:1fr 1fr;gap:2rem}
+
+  /* WhatsApp float */
+  .wa-float{padding:0.75rem}
+  .wa-label-mob{display:none}
+}
+
+/* Mobile */
+@media(max-width:580px){
+  /* Global spacing */
+  .section-wrap{padding:0 5vw}
+
+  /* Hero */
+  .hero-content{padding:2.5rem 5vw 2.5rem}
+  .hero-title{font-size:2.2rem}
+  .hero-btns{flex-direction:column;gap:0.75rem}
+  .btn-a,.btn-b{text-align:center;justify-content:center;width:100%}
+  .hero-badges{
+    flex-direction:row;flex-wrap:wrap;gap:0.8rem 1.5rem;
+    padding-top:1.4rem;margin-top:1.8rem;
+  }
+  .hero-badge{border-right:none;padding-right:0;margin-right:0;flex:0 0 calc(50% - 0.75rem)}
+  .hb-num{font-size:1.5rem}
+  .hero-visual{min-height:65vw}
+
+  /* Practice strip: 2 rows of 4 on mobile, scrollable */
+  .practices-strip{overflow-x:auto}
+  .practices-inner{min-width:500px}
+  .prac-item{padding:0.85rem 0.5rem}
+
+  /* Areas */
+  .areas-grid{grid-template-columns:1fr}
+  .areas-section{padding:4rem 0}
+
+  /* About */
+  .about-section{padding:4rem 0}
+  .about-photo{aspect-ratio:4/3}
+
+  /* Values */
+  .values-grid{grid-template-columns:1fr}
+  .val-item{border-right:none;border-bottom:1px solid var(--rule)}
+  .values-section{padding:3.5rem 0}
+
+  /* Reviews */
+  .reviews-grid{grid-template-columns:1fr}
+  .reviews-section{padding:3rem 0}
+
+  /* Contact */
+  .form-2col{grid-template-columns:1fr}
+  .cinfo-row{gap:0.9rem}
+
+  /* Footer */
+  .footer-main{grid-template-columns:1fr;gap:1.75rem}
+  .footer-bottom{flex-direction:column;text-align:center;gap:0.4rem}
+
+  /* Sections general */
+  .about-section,.team-section,.quote-section{padding:4rem 0}
+  .sec-title{font-size:1.7rem}
+  .areas-header,.team-header{flex-direction:column}
+
+  /* Lang pill doesn't crowd */
+  #lang-pill{border-bottom-left-radius:0}
+}
+
+/* Very small phones */
+@media(max-width:380px){
+  .logo-name{font-size:0.88rem}
+  .topbar-right{gap:0.75rem;font-size:0.62rem}
+  .hero-title{font-size:1.9rem}
+}
+</style>
 </head>
 <body>
 
-  <div class="topbar">
-    <a href="/" class="logo">Grasso<span>.aero</span></a>
-    <div class="topbar-contact">
-      <a href="mailto:grasso@grasso.aero">grasso@grasso.aero</a>
-      &ensp;·&ensp;
-      <a href="https://wa.me/393452323111" target="_blank" rel="noopener">WhatsApp IT</a>
-      &ensp;·&ensp;
-      <a href="https://wa.me/218916556045" target="_blank" rel="noopener">WhatsApp LY</a>
-    </div>
-  </div>
+<!-- LANG PILL -->
+<div id="lang-pill">
+  <button class="lbtn on" id="btn-it" onclick="setLang('it')">IT</button>
+  <button class="lbtn" id="btn-en" onclick="setLang('en')">EN</button>
+</div>
 
-  <section class="hero">
-    <p class="hero-label">Engineering &amp; Infrastructure Advisory</p>
-    <h1>Where <em>engineering discipline</em> meets strategic advisory</h1>
-    <p class="hero-desc">
-      Grasso provides independent advisory and project management services to energy developers,
-      infrastructure investors, industrial operators and public institutions engaged in
-      complex international programmes. Our work is rooted in engineering — and extends
-      across the full spectrum of project development, from feasibility and technical structuring
-      through procurement, construction supervision and long-term asset management.
+<!-- TOP BAR -->
+<div class="topbar">
+  <div data-lang="it">Studio Legale Avvocato Elena Grasso — Lucera (FG) · Puglia, Italia</div>
+  <div data-lang="en">Law Firm Avvocato Elena Grasso — Lucera (FG) · Puglia, Italy</div>
+  <div class="topbar-right">
+    <span><a href="tel:+393387021568">+39 338 702 1568</a></span>
+    <span><a href="mailto:grasso@grasso.law">grasso@grasso.law</a></span>
+    <span><a href="https://wa.me/393387021568" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;color:#25D366">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp</a></span>
+  </div>
+</div>
+
+<!-- HEADER / NAV -->
+<header>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-name">Studio Legale Avv. Elena Grasso</span>
+      <span class="logo-sub" data-lang="it">Fondato a Lucera nel 1996</span>
+      <span class="logo-sub" data-lang="en">Established in Lucera, 1996</span>
+    </a>
+    <nav>
+      <ul id="nav-ul">
+        <li><a href="#studio" data-lang="it">Lo Studio</a><a href="#studio" data-lang="en">The Firm</a></li>
+        <li><a href="#aree" data-lang="it">Aree di Pratica</a><a href="#aree" data-lang="en">Practice Areas</a></li>
+        <li><a href="#contatti" data-lang="it">Contatti</a><a href="#contatti" data-lang="en">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contatti" class="nav-cta" data-lang="it">Consulenza</a>
+    <a href="#contatti" class="nav-cta" data-lang="en">Consultation</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag h1" data-lang="it">Studio Legale · Lucera, Foggia · Dal 1996</div>
+    <div class="hero-tag h1" data-lang="en">Law Firm · Lucera, Foggia · Since 1996</div>
+
+    <h1 class="hero-title h2" data-lang="it">
+      <strong>Studio Legale</strong>
+      <em>Avv. Elena Grasso</em>
+    </h1>
+    <h1 class="hero-title h2" data-lang="en">
+      <strong>Law Firm</strong>
+      <em>Avv. Elena Grasso</em>
+    </h1>
+
+    <div class="hero-rule h3"></div>
+
+    <p class="hero-body h3" data-lang="it">
+      Assistenza legale qualificata in diritto civile, penale, del lavoro, amministrativo, societario e bancario. Un team di professionisti al servizio di privati, imprese e istituzioni <strong style="color:var(--gold-light)">in tutto il mondo</strong>.
     </p>
-  </section>
+    <p class="hero-body h3" data-lang="en">
+      Expert legal counsel in civil, criminal, labour, administrative, corporate and banking law. A team of dedicated professionals serving individuals, businesses and institutions <strong style="color:var(--gold-light)">worldwide</strong>.
+    </p>
 
-  <section class="services">
-    <div class="service">
-      <span class="service-num">01</span>
-      <h2>Technical Due Diligence &amp; Feasibility</h2>
-      <p>Before capital is committed, the engineering and regulatory basis of a project must be sound. We provide independent technical assessment, feasibility review and site evaluation across energy generation, industrial infrastructure and civil works. Where applicable, this extends to the review of existing supply arrangements and procurement structures — assessing whether the specification, sourcing and qualification of critical equipment meets the standards that the asset class, the operating environment and the financing structure require.</p>
+    <div class="hero-btns h4">
+      <a href="#contatti" class="btn-a" data-lang="it">Prenota una consulenza</a>
+      <a href="#contatti" class="btn-a" data-lang="en">Book a consultation</a>
+      <a href="#aree" class="btn-b" data-lang="it">Le nostre aree →</a>
+      <a href="#aree" class="btn-b" data-lang="en">Our practice areas →</a>
     </div>
-    <div class="service">
-      <span class="service-num">02</span>
-      <h2>EPC Management &amp; Owner's Engineering</h2>
-      <p>From contract structuring and procurement strategy through construction supervision and commissioning, we represent the owner's technical and commercial interest at every stage. This includes the management of complex supply chains for critical industrial systems — where vendor qualification, technical specification integrity, certification compliance and long-lead item control are as consequential as the works themselves. Our oversight encompasses scope control, quality assurance, schedule management and interface coordination across multidisciplinary contractors.</p>
-    </div>
-    <div class="service">
-      <span class="service-num">03</span>
-      <h2>Asset Management &amp; O&amp;M Advisory</h2>
-      <p>Operational performance over the life of an asset is determined as much by the quality of its management framework as by its design. We support clients in establishing O&amp;M structures, maintenance protocols, performance monitoring systems and regulatory compliance programmes suited to the asset class and operating environment. Where assets depend on complex industrial supply chains — aerospace-grade components, subsea equipment, platform systems or specialised instrumentation — we extend our support to the qualification and management of the supply base, ensuring that procurement decisions through the operational phase maintain the technical and regulatory standards established at project delivery.</p>
-    </div>
-    <div class="service">
-      <span class="service-num">04</span>
-      <h2>Market Entry &amp; Institutional Relations</h2>
-      <p>Operating across jurisdictions with distinct regulatory regimes, procurement cultures and institutional frameworks requires sustained local engagement. We provide the country-level intelligence, permitting support and government interface that credible international project development demands.</p>
-    </div>
-    <div class="service">
-      <span class="service-num">05</span>
-      <h2>Environmental &amp; Industrial Engineering</h2>
-      <p>Complex projects carry environmental obligations that extend well beyond compliance. We advise on environmental impact assessment, site remediation, industrial permitting and the integration of environmental management systems into project governance — across both greenfield development and brownfield rehabilitation.</p>
-    </div>
-    <div class="service">
-      <span class="service-num">06</span>
-      <h2>HSE Governance &amp; Risk Engineering</h2>
-      <p>Safety management in high-hazard and remote environments demands engineering rigour, not administrative routine. We design and implement HSE governance frameworks, conduct risk assessments and support clients in building safety cultures appropriate to the operational complexity they face.</p>
-    </div>
-  </section>
 
-  <section class="value">
-    <div class="value-left">
-      <p class="value-label">Our Approach</p>
-      <h3>Substance over presentation.<br><em>Continuity</em> over delegation.</h3>
-    </div>
-    <div class="value-right">
-      <div class="promise">
-        <p class="promise-title">Engineering at the core</p>
-        <p>Our advisory is grounded in engineering practice — not in management consulting abstraction. Every recommendation we make is informed by technical understanding of what is feasible, what is certifiable and what will actually perform in the field.</p>
+    <div class="hero-badges h5">
+      <div class="hero-badge">
+        <div class="hb-num">1996</div>
+        <div class="hb-label" data-lang="it">Fondato in ottobre</div>
+        <div class="hb-label" data-lang="en">Founded in October</div>
       </div>
-      <div class="promise">
-        <p class="promise-title">Independent by design</p>
-        <p>As an independent firm, our only obligation is to the quality of our work and the interests of our clients. We carry no conflicting mandates, no supply chain relationships, no institutional agendas.</p>
+      <div class="hero-badge">
+        <div class="hb-num">7</div>
+        <div class="hb-label" data-lang="it">Aree di pratica</div>
+        <div class="hb-label" data-lang="en">Practice areas</div>
       </div>
-      <div class="promise">
-        <p class="promise-title">Structured for each engagement</p>
-        <p>We operate as strategic advisors, embedded technical representatives, or interim project directors — in whatever configuration best serves the client's organisational structure and programme objectives.</p>
-      </div>
-      <div class="promise">
-        <p class="promise-title">Present where it matters</p>
-        <p>Effective technical advisory in international markets requires proximity to the project and to the operating environment. We maintain an active presence across our core geographies, ensuring our engagement reflects conditions as they are.</p>
+      <div class="hero-badge">
+        <div class="hb-num" style="font-size:1.4rem;letter-spacing:0.04em">Int'l</div>
+        <div class="hb-label" data-lang="it">Assistenza mondiale</div>
+        <div class="hb-label" data-lang="en">Worldwide coverage</div>
       </div>
     </div>
-  </section>
-
-  <div class="sectors">
-    <span class="sectors-label">Sectors</span>
-    <span class="sector-item">Oil &amp; Gas</span>
-    <span class="sector-item">Oilfield Services</span>
-    <span class="sector-item">Renewable Energy / PV</span>
-    <span class="sector-item">EPC Infrastructure</span>
-    <span class="sector-item">Industrial Engineering</span>
-    <span class="sector-item">Environmental Engineering</span>
-    <span class="sector-item">Civil &amp; Structural Works</span>
-    <span class="sector-item">Public &amp; Institutional</span>
   </div>
 
-  <footer>
-    <div class="footer-contact">
-      <a href="mailto:grasso@grasso.aero">grasso@grasso.aero</a>
-      <a href="https://wa.me/393452323111" target="_blank" rel="noopener">WhatsApp IT</a>
-      <a href="https://wa.me/218916556045" target="_blank" rel="noopener">WhatsApp LY</a>
+  <div class="hero-visual">
+    <div class="hero-photo"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-caption">
+      <div class="hc-label" data-lang="it">Il nostro impegno</div>
+      <div class="hc-label" data-lang="en">Our commitment</div>
+      <div class="hc-text" data-lang="it">"La vera giustizia si costruisce con rigore, etica e dedizione incondizionata al cliente."</div>
+      <div class="hc-text" data-lang="en">"True justice is built through rigour, ethics and unconditional dedication to the client."</div>
     </div>
-    <span class="footer-geo">Milan &nbsp;·&nbsp; Rome &nbsp;·&nbsp; Tripoli &nbsp;·&nbsp; Worldwide</span>
-  </footer>
+  </div>
+</section>
 
+<!-- PRACTICE STRIP -->
+<div class="practices-strip">
+  <div class="practices-inner">
+    <a href="#aree" class="prac-item">
+      <span class="prac-name" data-lang="it">Diritto Civile</span>
+      <span class="prac-name" data-lang="en">Civil Law</span>
+    </a>
+    <a href="#aree" class="prac-item">
+      <span class="prac-name" data-lang="it">Diritto Penale</span>
+      <span class="prac-name" data-lang="en">Criminal Law</span>
+    </a>
+    <a href="#aree" class="prac-item">
+      <span class="prac-name" data-lang="it">Diritto del Lavoro</span>
+      <span class="prac-name" data-lang="en">Labour Law</span>
+    </a>
+    <a href="#aree" class="prac-item">
+      <span class="prac-name" data-lang="it">Dir. Amministrativo</span>
+      <span class="prac-name" data-lang="en">Administrative Law</span>
+    </a>
+    <a href="#aree" class="prac-item">
+      <span class="prac-name" data-lang="it">Diritto Societario</span>
+      <span class="prac-name" data-lang="en">Corporate Law</span>
+    </a>
+    <a href="#aree" class="prac-item">
+      <span class="prac-name" data-lang="it">Dir. Bancario</span>
+      <span class="prac-name" data-lang="en">Banking Law</span>
+    </a>
+    <a href="#aree" class="prac-item">
+      <span class="prac-name" data-lang="it">Mediazione</span>
+      <span class="prac-name" data-lang="en">Mediation</span>
+    </a>
+  </div>
+</div>
+
+<!-- ══ ABOUT / STUDIO ══ -->
+<section class="about-section" id="studio">
+  <div class="section-wrap">
+    <div class="about-grid">
+      <div class="about-photo-wrap reveal">
+        <img class="about-photo"
+          src="https://images.unsplash.com/photo-1521791055366-0d553872952f?w=700&q=85"
+          alt="Studio Legale Avvocato Elena Grasso">
+        <div class="about-photo-badge">
+          <div class="apb-num">1996</div>
+          <div class="apb-sub" data-lang="it">Fondato in ottobre</div>
+          <div class="apb-sub" data-lang="en">Founded in October</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="sec-label" data-lang="it">Lo Studio</div>
+        <div class="sec-label" data-lang="en">The Firm</div>
+        <h2 class="sec-title" data-lang="it">Una realtà <em>solida</em><br>al vostro fianco</h2>
+        <h2 class="sec-title" data-lang="en">A <em>trusted</em> firm<br>by your side</h2>
+
+        <p class="about-text" data-lang="it">
+          Lo Studio Legale Avvocato Elena Grasso è una realtà professionale radicata a Lucera, nel cuore della Puglia, attiva dal <strong>ottobre 1996</strong>. Con quasi trent'anni di esperienza nel trattare le questioni legali più complesse, lo studio riunisce professionisti specializzati nelle principali branche del diritto, garantendo un'assistenza integrata e di alto profilo.
+        </p>
+        <p class="about-text" data-lang="it">
+          Il nostro approccio combina rigore tecnico e attenzione alla persona: ogni cliente riceve una strategia su misura, costruita sulla comprensione profonda della sua situazione. Operiamo dinanzi ai tribunali italiani e assistiamo clienti in tutto il mondo, senza confini geografici.
+        </p>
+        <p class="about-text" data-lang="en">
+          The Law Firm of Avvocato Elena Grasso is an established practice rooted in Lucera, at the heart of Puglia, active since <strong>October 1996</strong>. With almost thirty years of experience handling complex legal matters, the firm brings together specialists across the major branches of law, providing integrated and high-level assistance.
+        </p>
+        <p class="about-text" data-lang="en">
+          Our approach combines technical rigour with genuine attention to people: every client receives a bespoke strategy built on a deep understanding of their situation. We practise before Italian courts and assist clients <strong>worldwide</strong>, with no geographical boundaries.
+        </p>
+
+        <div class="partner-name">Avv. Elena Grasso</div>
+        <div class="partner-role" data-lang="it">Fondatrice &amp; Managing Partner</div>
+        <div class="partner-role" data-lang="en">Founder &amp; Managing Partner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ AREE DI PRATICA ══ -->
+<section class="areas-section" id="aree">
+  <div class="section-wrap">
+    <div class="areas-header">
+      <div>
+        <div class="sec-label" data-lang="it">Competenze</div>
+        <div class="sec-label" data-lang="en">Expertise</div>
+        <h2 class="sec-title" data-lang="it">Aree di <em>pratica</em></h2>
+        <h2 class="sec-title" data-lang="en">Practice <em>areas</em></h2>
+      </div>
+      <p class="sec-lead reveal" data-lang="it">Assistenza integrata nelle principali aree del diritto, con competenze specifiche per ogni settore.</p>
+      <p class="sec-lead reveal" data-lang="en">Integrated assistance across the main areas of law, with sector-specific expertise for every matter.</p>
+    </div>
+
+    <div class="areas-grid reveal">
+      <!-- PENALE – highlighted -->
+      <div class="area-card">
+        <div class="area-tag" data-lang="it">Area Flagship</div>
+        <div class="area-tag" data-lang="en">Flagship Area</div>
+        <div class="area-num">01</div>
+        <div class="area-title criminal" data-lang="it">Diritto Penale</div>
+        <div class="area-title criminal" data-lang="en">Criminal Law</div>
+        <p class="area-desc" data-lang="it">Difesa penale in ogni grado di giudizio, dall'indagine preliminare al giudizio di Cassazione. Reati contro la persona, reati economici, reati informatici e responsabilità degli enti (D.Lgs. 231/2001). Patrocinio di parti civili e assistenza alle vittime di reato.</p>
+        <p class="area-desc" data-lang="en">Criminal defence at every stage of proceedings, from preliminary investigation to the Court of Cassation. Offences against the person, economic crimes, cybercrime and corporate liability (Legislative Decree 231/2001). Civil party representation and victim assistance.</p>
+      </div>
+      <!-- CIVILE -->
+      <div class="area-card">
+        <div class="area-num">02</div>
+        <div class="area-title" data-lang="it">Diritto Civile</div>
+        <div class="area-title" data-lang="en">Civil Law</div>
+        <p class="area-desc" data-lang="it">Contratti, proprietà, successioni, diritto di famiglia e responsabilità civile. Assistenza integrata in ogni fase del contenzioso civile, dalla diffida giudiziale all'esecuzione delle sentenze.</p>
+        <p class="area-desc" data-lang="en">Contracts, property, inheritance, family law and tort liability. Full assistance at every stage of civil proceedings, from formal notice through to enforcement of judgments.</p>
+      </div>
+      <!-- LAVORO -->
+      <div class="area-card">
+        <div class="area-num">03</div>
+        <div class="area-title" data-lang="it">Diritto del Lavoro</div>
+        <div class="area-title" data-lang="en">Labour Law</div>
+        <p class="area-desc" data-lang="it">Contratti di lavoro subordinato e autonomo, licenziamenti, sicurezza sul lavoro, mobbing e contratti collettivi. Assistenza tanto per datori di lavoro quanto per lavoratori.</p>
+        <p class="area-desc" data-lang="en">Employment and self-employment contracts, wrongful dismissal, workplace safety, mobbing and collective agreements. Assistance for both employers and employees.</p>
+      </div>
+      <!-- AMMINISTRATIVO -->
+      <div class="area-card">
+        <div class="area-num">04</div>
+        <div class="area-title" data-lang="it">Diritto Amministrativo</div>
+        <div class="area-title" data-lang="en">Administrative Law</div>
+        <p class="area-desc" data-lang="it">Ricorsi al TAR e al Consiglio di Stato, appalti pubblici, urbanistica, edilizia e autorizzazioni. Contenzioso con la pubblica amministrazione a ogni livello.</p>
+        <p class="area-desc" data-lang="en">Appeals before the Regional Administrative Court and the Council of State, public procurement, urban planning, building permits and authorisations. Disputes with public authorities at every level.</p>
+      </div>
+      <!-- SOCIETARIO -->
+      <div class="area-card">
+        <div class="area-num">05</div>
+        <div class="area-title" data-lang="it">Diritto Societario e Commerciale</div>
+        <div class="area-title" data-lang="en">Corporate &amp; Commercial Law</div>
+        <p class="area-desc" data-lang="it">Costituzione di società, governance, patti parasociali, fusioni, acquisizioni e ristrutturazioni aziendali. Contratti commerciali nazionali e internazionali.</p>
+        <p class="area-desc" data-lang="en">Company formation, governance, shareholders' agreements, mergers, acquisitions and corporate restructuring. Domestic and international commercial contracts.</p>
+      </div>
+      <!-- BANCARIO -->
+      <div class="area-card">
+        <div class="area-num">06</div>
+        <div class="area-title" data-lang="it">Diritto Bancario e Finanziario</div>
+        <div class="area-title" data-lang="en">Banking &amp; Financial Law</div>
+        <p class="area-desc" data-lang="it">Finanziamenti, fideiussioni, usura bancaria, anatocismo e trasparenza contrattuale. Contenzioso con istituti di credito e impugnazione di contratti di investimento.</p>
+        <p class="area-desc" data-lang="en">Financing, surety bonds, usury, compound interest and contractual transparency. Disputes with credit institutions and challenges to investment contracts.</p>
+      </div>
+      <!-- MEDIAZIONE – spans full width on small -->
+      <div class="area-card">
+        <div class="area-num">07</div>
+        <div class="area-title" data-lang="it">Mediazione e ADR</div>
+        <div class="area-title" data-lang="en">Mediation &amp; ADR</div>
+        <p class="area-desc" data-lang="it">Risoluzione alternativa delle controversie in ambito civile e commerciale. Mediatori accreditati presso organismi ministeriali. Arbitrato e negoziazione assistita.</p>
+        <p class="area-desc" data-lang="en">Alternative dispute resolution in civil and commercial matters. Mediators accredited with Ministry-approved bodies. Arbitration and assisted negotiation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VALUES ══ -->
+<section class="values-section">
+  <div class="section-wrap">
+    <div style="text-align:center;margin-bottom:0.5rem">
+      <div class="sec-label" style="justify-content:center" data-lang="it">I nostri valori</div>
+      <div class="sec-label" style="justify-content:center" data-lang="en">Our values</div>
+      <h2 class="sec-title" data-lang="it">Come lavoriamo</h2>
+      <h2 class="sec-title" data-lang="en">How we work</h2>
+    </div>
+    <div class="values-grid reveal">
+      <div class="val-item">
+        <div class="val-num">01</div>
+        <div class="val-title" data-lang="it">Riservatezza</div>
+        <div class="val-title" data-lang="en">Confidentiality</div>
+        <p class="val-text" data-lang="it">Il segreto professionale è un pilastro della nostra etica. Ogni informazione è trattata con la massima discrezione.</p>
+        <p class="val-text" data-lang="en">Professional privilege is a cornerstone of our ethics. Every piece of information is handled with the utmost discretion.</p>
+      </div>
+      <div class="val-item">
+        <div class="val-num">02</div>
+        <div class="val-title" data-lang="it">Competenza</div>
+        <div class="val-title" data-lang="en">Expertise</div>
+        <p class="val-text" data-lang="it">Aggiornamento costante e specializzazione verticale garantiscono soluzioni legali all'avanguardia per ogni materia.</p>
+        <p class="val-text" data-lang="en">Continuous training and deep specialisation ensure cutting-edge legal solutions across every area of law.</p>
+      </div>
+      <div class="val-item">
+        <div class="val-num">03</div>
+        <div class="val-title" data-lang="it">Trasparenza</div>
+        <div class="val-title" data-lang="en">Transparency</div>
+        <p class="val-text" data-lang="it">Comunicazione chiara, preventivi definiti e aggiornamenti regolari: saprete sempre a che punto è la vostra pratica.</p>
+        <p class="val-text" data-lang="en">Clear communication, defined fees and regular updates: you will always know exactly where your matter stands.</p>
+      </div>
+      <div class="val-item">
+        <div class="val-num">04</div>
+        <div class="val-title" data-lang="it">Risultati</div>
+        <div class="val-title" data-lang="en">Results</div>
+        <p class="val-text" data-lang="it">Ogni strategia è costruita per ottenere il miglior risultato possibile, non soltanto per gestire il procedimento.</p>
+        <p class="val-text" data-lang="en">Every strategy is built to achieve the best possible outcome — not merely to manage the proceedings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ QUOTE ══ -->
+<section class="quote-section">
+  <span class="quote-mark">"</span>
+  <p class="quote-text" data-lang="it">
+    Difendere i diritti di un cliente significa assumersi la responsabilità della sua storia. È un mandato che non si esaurisce in un'aula di tribunale.
+  </p>
+  <p class="quote-text" data-lang="en">
+    Defending a client's rights means taking responsibility for their story. It is a mandate that extends far beyond the courtroom.
+  </p>
+  <div class="quote-attr" data-lang="it">Avv. Elena Grasso — Managing Partner</div>
+  <div class="quote-attr" data-lang="en">Avv. Elena Grasso — Managing Partner</div>
+</section>
+
+<!-- ══ CONTATTI ══ -->
+<section class="contact-section" id="contatti">
+  <div class="contact-info-col">
+    <div class="sec-label" data-lang="it">Contatti</div>
+    <div class="sec-label" data-lang="en">Contact</div>
+    <h2 class="sec-title" data-lang="it">Siamo a<br><em>vostra disposizione</em></h2>
+    <h2 class="sec-title" data-lang="en">We are at<br><em>your disposal</em></h2>
+    <p class="sec-lead" data-lang="it">Contattateci per una prima consulenza riservata. Operiamo su tutto il territorio italiano e assistiamo clienti <strong style="color:var(--gold-light)">in tutto il mondo</strong>, in presenza a Lucera o da remoto.</p>
+    <p class="sec-lead" data-lang="en">Contact us for a confidential initial consultation. We operate throughout Italy and assist clients <strong style="color:var(--gold-light)">worldwide</strong>, in person in Lucera or remotely.</p>
+
+    <div class="cinfo-grid">
+      <div class="cinfo-row">
+        <div class="cinfo-mark">Sede</div>
+        <div>
+          <div class="cinfo-label" data-lang="it">Sede</div>
+          <div class="cinfo-label" data-lang="en">Address</div>
+          <div class="cinfo-val">Lucera (FG) — Puglia, Italia</div>
+        </div>
+      </div>
+      <div class="cinfo-row">
+        <div class="cinfo-mark">Tel.</div>
+        <div>
+          <div class="cinfo-label" data-lang="it">Telefono</div>
+          <div class="cinfo-label" data-lang="en">Phone</div>
+          <div class="cinfo-val"><a href="tel:+393387021568" style="color:inherit;text-decoration:none">+39 338 702 1568</a></div>
+        </div>
+      </div>
+      <div class="cinfo-row">
+        <div class="cinfo-mark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366" style="display:block;margin-top:0.1rem"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div>
+          <div class="cinfo-label">WhatsApp</div>
+          <div class="cinfo-val"><a href="https://wa.me/393387021568" target="_blank" rel="noopener" style="color:#25D366;text-decoration:none;font-weight:500">+39 338 702 1568</a></div>
+        </div>
+      </div>
+      <div class="cinfo-row">
+        <div class="cinfo-mark">Email</div>
+        <div>
+          <div class="cinfo-label">Email</div>
+          <div class="cinfo-val"><a href="mailto:grasso@grasso.law" style="color:var(--gold-light);text-decoration:none">grasso@grasso.law</a></div>
+        </div>
+      </div>
+      <div class="cinfo-row">
+        <div class="cinfo-mark">Area</div>
+        <div>
+          <div class="cinfo-label" data-lang="it">Operatività</div>
+          <div class="cinfo-label" data-lang="en">Coverage</div>
+          <div class="cinfo-val" data-lang="it">Italia e tutto il mondo<br><small style="opacity:0.65">In presenza e da remoto</small></div>
+          <div class="cinfo-val" data-lang="en">Italy and worldwide<br><small style="opacity:0.65">In person and remotely</small></div>
+        </div>
+      </div>
+      <div class="cinfo-row">
+        <div class="cinfo-mark">Orari</div>
+        <div>
+          <div class="cinfo-label" data-lang="it">Orari</div>
+          <div class="cinfo-label" data-lang="en">Office hours</div>
+          <div class="cinfo-val" data-lang="it">Lun – Ven: 09:00 – 18:00<br>Su appuntamento</div>
+          <div class="cinfo-val" data-lang="en">Mon – Fri: 09:00 – 18:00<br>By appointment</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form-col">
+    <div class="form-title" data-lang="it">Scrivici</div>
+    <div class="form-title" data-lang="en">Write to us</div>
+
+    <form id="contact-form" novalidate>
+      <div class="form-2col">
+        <div class="fg">
+          <label for="f-nome" data-lang="it">Nome *</label>
+          <label for="f-nome" data-lang="en">First name *</label>
+          <input type="text" id="f-nome" required placeholder="Maria">
+        </div>
+        <div class="fg">
+          <label for="f-cognome" data-lang="it">Cognome *</label>
+          <label for="f-cognome" data-lang="en">Last name *</label>
+          <input type="text" id="f-cognome" required placeholder="Rossi">
+        </div>
+      </div>
+      <div class="fg">
+        <label for="f-email">Email *</label>
+        <input type="email" id="f-email" required placeholder="maria.rossi@email.com">
+      </div>
+      <div class="fg">
+        <label for="f-tel" data-lang="it">Telefono</label>
+        <label for="f-tel" data-lang="en">Phone</label>
+        <input type="tel" id="f-tel" placeholder="+39 333 000 0000">
+      </div>
+      <div class="fg">
+        <label for="f-area" data-lang="it">Area di riferimento *</label>
+        <label for="f-area" data-lang="en">Practice area *</label>
+        <select id="f-area" required>
+          <option value="" data-lang="it">— Seleziona —</option>
+          <option value="" data-lang="en">— Select —</option>
+          <option value="Diritto Penale" data-lang="it">Diritto Penale</option>
+          <option value="Criminal Law" data-lang="en">Criminal Law</option>
+          <option value="Diritto Civile" data-lang="it">Diritto Civile</option>
+          <option value="Civil Law" data-lang="en">Civil Law</option>
+          <option value="Diritto del Lavoro" data-lang="it">Diritto del Lavoro</option>
+          <option value="Labour Law" data-lang="en">Labour Law</option>
+          <option value="Diritto Amministrativo" data-lang="it">Diritto Amministrativo</option>
+          <option value="Administrative Law" data-lang="en">Administrative Law</option>
+          <option value="Diritto Societario" data-lang="it">Diritto Societario</option>
+          <option value="Corporate Law" data-lang="en">Corporate Law</option>
+          <option value="Diritto Bancario" data-lang="it">Diritto Bancario e Finanziario</option>
+          <option value="Banking Law" data-lang="en">Banking &amp; Financial Law</option>
+          <option value="Mediazione" data-lang="it">Mediazione e ADR</option>
+          <option value="Mediation" data-lang="en">Mediation &amp; ADR</option>
+          <option value="Altro" data-lang="it">Altro</option>
+          <option value="Other" data-lang="en">Other</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label for="f-msg" data-lang="it">Messaggio *</label>
+        <label for="f-msg" data-lang="en">Message *</label>
+        <textarea id="f-msg" required
+          data-it="Descriva brevemente la sua situazione. Tutte le informazioni sono trattate con la massima riservatezza professionale."
+          data-en="Please briefly describe your situation. All information is handled with strict professional confidentiality."></textarea>
+      </div>
+      <div class="privacy-note" data-lang="it">
+        Ai sensi del Reg. UE 2016/679 (GDPR) e del D.Lgs. 196/2003, i dati forniti saranno trattati dallo Studio Legale Avvocato Elena Grasso esclusivamente per rispondere alla presente richiesta.
+      </div>
+      <div class="privacy-note" data-lang="en">
+        Pursuant to EU Reg. 2016/679 (GDPR), the data provided will be processed by the Law Firm of Avvocato Elena Grasso solely to respond to this enquiry.
+      </div>
+      <button type="submit" class="form-submit" id="f-submit">
+        <span data-lang="it">Invia richiesta</span>
+        <span data-lang="en">Send enquiry</span>
+      </button>
+      <div class="form-msg" id="form-msg"></div>
+    </form>
+  </div>
+</section>
+
+<!-- ══ GOOGLE REVIEWS ══ -->
+<section class="reviews-section">
+  <div class="reviews-inner">
+    <div class="sec-label" style="justify-content:center;margin-bottom:1rem" data-lang="it">La voce dei clienti</div>
+    <div class="sec-label" style="justify-content:center;margin-bottom:1rem" data-lang="en">Client reviews</div>
+
+    <div class="gmap-badge">
+      <div>
+        <div class="gmap-stars">★★★★★</div>
+        <div style="display:flex;align-items:baseline;gap:0.5rem;margin-top:0.2rem">
+          <span class="gmap-rating">5.0</span>
+          <span class="gmap-count" data-lang="it">su Google · <strong>54+ recensioni</strong></span>
+          <span class="gmap-count" data-lang="en">on Google · <strong>54+ reviews</strong></span>
+        </div>
+      </div>
+      <a href="https://www.google.com/maps/search/Studio+Legale+Avvocato+Elena+Grasso+Lucera" target="_blank" rel="noopener" class="gmap-link" data-lang="it">Leggi su Google Maps →</a>
+      <a href="https://www.google.com/maps/search/Studio+Legale+Avvocato+Elena+Grasso+Lucera" target="_blank" rel="noopener" class="gmap-link" data-lang="en">Read on Google Maps →</a>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text" data-lang="it">"Professionalità e competenza fuori dal comune. L'Avvocato Grasso ha seguito il mio caso con grande dedizione, ottenendo un risultato che non avrei mai sperato. Consigliatissima."</p>
+        <p class="rev-text" data-lang="en">"Outstanding professionalism and expertise. The attorney handled my case with great dedication, achieving a result I would never have hoped for. Highly recommended."</p>
+        <div class="rev-author">G.P.</div>
+        <div class="rev-date">Google · 2024</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text" data-lang="it">"Ho affidato una questione penale delicata allo studio e sono rimasto colpito dalla serietà e dalla rapidità con cui è stata gestita. Sempre reperibile e disponibile a spiegare ogni passaggio."</p>
+        <p class="rev-text" data-lang="en">"I entrusted a sensitive criminal matter to the firm and was impressed by the seriousness and speed with which it was handled. Always reachable and willing to explain every step."</p>
+        <div class="rev-author">M.D.</div>
+        <div class="rev-date">Google · 2024</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text" data-lang="it">"Studio di altissimo livello. Segue i clienti con attenzione e con risultati concreti. Ho risolto una controversia lavorativa che trascinavo da anni in pochi mesi. Grazie di cuore."</p>
+        <p class="rev-text" data-lang="en">"A top-level firm. They follow clients with great attention and deliver real results. I resolved a labour dispute I had been dragging for years in just a few months. Many thanks."</p>
+        <div class="rev-author">L.T.</div>
+        <div class="rev-date">Google · 2025</div>
+      </div>
+    </div>
+    <div style="margin-top:1.5rem">
+      <a href="https://www.google.com/maps/search/Studio+Legale+Avvocato+Elena+Grasso+Lucera" target="_blank" rel="noopener" class="gmap-link" data-lang="it">Visualizza tutte le recensioni →</a>
+      <a href="https://www.google.com/maps/search/Studio+Legale+Avvocato+Elena+Grasso+Lucera" target="_blank" rel="noopener" class="gmap-link" data-lang="en">View all reviews →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="logo-name">Studio Legale Avv. Elena Grasso</div>
+      <div class="logo-sub" style="margin-top:0.3rem" data-lang="it">Lucera · Dal ottobre 1996</div>
+      <div class="logo-sub" style="margin-top:0.3rem" data-lang="en">Lucera · Since October 1996</div>
+      <p data-lang="it">Studio legale multidisciplinare con sede a Lucera, al servizio di privati, imprese e istituzioni in Italia e in tutto il mondo.</p>
+      <p data-lang="en">Multidisciplinary law firm based in Lucera, serving individuals, businesses and institutions in Italy and worldwide.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title" data-lang="it">Aree di Pratica</div>
+      <div class="footer-col-title" data-lang="en">Practice Areas</div>
+      <ul>
+        <li><a href="#aree" data-lang="it">Diritto Penale</a><a href="#aree" data-lang="en">Criminal Law</a></li>
+        <li><a href="#aree" data-lang="it">Diritto Civile</a><a href="#aree" data-lang="en">Civil Law</a></li>
+        <li><a href="#aree" data-lang="it">Diritto del Lavoro</a><a href="#aree" data-lang="en">Labour Law</a></li>
+        <li><a href="#aree" data-lang="it">Dir. Amministrativo</a><a href="#aree" data-lang="en">Administrative Law</a></li>
+        <li><a href="#aree" data-lang="it">Diritto Societario</a><a href="#aree" data-lang="en">Corporate Law</a></li>
+        <li><a href="#aree" data-lang="it">Dir. Bancario</a><a href="#aree" data-lang="en">Banking Law</a></li>
+        <li><a href="#aree" data-lang="it">Mediazione</a><a href="#aree" data-lang="en">Mediation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title" data-lang="it">Lo Studio</div>
+      <div class="footer-col-title" data-lang="en">The Firm</div>
+      <ul>
+        <li><a href="#studio" data-lang="it">Chi siamo</a><a href="#studio" data-lang="en">About us</a></li>
+        <li><a href="#contatti" data-lang="it">Contatti</a><a href="#contatti" data-lang="en">Contact</a></li>
+        <li><a href="mailto:grasso@grasso.law">grasso@grasso.law</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title" data-lang="it">Informazioni Legali</div>
+      <div class="footer-col-title" data-lang="en">Legal Information</div>
+      <ul>
+        <li><a href="#" data-lang="it">Privacy Policy</a><a href="#" data-lang="en">Privacy Policy</a></li>
+        <li><a href="#" data-lang="it">Cookie Policy</a><a href="#" data-lang="en">Cookie Policy</a></li>
+        <li><a href="#" data-lang="it">Note Legali</a><a href="#" data-lang="en">Legal Notice</a></li>
+        <li><a href="https://www.grasso.law">grasso.law</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Studio Legale Avvocato Elena Grasso — <span data-lang="it">Tutti i diritti riservati</span><span data-lang="en">All rights reserved</span></span>
+    <span data-lang="it">Iscritta all'Ordine degli Avvocati di Foggia · Attiva dal ottobre 1996</span>
+    <span data-lang="en">Registered with the Foggia Bar Association · Active since October 1996</span>
+  </div>
+</footer>
+
+<!-- ══ WHATSAPP FLOATING BUTTON ══ -->
+<a href="https://wa.me/393387021568" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg class="wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="wa-label-mob" data-lang="it">WhatsApp</span>
+  <span class="wa-label-mob" data-lang="en">WhatsApp</span>
+</a>
+
+<script>
+/* ══ LANGUAGE ══ */
+function setLang(l){
+  document.documentElement.lang=l;
+  document.getElementById('btn-it').classList.toggle('on',l==='it');
+  document.getElementById('btn-en').classList.toggle('on',l==='en');
+  document.title=l==='it'?'Studio Legale Avvocato Elena Grasso | Lucera':'Law Firm Avvocato Elena Grasso | Lucera';
+  const d=document.querySelector('meta[name="description"]');
+  if(d)d.content=l==='it'
+    ?'Studio Legale Avvocato Elena Grasso – Lucera, Foggia. Dal 1996. Diritto penale, civile, lavoro, amministrativo, societario, bancario. Assistenza in tutto il mondo.'
+    :'Law Firm Avvocato Elena Grasso – Lucera, Foggia. Since 1996. Criminal, civil, labour, administrative, corporate and banking law. Worldwide assistance.';
+  // update textarea placeholder
+  const ta=document.getElementById('f-msg');
+  if(ta)ta.placeholder=ta.dataset[l]||'';
+  // update select to show correct options
+  syncSelect();
+  try{localStorage.setItem('g-lang',l)}catch(e){}
+}
+
+function syncSelect(){
+  // show only options for current lang
+  const lang=document.documentElement.lang;
+  document.querySelectorAll('#f-area option').forEach(o=>{
+    const ol=o.dataset.lang;
+    o.style.display=(!ol||ol===lang)?'':'none';
+    if(ol&&ol!==lang)o.disabled=true; else o.disabled=false;
+  });
+}
+
+(function(){
+  let s;try{s=localStorage.getItem('g-lang')}catch(e){}
+  const lang=s||(navigator.language||'it').slice(0,2).toLowerCase();
+  setLang(lang==='it'?'it':'en');
+})();
+
+/* ══ FORM → MAILTO ══ */
+document.getElementById('contact-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  const lang=document.documentElement.lang;
+  const nome=document.getElementById('f-nome').value.trim();
+  const cognome=document.getElementById('f-cognome').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const tel=document.getElementById('f-tel').value.trim();
+  const area=document.getElementById('f-area').value;
+  const msg=document.getElementById('f-msg').value.trim();
+
+  if(!nome||!cognome||!email||!area||!msg){
+    const err=lang==='it'
+      ?'Si prega di compilare tutti i campi obbligatori (*)'
+      :'Please fill in all required fields (*)';
+    alert(err);return;
+  }
+
+  const subjectIT=`[Studio Legale Avv. Elena Grasso] Richiesta di consulenza – ${area} – ${nome} ${cognome}`;
+  const subjectEN=`[Law Firm Avv. Elena Grasso] Consultation request – ${area} – ${nome} ${cognome}`;
+  const subject=lang==='it'?subjectIT:subjectEN;
+
+  const bodyIT=
+`Gentile Studio Legale Avv. Elena Grasso,
+
+Vi contatto per richiedere una consulenza in merito a: ${area}
+
+--- DATI DEL RICHIEDENTE ---
+Nome: ${nome} ${cognome}
+Email: ${email}
+Telefono: ${tel||'non fornito'}
+
+--- MESSAGGIO ---
+${msg}
+
+Cordiali saluti,
+${nome} ${cognome}`;
+
+  const bodyEN=
+`Dear Law Firm of Avv. Elena Grasso,
+
+I am writing to request a consultation regarding: ${area}
+
+--- APPLICANT DETAILS ---
+Name: ${nome} ${cognome}
+Email: ${email}
+Phone: ${tel||'not provided'}
+
+--- MESSAGE ---
+${msg}
+
+Kind regards,
+${nome} ${cognome}`;
+
+  const body=lang==='it'?bodyIT:bodyEN;
+  const mailto=`mailto:grasso@grasso.law?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href=mailto;
+
+  // Show confirmation
+  const m=document.getElementById('form-msg');
+  m.style.display='block';
+  m.textContent=lang==='it'
+    ?'Il suo client di posta si aprirà con il messaggio precompilato. Grazie per averci contattato.'
+    :'Your email client will open with a pre-filled message. Thank you for contacting us.';
+});
+
+/* ══ SCROLL REVEAL ══ */
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(el=>{if(el.isIntersecting){el.target.classList.add('in');ro.unobserve(el.target)}});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+/* ══ STICKY NAV SHADE ══ */
+window.addEventListener('scroll',()=>{
+  document.querySelector('header').style.boxShadow=
+    window.scrollY>40?'0 4px 24px rgba(13,27,42,0.1)':'0 2px 20px rgba(13,27,42,0.06)';
+},{passive:true});
+
+/* ══ MOBILE MENU ══ */
+function toggleMenu(){
+  const ul=document.getElementById('nav-ul');
+  const open=ul.style.display==='flex';
+  ul.style.display=open?'':'flex';
+  ul.style.flexDirection='column';
+  ul.style.position='absolute';
+  ul.style.top='100%';
+  ul.style.left='0';ul.style.right='0';
+  ul.style.background='var(--warm-white)';
+  ul.style.borderBottom='1px solid var(--rule)';
+  ul.style.padding='0.5rem 0';
+  if(open)ul.removeAttribute('style');
+}
+</script>
 </body>
 </html>
