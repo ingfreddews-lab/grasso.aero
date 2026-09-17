@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Foreign Companies Support in Italy – Grasso.aero</title>
+  <meta name="description" content="Turnkey compliance and safety support for foreign companies operating in Italy: posting of workers, Art. 10, patente a crediti, POS, DVR, medico competente.">
+  <link rel="canonical" href="https://grasso.aero/en/foreign-companies-support">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans:wght@300;400;500;600&family=Noto+Sans+Arabic:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:   #111820;
+      --white:  #f8f8f6;
+      --mid:    #5a6472;
+      --accent: #c09a50;
+      --rule:   rgba(255,255,255,0.1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      left: 0; top: 0;
+      width: 2px; height: 100vh;
+      background: var(--accent);
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    /* language content toggle */
+    [data-lang]{ display:none; }
+    [data-lang].active{ display:inline; }
+
+    /* language switcher */
+    #lang-switch{
+      display:flex;flex-wrap:wrap;
+      padding:0.45rem 3.5rem;
+      background:#0b0f14;
+      border-bottom:1px solid var(--rule);
+    }
+    .lgb{
+      font-family:'DM Sans',sans-serif;
+      font-size:0.62rem;font-weight:500;letter-spacing:0.08em;
+      padding:0.3rem 0.55rem;
+      background:transparent;border:none;cursor:pointer;
+      color:rgba(248,248,246,0.35);
+      transition:color 0.2s;
+    }
+    .lgb.active{ color:var(--accent); }
+    .lgb:hover{ color:var(--white); }
+
+    /* RTL */
+    html[dir="rtl"] body{ direction:rtl; }
+    html[dir="rtl"] .hero-desc,
+    html[dir="rtl"] .service p,
+    html[dir="rtl"] .promise p,
+    html[dir="rtl"] .contact-desc{ text-align:right; }
+    html[dir="rtl"] #lang-switch{ justify-content:flex-start; }
+
+    /* non-Latin script fonts */
+    :lang(bg), :lang(ru), :lang(el){ font-family:'Noto Sans',sans-serif; }
+    :lang(bg) h1, :lang(bg) h2, :lang(bg) h3,
+    :lang(ru) h1, :lang(ru) h2, :lang(ru) h3,
+    :lang(el) h1, :lang(el) h2, :lang(el) h3{ font-family:'Noto Sans',sans-serif; font-weight:500; }
+    :lang(ar){ font-family:'Noto Sans Arabic',sans-serif; }
+    :lang(ar) h1, :lang(ar) h2, :lang(ar) h3{ font-family:'Noto Sans Arabic',sans-serif; font-weight:600; }
+    :lang(zh){ font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif; }
+    :lang(zh) h1, :lang(zh) h2, :lang(zh) h3{ font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif; font-weight:500; }
+    :lang(zh) .hero h1 em, :lang(zh) .value-left h3{ font-style:normal; }
+    :lang(zh) .hero h1{ max-width:24ch; line-height:1.3; }
+    :lang(zh) .contact-title{ max-width:28ch; }
+
+    /* topbar */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.6rem 3.5rem;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      animation: fade 0.8s ease forwards 0.05s;
+    }
+
+    .logo {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .logo span { color: var(--accent); }
+
+    /* main nav */
+    .topnav { display:flex; align-items:center; gap:1.8rem; flex-wrap:wrap; }
+    .topnav a{
+      font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase;
+      color:rgba(248,248,246,0.62); text-decoration:none; transition:color 0.2s;
+    }
+    .topnav a:hover{ color:var(--accent); }
+    .topnav a.nav-highlight{ color:var(--accent); }
+    .topnav a.nav-highlight::before{
+      content:'→'; margin-right:0.45rem; opacity:0.7;
+    }
+    html[dir="rtl"] .topnav a.nav-highlight::before{ content:'←'; }
+
+    /* foreign companies banner */
+    .fx-banner{
+      display:grid; grid-template-columns: 1fr auto; align-items:center; gap:2rem;
+      padding:2.2rem 3.5rem;
+      background:rgba(192,154,80,0.06);
+      border-bottom:1px solid var(--rule);
+      border-left:2px solid var(--accent);
+      opacity:0; animation: fade 0.8s ease forwards 0.3s;
+    }
+    .fx-banner-label{
+      font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase;
+      color:var(--accent); margin-bottom:0.7rem;
+    }
+    .fx-banner h2{
+      font-family:'Libre Baskerville', serif; font-weight:400;
+      font-size:1.15rem; line-height:1.45; margin-bottom:0.6rem;
+    }
+    .fx-banner p{
+      font-size:0.8rem; line-height:1.8; color:rgba(248,248,246,0.55); max-width:70ch;
+    }
+    .fx-cta{
+      display:inline-block; white-space:nowrap;
+      padding:0.95rem 1.7rem;
+      border:1px solid var(--accent); color:var(--accent);
+      font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase;
+      text-decoration:none; transition:background 0.25s, color 0.25s;
+    }
+    .fx-cta:hover{ background:var(--accent); color:var(--navy); }
+
+    @media (max-width: 760px){
+      .fx-banner{ grid-template-columns:1fr; padding:2rem 1.8rem; }
+      .topnav{ gap:1.1rem; }
+    }
+
+    .topbar-contact { font-size: 0.72rem; color: var(--mid); }
+    .topbar-contact a { color: var(--white); text-decoration: none; transition: color 0.2s; }
+    .topbar-contact a:hover { color: var(--accent); }
+
+    /* hero */
+    .hero {
+      padding: 6rem 3.5rem 5rem;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      animation: rise 0.9s ease forwards 0.2s;
+    }
+
+    .hero-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2.2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 400;
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      line-height: 1.12;
+      max-width: 20ch;
+      margin-bottom: 2.4rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    :lang(ar) .hero h1 em{ font-style:normal; }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: rgba(248,248,246,0.62);
+      max-width: 60ch;
+    }
+
+    /* services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      animation: rise 0.9s ease forwards 0.38s;
+    }
+
+    .service {
+      padding: 2.8rem 2.2rem;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      transition: background 0.3s;
+    }
+    .service:nth-child(3n) { border-right: none; }
+    .service:nth-last-child(-n+3) { border-bottom: none; }
+    .service:hover { background: rgba(192,154,80,0.04); }
+
+    .service-num {
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      margin-bottom: 1.4rem;
+      display: block;
+    }
+
+    .service h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+
+    .service p {
+      font-size: 0.78rem;
+      line-height: 1.85;
+      color: rgba(248,248,246,0.48);
+    }
+
+    /* value strip */
+    .value {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      animation: rise 0.9s ease forwards 0.52s;
+    }
+
+    .value-left {
+      padding: 3rem 2.4rem;
+      border-right: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .value-label {
+      font-size: 0.63rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+    }
+
+    .value-left h3 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.4;
+      font-style: italic;
+    }
+    :lang(ar) .value-left h3{ font-style:normal; }
+
+    .value-right {
+      padding: 3rem 2.8rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .promise {
+      border-top: 1px solid var(--rule);
+      padding-top: 1.1rem;
+    }
+
+    .promise-title {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.03em;
+    }
+
+    .promise p {
+      font-size: 0.74rem;
+      line-height: 1.75;
+      color: rgba(248,248,246,0.48);
+    }
+
+    /* sectors */
+    .sectors {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0 3.5rem;
+      min-height: 54px;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      animation: fade 0.8s ease forwards 0.65s;
+    }
+
+    .sectors-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-right: 2rem;
+      white-space: nowrap;
+    }
+
+    .sector-item {
+      font-size: 0.67rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(248,248,246,0.38);
+      padding: 0 1.4rem;
+      border-left: 1px solid var(--rule);
+      line-height: 54px;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .sector-item:hover { color: var(--white); }
+
+    /* contact */
+    .contact {
+      padding: 5rem 3.5rem;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      animation: rise 0.9s ease forwards 0.6s;
+    }
+    .contact-label {
+      font-size: 0.63rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+    }
+    .contact-title {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 400;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.3;
+      max-width: 22ch;
+      margin-bottom: 1.2rem;
+    }
+    .contact-desc {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: rgba(248,248,246,0.55);
+      max-width: 50ch;
+      margin-bottom: 2.8rem;
+    }
+    .contact-actions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+    .contact-btn {
+      background: var(--navy);
+      padding: 1.8rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-decoration: none;
+      transition: background 0.25s;
+    }
+    .contact-btn:hover { background: rgba(192,154,80,0.06); }
+    .contact-btn-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .contact-btn-value {
+      font-size: 0.88rem;
+      color: var(--white);
+      letter-spacing: 0.01em;
+    }
+    @media (max-width: 700px){
+      .contact-actions{ grid-template-columns: 1fr; }
+    }
+
+    /* footer */
+    footer {
+      margin-top: auto;
+      padding: 2rem 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      opacity: 0;
+      animation: fade 0.8s ease forwards 0.75s;
+    }
+
+    .footer-contact { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+    .footer-contact a {
+      font-size: 0.75rem;
+      color: rgba(248,248,246,0.48);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .footer-contact a:hover { color: var(--accent); }
+
+    .footer-geo {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(248,248,246,0.22);
+    }
+
+    /* animations */
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      #lang-switch{ padding: 0.5rem 1.8rem; }
+      .topbar, .hero, footer { padding-left: 1.8rem; padding-right: 1.8rem; }
+      .services { grid-template-columns: 1fr 1fr; }
+      .service { border-right: none; }
+      .service:nth-child(odd) { border-right: 1px solid var(--rule); }
+      .service:nth-child(3n) { border-right: none; }
+      .value { grid-template-columns: 1fr; }
+      .value-left { border-right: none; border-bottom: 1px solid var(--rule); }
+      .sectors { padding: 1rem 1.8rem; min-height: auto; }
+      .sector-item { line-height: 2.8; }
+    }
+
+    @media (max-width: 560px) {
+      .services { grid-template-columns: 1fr; }
+      .service:nth-child(odd) { border-right: none; }
+      .value-right { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.2rem; }
+      .topbar-contact { display: none; }
+    }
+  
+    /* ===== subpage specific ===== */
+    .hero-cta{ display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.6rem; }
+    .btn-primary, .btn-ghost{
+      display:inline-block; padding:1rem 1.9rem;
+      font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase;
+      text-decoration:none; transition:background 0.25s, color 0.25s, border-color 0.25s;
+    }
+    .btn-primary{ background:var(--accent); color:var(--navy); border:1px solid var(--accent); font-weight:500; }
+    .btn-primary:hover{ background:transparent; color:var(--accent); }
+    .btn-ghost{ border:1px solid var(--rule); color:var(--white); }
+    .btn-ghost:hover{ border-color:var(--accent); color:var(--accent); }
+
+    .section-label{
+      padding:2.6rem 3.5rem 0;
+      font-size:0.63rem; letter-spacing:0.24em; text-transform:uppercase; color:var(--accent);
+    }
+    .services.three{ grid-template-columns:repeat(3,1fr); margin-top:1.6rem; }
+
+    /* form */
+    .form-grid{
+      display:grid; grid-template-columns:1fr 1fr; gap:1.4rem 1.8rem;
+      margin-bottom:2rem;
+    }
+    .field{ display:flex; flex-direction:column; gap:0.5rem; }
+    .field.full{ grid-column:1 / -1; }
+    .field label{
+      font-size:0.62rem; letter-spacing:0.16em; text-transform:uppercase;
+      color:rgba(248,248,246,0.55);
+    }
+    .field input, .field select, .field textarea{
+      background:rgba(255,255,255,0.03);
+      border:1px solid var(--rule);
+      color:var(--white);
+      font-family:inherit; font-size:0.85rem; font-weight:300;
+      padding:0.85rem 0.9rem;
+      border-radius:0;
+      transition:border-color 0.2s, background 0.2s;
+    }
+    .field select{ appearance:none; cursor:pointer; }
+    .field select option{ background:var(--navy); color:var(--white); }
+    .field textarea{ min-height:120px; resize:vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus{
+      outline:none; border-color:var(--accent); background:rgba(255,255,255,0.05);
+    }
+    .form-actions{ display:flex; flex-wrap:wrap; gap:1rem; align-items:center; }
+    .form-note{
+      font-size:0.68rem; line-height:1.7; color:rgba(248,248,246,0.38);
+      margin-top:1.2rem; max-width:60ch;
+    }
+    .form-error{
+      font-size:0.72rem; color:#e08a6a; margin-top:0.9rem; display:none;
+    }
+    .form-error.show{ display:block; }
+    .contact-actions{ margin-top:3rem; }
+    html[dir="rtl"] .form-note, html[dir="rtl"] .hero-sub{ text-align:right; }
+
+    @media (max-width: 900px){
+      .section-label{ padding-left:1.8rem; padding-right:1.8rem; }
+      .services.three{ grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width: 700px){
+      .form-grid{ grid-template-columns:1fr; }
+      .btn-primary, .btn-ghost{ width:100%; text-align:center; }
+    }
+    @media (max-width: 560px){
+      .services.three{ grid-template-columns:1fr; }
+    }
+</style>
+</head>
+<body>
+
+  <div id="lang-switch">
+    <button class="lgb" data-l="en">EN</button>
+    <button class="lgb" data-l="fr">FR</button>
+    <button class="lgb" data-l="de">DE</button>
+    <button class="lgb" data-l="es">ES</button>
+    <button class="lgb" data-l="pt">PT</button>
+    <button class="lgb" data-l="bg">BG</button>
+    <button class="lgb" data-l="el">EL</button>
+    <button class="lgb" data-l="ru">RU</button>
+    <button class="lgb" data-l="ar">AR</button>
+    <button class="lgb" data-l="zh">中文</button>
+  </div>
+
+  <div class="topbar">
+    <a href="/" class="logo">Grasso<span>.aero</span></a>
+    <nav class="topnav">
+      <a href="/">
+        <span data-lang="en">Home</span>
+        <span data-lang="fr">Accueil</span>
+        <span data-lang="de">Startseite</span>
+        <span data-lang="es">Inicio</span>
+        <span data-lang="pt">Início</span>
+        <span data-lang="bg">Начало</span>
+        <span data-lang="el">Αρχική</span>
+        <span data-lang="ru">Главная</span>
+        <span data-lang="ar">الرئيسية</span>
+        <span data-lang="zh">首页</span>
+      </a>
+      <a href="/#services">
+        <span data-lang="en">Services</span>
+        <span data-lang="fr">Services</span>
+        <span data-lang="de">Leistungen</span>
+        <span data-lang="es">Servicios</span>
+        <span data-lang="pt">Serviços</span>
+        <span data-lang="bg">Услуги</span>
+        <span data-lang="el">Υπηρεσίες</span>
+        <span data-lang="ru">Услуги</span>
+        <span data-lang="ar">الخدمات</span>
+        <span data-lang="zh">服务</span>
+      </a>
+      <a href="/en/foreign-companies-support" class="nav-highlight">
+        <span data-lang="en">Foreign Companies</span>
+        <span data-lang="fr">Entreprises Étrangères</span>
+        <span data-lang="de">Ausländische Unternehmen</span>
+        <span data-lang="es">Empresas Extranjeras</span>
+        <span data-lang="pt">Empresas Estrangeiras</span>
+        <span data-lang="bg">Чуждестранни компании</span>
+        <span data-lang="el">Ξένες Εταιρείες</span>
+        <span data-lang="ru">Иностранным компаниям</span>
+        <span data-lang="ar">الشركات الأجنبية</span>
+        <span data-lang="zh">外国企业服务</span>
+      </a>
+      <a href="#contact">
+        <span data-lang="en">Contact</span>
+        <span data-lang="fr">Contact</span>
+        <span data-lang="de">Kontakt</span>
+        <span data-lang="es">Contacto</span>
+        <span data-lang="pt">Contacto</span>
+        <span data-lang="bg">Контакти</span>
+        <span data-lang="el">Επικοινωνία</span>
+        <span data-lang="ru">Контакты</span>
+        <span data-lang="ar">اتصل بنا</span>
+        <span data-lang="zh">联系</span>
+      </a>
+    </nav>
+    <div class="topbar-contact">
+      <a href="mailto:grasso@grasso.aero">grasso@grasso.aero</a>
+      &ensp;&middot;&ensp;
+      <a href="https://wa.me/393452323111" target="_blank" rel="noopener">WhatsApp IT</a>
+      &ensp;&middot;&ensp;
+      <a href="https://wa.me/218916556045" target="_blank" rel="noopener">WhatsApp LY</a>
+    </div>
+  </div>
+
+  <section class="hero">
+    <p class="hero-label">
+        <span data-lang="en">Support for Foreign Companies in Italy</span>
+        <span data-lang="fr">Accompagnement des entreprises étrangères en Italie</span>
+        <span data-lang="de">Unterstützung für ausländische Unternehmen in Italien</span>
+        <span data-lang="es">Apoyo a empresas extranjeras en Italia</span>
+        <span data-lang="pt">Apoio a empresas estrangeiras em Itália</span>
+        <span data-lang="bg">Подкрепа за чуждестранни компании в Италия</span>
+        <span data-lang="el">Υποστήριξη ξένων εταιρειών στην Ιταλία</span>
+        <span data-lang="ru">Поддержка иностранных компаний в Италии</span>
+        <span data-lang="ar">دعم الشركات الأجنبية في إيطاليا</span>
+        <span data-lang="zh">为在意大利经营的外国企业提供支持</span>
+    </p>
+    <h1>
+        <span data-lang="en">Compliance, Safety and Statutory Obligations for <em>Foreign Companies</em> in Italy</span>
+        <span data-lang="fr">Conformité, sécurité et obligations légales pour les <em>entreprises étrangères</em> en Italie</span>
+        <span data-lang="de">Compliance, Sicherheit und gesetzliche Pflichten für <em>ausländische Unternehmen</em> in Italien</span>
+        <span data-lang="es">Cumplimiento, seguridad y obligaciones legales para <em>empresas extranjeras</em> en Italia</span>
+        <span data-lang="pt">Conformidade, segurança e obrigações legais para <em>empresas estrangeiras</em> em Itália</span>
+        <span data-lang="bg">Съответствие, безопасност и законови задължения за <em>чуждестранни компании</em> в Италия</span>
+        <span data-lang="el">Συμμόρφωση, ασφάλεια και νόμιμες υποχρεώσεις για <em>ξένες εταιρείες</em> στην Ιταλία</span>
+        <span data-lang="ru">Соответствие требованиям, охрана труда и законные обязательства для <em>иностранных компаний</em> в Италии</span>
+        <span data-lang="ar">الامتثال والسلامة والالتزامات القانونية <em>للشركات الأجنبية</em> في إيطاليا</span>
+        <span data-lang="zh">为<em>外国企业</em>在意大利提供合规、安全与法定义务支持</span>
+    </h1>
+    <p class="hero-desc hero-sub">
+        <span data-lang="en">Fast, turnkey support for construction sites, transnational posting of workers, POS, DVR and the patente a crediti. Operational throughout Italy.</span>
+        <span data-lang="fr">Un accompagnement rapide et clés en main pour les chantiers, le détachement transnational de travailleurs, le POS, le DVR et la patente a crediti. Opérationnels partout en Italie.</span>
+        <span data-lang="de">Schnelle Turnkey-Unterstützung für Baustellen, transnationale Arbeitnehmerentsendung, POS, DVR und die patente a crediti. Italienweit im Einsatz.</span>
+        <span data-lang="es">Apoyo rápido y llave en mano para obras, desplazamiento transnacional de trabajadores, POS, DVR y la patente a crediti. Operativos en toda Italia.</span>
+        <span data-lang="pt">Apoio rápido e turnkey para obras, destacamento transnacional de trabalhadores, POS, DVR e a patente a crediti. Operacionais em toda a Itália.</span>
+        <span data-lang="bg">Бърза подкрепа „до ключ“ за строителни обекти, транснационално командироване на работници, POS, DVR и patente a crediti. Работим в цяла Италия.</span>
+        <span data-lang="el">Ταχεία, ολοκληρωμένη υποστήριξη για εργοτάξια, διακρατική απόσπαση εργαζομένων, POS, DVR και patente a crediti. Δραστηριοποιούμαστε σε όλη την Ιταλία.</span>
+        <span data-lang="ru">Оперативная поддержка «под ключ» для строительных объектов, транснационального командирования работников, POS, DVR и patente a crediti. Работаем по всей Италии.</span>
+        <span data-lang="ar">دعم سريع ومتكامل للمواقع الإنشائية، وإيفاد العمال عبر الحدود، وخطط السلامة (POS) ووثائق تقييم المخاطر (DVR) ورخصة النقاط. نعمل في جميع أنحاء إيطاليا.</span>
+        <span data-lang="zh">为工地作业、跨国派遣工人、POS、DVR 及信用分许可证提供快速的交钥匙支持。业务覆盖意大利全境。</span>
+    </p>
+    <div class="hero-cta">
+      <a class="btn-primary" href="https://wa.me/393452323111?text=Hello%20Grasso%2C%20we%20are%20a%20foreign%20company%20operating%20in%20Italy%20and%20need%20support." target="_blank" rel="noopener">
+        <span data-lang="en">Contact us on WhatsApp</span>
+        <span data-lang="fr">Nous contacter sur WhatsApp</span>
+        <span data-lang="de">Kontakt über WhatsApp</span>
+        <span data-lang="es">Contáctenos por WhatsApp</span>
+        <span data-lang="pt">Contacte-nos no WhatsApp</span>
+        <span data-lang="bg">Свържете се с нас в WhatsApp</span>
+        <span data-lang="el">Επικοινωνία μέσω WhatsApp</span>
+        <span data-lang="ru">Написать в WhatsApp</span>
+        <span data-lang="ar">تواصلوا معنا على واتساب</span>
+        <span data-lang="zh">通过 WhatsApp 联系我们</span>
+      </a>
+      <a class="btn-ghost" href="#contact">
+        <span data-lang="en">Request urgent consultation</span>
+        <span data-lang="fr">Demander une consultation urgente</span>
+        <span data-lang="de">Dringende Beratung anfragen</span>
+        <span data-lang="es">Solicitar consulta urgente</span>
+        <span data-lang="pt">Solicitar consulta urgente</span>
+        <span data-lang="bg">Заявка за спешна консултация</span>
+        <span data-lang="el">Αίτημα άμεσης συμβουλής</span>
+        <span data-lang="ru">Запросить срочную консультацию</span>
+        <span data-lang="ar">طلب استشارة عاجلة</span>
+        <span data-lang="zh">申请紧急咨询</span>
+      </a>
+    </div>
+  </section>
+
+  <p class="section-label">
+        <span data-lang="en">Operational Solutions</span>
+        <span data-lang="fr">Solutions opérationnelles</span>
+        <span data-lang="de">Operative Lösungen</span>
+        <span data-lang="es">Soluciones operativas</span>
+        <span data-lang="pt">Soluções operacionais</span>
+        <span data-lang="bg">Оперативни решения</span>
+        <span data-lang="el">Επιχειρησιακές λύσεις</span>
+        <span data-lang="ru">Операционные решения</span>
+        <span data-lang="ar">الحلول التشغيلية</span>
+        <span data-lang="zh">核心操作服务</span>
+  </p>
+
+  <section class="services three" id="solutions">
+    <div class="service">
+      <span class="service-num">01</span>
+      <h2>
+        <span data-lang="en">Transnational Posting &amp; Art. 10</span>
+        <span data-lang="fr">Détachement transnational &amp; Art. 10</span>
+        <span data-lang="de">Transnationale Entsendung &amp; Art. 10</span>
+        <span data-lang="es">Desplazamiento transnacional y Art. 10</span>
+        <span data-lang="pt">Destacamento transnacional e Art. 10</span>
+        <span data-lang="bg">Транснационално командироване и чл. 10</span>
+        <span data-lang="el">Διακρατική απόσπαση &amp; Άρθρο 10</span>
+        <span data-lang="ru">Транснациональное командирование и ст. 10</span>
+        <span data-lang="ar">الإيفاد عبر الحدود والمادة 10</span>
+        <span data-lang="zh">跨国派遣与第10条义务</span>
+      </h2>
+      <p>
+        <span data-lang="en">Management of the posting process and formal obligations: UNI_Distacco_UE notification, documentary referent and union referent under Art. 10 of D.Lgs. 136/2016, worker documentation, and liaison with the Italian Labour Inspectorate.</span>
+        <span data-lang="fr">Gestion des flux de détachement et des obligations formelles : déclaration UNI_Distacco_UE, référent documentaire et référent syndical au titre de l'article 10 du D.Lgs. 136/2016, documentation des travailleurs et interface avec l'Inspection du travail italienne.</span>
+        <span data-lang="de">Steuerung des Entsendeprozesses und der formellen Pflichten: UNI_Distacco_UE-Meldung, Dokumentations- und Gewerkschaftsbeauftragter gemäß Art. 10 des D.Lgs. 136/2016, Arbeitnehmerdokumentation und Kontakt zur italienischen Arbeitsaufsichtsbehörde.</span>
+        <span data-lang="es">Gestión de los flujos de desplazamiento y de las obligaciones formales: comunicación UNI_Distacco_UE, referente documental y referente sindical según el Art. 10 del D.Lgs. 136/2016, documentación de los trabajadores e interlocución con la Inspección de Trabajo italiana.</span>
+        <span data-lang="pt">Gestão dos fluxos de destacamento e das obrigações formais: comunicação UNI_Distacco_UE, referente documental e referente sindical ao abrigo do Art. 10.º do D.Lgs. 136/2016, documentação dos trabalhadores e contacto com a Inspeção do Trabalho italiana.</span>
+        <span data-lang="bg">Управление на процеса по командироване и формалните задължения: уведомление UNI_Distacco_UE, документален и синдикален представител съгласно чл. 10 от D.Lgs. 136/2016, документация на работниците и връзка с италианската трудова инспекция.</span>
+        <span data-lang="el">Διαχείριση της διαδικασίας απόσπασης και των τυπικών υποχρεώσεων: γνωστοποίηση UNI_Distacco_UE, υπεύθυνος τεκμηρίωσης και συνδικαλιστικός εκπρόσωπος βάσει του άρθρου 10 του D.Lgs. 136/2016, τεκμηρίωση εργαζομένων και επικοινωνία με την ιταλική Επιθεώρηση Εργασίας.</span>
+        <span data-lang="ru">Ведение процедуры командирования и формальных обязательств: уведомление UNI_Distacco_UE, документальный и профсоюзный представитель согласно ст. 10 Законодательного декрета № 136/2016, документация работников и взаимодействие с трудовой инспекцией Италии.</span>
+        <span data-lang="ar">إدارة إجراءات الإيفاد والالتزامات الشكلية: إشعار UNI_Distacco_UE، وتعيين الممثل الوثائقي والممثل النقابي بموجب المادة 10 من المرسوم التشريعي 136/2016، ووثائق العمال، والتواصل مع مفتشية العمل الإيطالية.</span>
+        <span data-lang="zh">全流程管理派遣事务与形式义务：UNI_Distacco_UE 申报、依据第136/2016号立法令第10条指定文件负责人与工会联络人、工人文件管理，以及与意大利劳动监察部门的对接。</span>
+      </p>
+    </div>
+    <div class="service">
+      <span class="service-num">02</span>
+      <h2>
+        <span data-lang="en">Site Works &amp; Safety</span>
+        <span data-lang="fr">Chantiers &amp; Sécurité</span>
+        <span data-lang="de">Baustellen &amp; Arbeitssicherheit</span>
+        <span data-lang="es">Obras y seguridad</span>
+        <span data-lang="pt">Obras e segurança</span>
+        <span data-lang="bg">Строителни обекти и безопасност</span>
+        <span data-lang="el">Εργοτάξια &amp; Ασφάλεια</span>
+        <span data-lang="ru">Строительные работы и охрана труда</span>
+        <span data-lang="ar">أعمال المواقع والسلامة</span>
+        <span data-lang="zh">工地作业与安全</span>
+      </h2>
+      <p>
+        <span data-lang="en">Patente a crediti, POS, DVR, appointment of the medico competente, training attestations and machine-use certifications — everything required to work legally on an Italian site under D.Lgs. 81/08.</span>
+        <span data-lang="fr">Patente a crediti, POS, DVR, désignation du medico competente, attestations de formation et certifications d'utilisation de machines — tout ce qui est requis pour travailler légalement sur un chantier italien au titre du D.Lgs. 81/08.</span>
+        <span data-lang="de">Patente a crediti, POS, DVR, Bestellung des medico competente, Schulungsnachweise und Maschinenbedienungszertifikate — alles, was für die rechtmäßige Arbeit auf einer italienischen Baustelle gemäß D.Lgs. 81/08 erforderlich ist.</span>
+        <span data-lang="es">Patente a crediti, POS, DVR, nombramiento del medico competente, certificados de formación y certificaciones de uso de maquinaria: todo lo necesario para trabajar legalmente en una obra en Italia conforme al D.Lgs. 81/08.</span>
+        <span data-lang="pt">Patente a crediti, POS, DVR, nomeação do medico competente, certificados de formação e certificações de utilização de máquinas — tudo o que é exigido para trabalhar legalmente numa obra em Itália ao abrigo do D.Lgs. 81/08.</span>
+        <span data-lang="bg">Patente a crediti, POS, DVR, назначаване на medico competente, удостоверения за обучение и сертификати за работа с машини — всичко необходимо за законна работа на обект в Италия съгласно D.Lgs. 81/08.</span>
+        <span data-lang="el">Patente a crediti, POS, DVR, ορισμός medico competente, πιστοποιητικά κατάρτισης και πιστοποιήσεις χειρισμού μηχανημάτων — όλα όσα απαιτούνται για νόμιμη εργασία σε εργοτάξιο στην Ιταλία βάσει του D.Lgs. 81/08.</span>
+        <span data-lang="ru">Patente a crediti, POS, DVR, назначение medico competente, подтверждения обучения и сертификаты на работу с оборудованием — всё необходимое для законной работы на итальянском объекте согласно декрету № 81/08.</span>
+        <span data-lang="ar">رخصة النقاط، وخطة التشغيل الآمن (POS)، ووثيقة تقييم المخاطر (DVR)، وتعيين الطبيب المختص، وشهادات التدريب وتراخيص تشغيل الآلات — كل ما يلزم للعمل القانوني في موقع إيطالي بموجب المرسوم التشريعي 81/08.</span>
+        <span data-lang="zh">信用分许可证、POS、DVR、指定医师委任、培训证明与机械操作资格证书——依据第81/08号立法令在意大利工地合法作业所需的全部文件。</span>
+      </p>
+    </div>
+    <div class="service">
+      <span class="service-num">03</span>
+      <h2>
+        <span data-lang="en">Waste Management &amp; Site Logistics</span>
+        <span data-lang="fr">Gestion des déchets &amp; Logistique de chantier</span>
+        <span data-lang="de">Abfallmanagement &amp; Baustellenlogistik</span>
+        <span data-lang="es">Gestión de residuos y logística de obra</span>
+        <span data-lang="pt">Gestão de resíduos e logística de obra</span>
+        <span data-lang="bg">Управление на отпадъци и логистика на обекта</span>
+        <span data-lang="el">Διαχείριση αποβλήτων &amp; Λογιστική εργοταξίου</span>
+        <span data-lang="ru">Обращение с отходами и логистика объекта</span>
+        <span data-lang="ar">إدارة النفايات ولوجستيات الموقع</span>
+        <span data-lang="zh">废弃物管理与工地物流</span>
+      </h2>
+      <p>
+        <span data-lang="en">Construction and industrial waste management in line with Italian environmental law, together with site logistics, security and surveillance coordination.</span>
+        <span data-lang="fr">Gestion des déchets de construction et industriels conformément au droit environnemental italien, ainsi que la logistique de chantier et la coordination de la sécurité et de la surveillance.</span>
+        <span data-lang="de">Management von Bau- und Industrieabfällen gemäß italienischem Umweltrecht, zusammen mit Baustellenlogistik sowie Koordination von Sicherheit und Überwachung.</span>
+        <span data-lang="es">Gestión de residuos de construcción e industriales conforme a la normativa ambiental italiana, junto con la logística de obra y la coordinación de seguridad y vigilancia.</span>
+        <span data-lang="pt">Gestão de resíduos de construção e industriais em conformidade com a legislação ambiental italiana, juntamente com a logística de obra e a coordenação de segurança e vigilância.</span>
+        <span data-lang="bg">Управление на строителни и индустриални отпадъци съгласно италианското екологично законодателство, заедно с логистика на обекта и координация на охраната и наблюдението.</span>
+        <span data-lang="el">Διαχείριση αποβλήτων κατασκευών και βιομηχανικών αποβλήτων σύμφωνα με την ιταλική περιβαλλοντική νομοθεσία, μαζί με τη λογιστική εργοταξίου και τον συντονισμό ασφάλειας και επιτήρησης.</span>
+        <span data-lang="ru">Обращение со строительными и промышленными отходами в соответствии с экологическим законодательством Италии, а также логистика объекта и координация охраны и видеонаблюдения.</span>
+        <span data-lang="ar">إدارة نفايات البناء والنفايات الصناعية وفقاً للقانون البيئي الإيطالي، إلى جانب لوجستيات الموقع وتنسيق الأمن والمراقبة.</span>
+        <span data-lang="zh">依据意大利环境法规管理建筑与工业废弃物，并提供工地物流、安保及监控协调服务。</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <p class="contact-label">
+        <span data-lang="en">Immediate Contact</span>
+        <span data-lang="fr">Contact immédiat</span>
+        <span data-lang="de">Direkter Kontakt</span>
+        <span data-lang="es">Contacto inmediato</span>
+        <span data-lang="pt">Contacto imediato</span>
+        <span data-lang="bg">Незабавен контакт</span>
+        <span data-lang="el">Άμεση επικοινωνία</span>
+        <span data-lang="ru">Срочная связь</span>
+        <span data-lang="ar">تواصل فوري</span>
+        <span data-lang="zh">即时联系</span>
+    </p>
+    <h2 class="contact-title">
+        <span data-lang="en">Tell us what you need — we reply quickly</span>
+        <span data-lang="fr">Dites-nous ce dont vous avez besoin — nous répondons rapidement</span>
+        <span data-lang="de">Sagen Sie uns, was Sie brauchen — wir antworten schnell</span>
+        <span data-lang="es">Cuéntenos qué necesita: respondemos con rapidez</span>
+        <span data-lang="pt">Diga-nos o que precisa — respondemos rapidamente</span>
+        <span data-lang="bg">Кажете ни какво ви е необходимо — отговаряме бързо</span>
+        <span data-lang="el">Πείτε μας τι χρειάζεστε — απαντάμε γρήγορα</span>
+        <span data-lang="ru">Расскажите, что вам нужно — мы отвечаем быстро</span>
+        <span data-lang="ar">أخبرونا بما تحتاجونه — نرد بسرعة</span>
+        <span data-lang="zh">告诉我们您的需求——我们会尽快回复</span>
+    </h2>
+    <p class="contact-desc">
+        <span data-lang="en">Complete the form below or reach us directly by email, phone or WhatsApp. On working days we normally reply within a few hours.</span>
+        <span data-lang="fr">Remplissez le formulaire ci-dessous ou contactez-nous directement par e-mail, téléphone ou WhatsApp. Les jours ouvrés, nous répondons généralement en quelques heures.</span>
+        <span data-lang="de">Füllen Sie das Formular unten aus oder kontaktieren Sie uns direkt per E-Mail, Telefon oder WhatsApp. An Werktagen antworten wir in der Regel innerhalb weniger Stunden.</span>
+        <span data-lang="es">Complete el formulario o contáctenos directamente por correo electrónico, teléfono o WhatsApp. En días laborables respondemos normalmente en pocas horas.</span>
+        <span data-lang="pt">Preencha o formulário abaixo ou contacte-nos diretamente por e-mail, telefone ou WhatsApp. Em dias úteis respondemos normalmente em poucas horas.</span>
+        <span data-lang="bg">Попълнете формуляра по-долу или се свържете директно с нас по имейл, телефон или WhatsApp. В работни дни обикновено отговаряме в рамките на няколко часа.</span>
+        <span data-lang="el">Συμπληρώστε τη φόρμα ή επικοινωνήστε απευθείας μέσω email, τηλεφώνου ή WhatsApp. Τις εργάσιμες ημέρες απαντάμε συνήθως μέσα σε λίγες ώρες.</span>
+        <span data-lang="ru">Заполните форму ниже или свяжитесь с нами напрямую по электронной почте, телефону или WhatsApp. В рабочие дни мы обычно отвечаем в течение нескольких часов.</span>
+        <span data-lang="ar">يُرجى تعبئة النموذج أدناه أو التواصل معنا مباشرةً عبر البريد الإلكتروني أو الهاتف أو واتساب. في أيام العمل نرد عادةً خلال ساعات قليلة.</span>
+        <span data-lang="zh">请填写下方表单，或直接通过电子邮件、电话或 WhatsApp 与我们联系。工作日内我们通常在数小时内回复。</span>
+    </p>
+
+    <div class="form-grid">
+      <div class="field">
+        <label for="f-company">
+        <span data-lang="en">Company</span>
+        <span data-lang="fr">Société</span>
+        <span data-lang="de">Unternehmen</span>
+        <span data-lang="es">Empresa</span>
+        <span data-lang="pt">Empresa</span>
+        <span data-lang="bg">Компания</span>
+        <span data-lang="el">Εταιρεία</span>
+        <span data-lang="ru">Компания</span>
+        <span data-lang="ar">الشركة</span>
+        <span data-lang="zh">公司名称</span>
+        &nbsp;*</label>
+        <input id="f-company" type="text" autocomplete="organization" required>
+      </div>
+      <div class="field">
+        <label for="f-country">
+        <span data-lang="en">Country</span>
+        <span data-lang="fr">Pays</span>
+        <span data-lang="de">Land</span>
+        <span data-lang="es">País</span>
+        <span data-lang="pt">País</span>
+        <span data-lang="bg">Държава</span>
+        <span data-lang="el">Χώρα</span>
+        <span data-lang="ru">Страна</span>
+        <span data-lang="ar">الدولة</span>
+        <span data-lang="zh">国家/地区</span>
+        </label>
+        <input id="f-country" type="text" autocomplete="country-name">
+      </div>
+      <div class="field">
+        <label for="f-name">
+        <span data-lang="en">Contact person</span>
+        <span data-lang="fr">Personne de contact</span>
+        <span data-lang="de">Ansprechpartner</span>
+        <span data-lang="es">Persona de contacto</span>
+        <span data-lang="pt">Pessoa de contacto</span>
+        <span data-lang="bg">Лице за контакт</span>
+        <span data-lang="el">Πρόσωπο επικοινωνίας</span>
+        <span data-lang="ru">Контактное лицо</span>
+        <span data-lang="ar">جهة الاتصال</span>
+        <span data-lang="zh">联系人</span>
+        &nbsp;*</label>
+        <input id="f-name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="f-email">
+        <span data-lang="en">Email</span>
+        <span data-lang="fr">E-mail</span>
+        <span data-lang="de">E-Mail</span>
+        <span data-lang="es">Correo electrónico</span>
+        <span data-lang="pt">E-mail</span>
+        <span data-lang="bg">Имейл</span>
+        <span data-lang="el">Email</span>
+        <span data-lang="ru">Эл. почта</span>
+        <span data-lang="ar">البريد الإلكتروني</span>
+        <span data-lang="zh">电子邮件</span>
+        &nbsp;*</label>
+        <input id="f-email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="f-phone">
+        <span data-lang="en">Phone / WhatsApp</span>
+        <span data-lang="fr">Téléphone / WhatsApp</span>
+        <span data-lang="de">Telefon / WhatsApp</span>
+        <span data-lang="es">Teléfono / WhatsApp</span>
+        <span data-lang="pt">Telefone / WhatsApp</span>
+        <span data-lang="bg">Телефон / WhatsApp</span>
+        <span data-lang="el">Τηλέφωνο / WhatsApp</span>
+        <span data-lang="ru">Телефон / WhatsApp</span>
+        <span data-lang="ar">الهاتف / واتساب</span>
+        <span data-lang="zh">电话 / WhatsApp</span>
+        </label>
+        <input id="f-phone" type="tel" autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="f-need">
+        <span data-lang="en">What do you need?</span>
+        <span data-lang="fr">De quoi avez-vous besoin ?</span>
+        <span data-lang="de">Was benötigen Sie?</span>
+        <span data-lang="es">¿Qué necesita?</span>
+        <span data-lang="pt">Do que precisa?</span>
+        <span data-lang="bg">Какво ви е необходимо?</span>
+        <span data-lang="el">Τι χρειάζεστε;</span>
+        <span data-lang="ru">Что вам требуется?</span>
+        <span data-lang="ar">ما الذي تحتاجونه؟</span>
+        <span data-lang="zh">您需要哪项服务？</span>
+        </label>
+        <select id="f-need">
+          <option value="posting" data-opt="o_posting"></option>
+          <option value="patente" data-opt="o_patente"></option>
+          <option value="posdvr" data-opt="o_posdvr"></option>
+          <option value="medico" data-opt="o_medico"></option>
+          <option value="waste" data-opt="o_waste"></option>
+          <option value="other" data-opt="o_other"></option>
+        </select>
+      </div>
+      <div class="field full">
+        <label for="f-msg">
+        <span data-lang="en">Message / project details</span>
+        <span data-lang="fr">Message / détails du projet</span>
+        <span data-lang="de">Nachricht / Projektdetails</span>
+        <span data-lang="es">Mensaje / detalles del proyecto</span>
+        <span data-lang="pt">Mensagem / detalhes do projeto</span>
+        <span data-lang="bg">Съобщение / детайли за проекта</span>
+        <span data-lang="el">Μήνυμα / στοιχεία έργου</span>
+        <span data-lang="ru">Сообщение / детали проекта</span>
+        <span data-lang="ar">الرسالة / تفاصيل المشروع</span>
+        <span data-lang="zh">留言 / 项目详情</span>
+        </label>
+        <textarea id="f-msg"></textarea>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <a class="btn-primary" href="#" id="send-email">
+        <span data-lang="en">Send by email</span>
+        <span data-lang="fr">Envoyer par e-mail</span>
+        <span data-lang="de">Per E-Mail senden</span>
+        <span data-lang="es">Enviar por correo</span>
+        <span data-lang="pt">Enviar por e-mail</span>
+        <span data-lang="bg">Изпрати по имейл</span>
+        <span data-lang="el">Αποστολή με email</span>
+        <span data-lang="ru">Отправить по email</span>
+        <span data-lang="ar">إرسال بالبريد الإلكتروني</span>
+        <span data-lang="zh">通过电子邮件发送</span>
+      </a>
+      <a class="btn-ghost" href="#" id="send-wa">
+        <span data-lang="en">Send via WhatsApp</span>
+        <span data-lang="fr">Envoyer via WhatsApp</span>
+        <span data-lang="de">Per WhatsApp senden</span>
+        <span data-lang="es">Enviar por WhatsApp</span>
+        <span data-lang="pt">Enviar via WhatsApp</span>
+        <span data-lang="bg">Изпрати през WhatsApp</span>
+        <span data-lang="el">Αποστολή μέσω WhatsApp</span>
+        <span data-lang="ru">Отправить в WhatsApp</span>
+        <span data-lang="ar">إرسال عبر واتساب</span>
+        <span data-lang="zh">通过 WhatsApp 发送</span>
+      </a>
+    </div>
+    <p class="form-error" id="form-error"></p>
+    <p class="form-note">
+        <span data-lang="en">Fields marked * are required. Your data is used only to reply to this enquiry.</span>
+        <span data-lang="fr">Les champs marqués * sont obligatoires. Vos données ne servent qu'à répondre à cette demande.</span>
+        <span data-lang="de">Mit * markierte Felder sind erforderlich. Ihre Daten werden ausschließlich zur Beantwortung dieser Anfrage verwendet.</span>
+        <span data-lang="es">Los campos marcados con * son obligatorios. Sus datos se utilizan únicamente para responder a esta consulta.</span>
+        <span data-lang="pt">Os campos marcados com * são obrigatórios. Os seus dados são utilizados apenas para responder a este pedido.</span>
+        <span data-lang="bg">Полетата, отбелязани с *, са задължителни. Данните ви се използват само за отговор на това запитване.</span>
+        <span data-lang="el">Τα πεδία με * είναι υποχρεωτικά. Τα στοιχεία σας χρησιμοποιούνται μόνο για την απάντηση σε αυτό το αίτημα.</span>
+        <span data-lang="ru">Поля, отмеченные *, обязательны. Ваши данные используются только для ответа на этот запрос.</span>
+        <span data-lang="ar">الحقول المعلَّمة بـ * إلزامية. تُستخدم بياناتكم للرد على هذا الطلب فقط.</span>
+        <span data-lang="zh">带 * 的字段为必填项。您的资料仅用于回复本次咨询。</span>
+    </p>
+
+    <div class="contact-actions">
+      <a class="contact-btn" href="mailto:grasso@grasso.aero">
+        <span class="contact-btn-label">
+        <span data-lang="en">Email</span>
+        <span data-lang="fr">E-mail</span>
+        <span data-lang="de">E-Mail</span>
+        <span data-lang="es">Correo electrónico</span>
+        <span data-lang="pt">E-mail</span>
+        <span data-lang="bg">Имейл</span>
+        <span data-lang="el">Email</span>
+        <span data-lang="ru">Эл. почта</span>
+        <span data-lang="ar">البريد الإلكتروني</span>
+        <span data-lang="zh">电子邮件</span>
+        </span>
+        <span class="contact-btn-value">grasso@grasso.aero</span>
+      </a>
+      <a class="contact-btn" href="https://wa.me/393452323111" target="_blank" rel="noopener">
+        <span class="contact-btn-label">
+        <span data-lang="en">WhatsApp — Italy</span>
+        <span data-lang="fr">WhatsApp — Italie</span>
+        <span data-lang="de">WhatsApp — Italien</span>
+        <span data-lang="es">WhatsApp — Italia</span>
+        <span data-lang="pt">WhatsApp — Itália</span>
+        <span data-lang="bg">WhatsApp — Италия</span>
+        <span data-lang="el">WhatsApp — Ιταλία</span>
+        <span data-lang="ru">WhatsApp — Италия</span>
+        <span data-lang="ar">واتساب — إيطاليا</span>
+        <span data-lang="zh">WhatsApp — 意大利</span>
+        </span>
+        <span class="contact-btn-value">+39 345 232 3111</span>
+      </a>
+      <a class="contact-btn" href="https://wa.me/218916556045" target="_blank" rel="noopener">
+        <span class="contact-btn-label">
+        <span data-lang="en">WhatsApp — Libya</span>
+        <span data-lang="fr">WhatsApp — Libye</span>
+        <span data-lang="de">WhatsApp — Libyen</span>
+        <span data-lang="es">WhatsApp — Libia</span>
+        <span data-lang="pt">WhatsApp — Líbia</span>
+        <span data-lang="bg">WhatsApp — Либия</span>
+        <span data-lang="el">WhatsApp — Λιβύη</span>
+        <span data-lang="ru">WhatsApp — Ливия</span>
+        <span data-lang="ar">واتساب — ليبيا</span>
+        <span data-lang="zh">WhatsApp — 利比亚</span>
+        </span>
+        <span class="contact-btn-value">+218 91 655 6045</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-contact">
+      <a href="/">Grasso.aero</a>
+      <a href="mailto:grasso@grasso.aero">grasso@grasso.aero</a>
+      <a href="https://wa.me/393452323111" target="_blank" rel="noopener">WhatsApp IT</a>
+      <a href="https://wa.me/218916556045" target="_blank" rel="noopener">WhatsApp LY</a>
+    </div>
+    <span class="footer-geo">
+        <span data-lang="en">Milan &nbsp;·&nbsp; Rome &nbsp;·&nbsp; Tripoli &nbsp;·&nbsp; Worldwide</span>
+        <span data-lang="fr">Milan &nbsp;·&nbsp; Rome &nbsp;·&nbsp; Tripoli &nbsp;·&nbsp; Monde entier</span>
+        <span data-lang="de">Mailand &nbsp;·&nbsp; Rom &nbsp;·&nbsp; Tripolis &nbsp;·&nbsp; Weltweit</span>
+        <span data-lang="es">Milán &nbsp;·&nbsp; Roma &nbsp;·&nbsp; Trípoli &nbsp;·&nbsp; Todo el mundo</span>
+        <span data-lang="pt">Milão &nbsp;·&nbsp; Roma &nbsp;·&nbsp; Trípoli &nbsp;·&nbsp; Mundo inteiro</span>
+        <span data-lang="bg">Милано &nbsp;·&nbsp; Рим &nbsp;·&nbsp; Триполи &nbsp;·&nbsp; По целия свят</span>
+        <span data-lang="el">Μιλάνο &nbsp;·&nbsp; Ρώμη &nbsp;·&nbsp; Τρίπολη &nbsp;·&nbsp; Παγκοσμίως</span>
+        <span data-lang="ru">Милан &nbsp;·&nbsp; Рим &nbsp;·&nbsp; Триполи &nbsp;·&nbsp; По всему миру</span>
+        <span data-lang="ar">ميلانو &nbsp;·&nbsp; روما &nbsp;·&nbsp; طرابلس &nbsp;·&nbsp; حول العالم</span>
+        <span data-lang="zh">米兰 &nbsp;·&nbsp; 罗马 &nbsp;·&nbsp; 的黎波里 &nbsp;·&nbsp; 全球服务</span>
+    </span>
+  </footer>
+
+<script>
+var GRASSO_I18N = {
+  en: {title:"Foreign Companies Support in Italy – Grasso.aero", desc:"Turnkey compliance and safety support for foreign companies operating in Italy: posting of workers, Art. 10, patente a crediti, POS, DVR, medico competente."},
+  fr: {title:"Accompagnement des entreprises étrangères en Italie – Grasso.aero", desc:"Conformité et sécurité clés en main pour les entreprises étrangères en Italie : détachement, Art. 10, patente a crediti, POS, DVR, medico competente."},
+  de: {title:"Unterstützung für ausländische Unternehmen in Italien – Grasso.aero", desc:"Turnkey-Compliance und Arbeitssicherheit für ausländische Unternehmen in Italien: Entsendung, Art. 10, patente a crediti, POS, DVR, medico competente."},
+  es: {title:"Apoyo a empresas extranjeras en Italia – Grasso.aero", desc:"Cumplimiento y seguridad llave en mano para empresas extranjeras en Italia: desplazamiento, Art. 10, patente a crediti, POS, DVR, medico competente."},
+  pt: {title:"Apoio a empresas estrangeiras em Itália – Grasso.aero", desc:"Conformidade e segurança turnkey para empresas estrangeiras em Itália: destacamento, Art. 10, patente a crediti, POS, DVR, medico competente."},
+  bg: {title:"Подкрепа за чуждестранни компании в Италия – Grasso.aero", desc:"Съответствие и безопасност „до ключ“ за чуждестранни компании в Италия: командироване, чл. 10, patente a crediti, POS, DVR, medico competente."},
+  el: {title:"Υποστήριξη ξένων εταιρειών στην Ιταλία – Grasso.aero", desc:"Ολοκληρωμένη συμμόρφωση και ασφάλεια για ξένες εταιρείες στην Ιταλία: απόσπαση, Άρθρο 10, patente a crediti, POS, DVR, medico competente."},
+  ru: {title:"Поддержка иностранных компаний в Италии – Grasso.aero", desc:"Соответствие требованиям и охрана труда «под ключ» для иностранных компаний в Италии: командирование, ст. 10, patente a crediti, POS, DVR, medico competente."},
+  ar: {title:"دعم الشركات الأجنبية في إيطاليا – Grasso.aero", desc:"دعم متكامل للامتثال والسلامة للشركات الأجنبية العاملة في إيطاليا: إيفاد العمال، المادة 10، رخصة النقاط، POS، DVR، الطبيب المختص."},
+  zh: {title:"在意大利经营的外国企业支持服务 – Grasso.aero", desc:"为在意大利经营的外国企业提供交钥匙式合规与安全支持：派遣工人、第10条义务、信用分许可证、POS、DVR、指定医师。"}
+};
+
+var GRASSO_FORM = {
+  en: {o_posting: "Transnational posting / Art. 10", o_patente: "Patente a crediti", o_posdvr: "POS / DVR", o_medico: "Medico competente", o_waste: "Waste management", o_other: "Other / not sure", f_fill: "Please complete the required fields.", email_subject: "Enquiry – Foreign company operating in Italy"},
+  fr: {o_posting: "Détachement transnational / Art. 10", o_patente: "Patente a crediti", o_posdvr: "POS / DVR", o_medico: "Medico competente", o_waste: "Gestion des déchets", o_other: "Autre / je ne sais pas", f_fill: "Veuillez remplir les champs obligatoires.", email_subject: "Demande – Entreprise étrangère opérant en Italie"},
+  de: {o_posting: "Transnationale Entsendung / Art. 10", o_patente: "Patente a crediti", o_posdvr: "POS / DVR", o_medico: "Medico competente", o_waste: "Abfallmanagement", o_other: "Anderes / unklar", f_fill: "Bitte füllen Sie die erforderlichen Felder aus.", email_subject: "Anfrage – Ausländisches Unternehmen in Italien"},
+  es: {o_posting: "Desplazamiento transnacional / Art. 10", o_patente: "Patente a crediti", o_posdvr: "POS / DVR", o_medico: "Medico competente", o_waste: "Gestión de residuos", o_other: "Otro / no estoy seguro", f_fill: "Complete los campos obligatorios.", email_subject: "Consulta – Empresa extranjera que opera en Italia"},
+  pt: {o_posting: "Destacamento transnacional / Art. 10", o_patente: "Patente a crediti", o_posdvr: "POS / DVR", o_medico: "Medico competente", o_waste: "Gestão de resíduos", o_other: "Outro / não tenho a certeza", f_fill: "Preencha os campos obrigatórios.", email_subject: "Pedido – Empresa estrangeira a operar em Itália"},
+  bg: {o_posting: "Транснационално командироване / чл. 10", o_patente: "Patente a crediti", o_posdvr: "POS / DVR", o_medico: "Medico competente", o_waste: "Управление на отпадъци", o_other: "Друго / не съм сигурен", f_fill: "Моля, попълнете задължителните полета.", email_subject: "Запитване – Чуждестранна компания в Италия"},
+  el: {o_posting: "Διακρατική απόσπαση / Άρθρο 10", o_patente: "Patente a crediti", o_posdvr: "POS / DVR", o_medico: "Medico competente", o_waste: "Διαχείριση αποβλήτων", o_other: "Άλλο / δεν είμαι βέβαιος", f_fill: "Συμπληρώστε τα υποχρεωτικά πεδία.", email_subject: "Αίτημα – Ξένη εταιρεία στην Ιταλία"},
+  ru: {o_posting: "Транснациональное командирование / ст. 10", o_patente: "Patente a crediti", o_posdvr: "POS / DVR", o_medico: "Medico competente", o_waste: "Обращение с отходами", o_other: "Другое / затрудняюсь ответить", f_fill: "Пожалуйста, заполните обязательные поля.", email_subject: "Запрос – Иностранная компания в Италии"},
+  ar: {o_posting: "الإيفاد عبر الحدود / المادة 10", o_patente: "رخصة النقاط", o_posdvr: "POS / DVR", o_medico: "الطبيب المختص", o_waste: "إدارة النفايات", o_other: "أخرى / غير محدد", f_fill: "يُرجى إكمال الحقول الإلزامية.", email_subject: "استفسار – شركة أجنبية تعمل في إيطاليا"},
+  zh: {o_posting: "跨国派遣 / 第10条", o_patente: "信用分许可证", o_posdvr: "POS / DVR", o_medico: "指定医师", o_waste: "废弃物管理", o_other: "其他 / 尚不确定", f_fill: "请填写必填字段。", email_subject: "咨询 – 在意大利经营的外国企业"}
+};
+
+var CURRENT = 'en';
+
+function setLang(l){
+  CURRENT = l;
+  document.querySelectorAll('[data-lang]').forEach(function(el){
+    el.classList.toggle('active', el.dataset.lang===l);
+  });
+  document.querySelectorAll('.lgb').forEach(function(b){
+    b.classList.toggle('active', b.dataset.l===l);
+  });
+  document.documentElement.lang = l;
+  document.documentElement.dir = (l==='ar') ? 'rtl' : 'ltr';
+  var t = GRASSO_I18N[l] || GRASSO_I18N.en;
+  document.title = t.title;
+  var d = document.querySelector('meta[name="description"]');
+  if(d) d.content = t.desc;
+  var f = GRASSO_FORM[l] || GRASSO_FORM.en;
+  document.querySelectorAll('option[data-opt]').forEach(function(o){
+    o.textContent = f[o.dataset.opt] || o.dataset.opt;
+  });
+  try{ localStorage.setItem('g-lang', l); }catch(e){}
+}
+
+document.querySelectorAll('.lgb').forEach(function(b){
+  b.addEventListener('click', function(){ setLang(b.dataset.l); });
+});
+
+(function(){
+  var saved; try{ saved = localStorage.getItem('g-lang'); }catch(e){}
+  var supported = ['en','fr','de','es','pt','bg','el','ru','ar','zh'];
+  var initial = saved;
+  if(!initial){
+    var nav = (navigator.language||'en').slice(0,2).toLowerCase();
+    initial = supported.indexOf(nav) !== -1 ? nav : 'en';
+  }
+  if(supported.indexOf(initial) === -1) initial = 'en';
+  setLang(initial);
+})();
+
+/* --- quick contact form: no backend required --- */
+function val(id){ var e=document.getElementById(id); return e ? e.value.trim() : ''; }
+
+function buildMessage(){
+  var f = GRASSO_FORM[CURRENT] || GRASSO_FORM.en;
+  var sel = document.getElementById('f-need');
+  var need = sel ? (f[sel.options[sel.selectedIndex].dataset.opt] || '') : '';
+  var lines = [
+    'Company: ' + val('f-company'),
+    'Country: ' + val('f-country'),
+    'Contact: ' + val('f-name'),
+    'Email: ' + val('f-email'),
+    'Phone: ' + val('f-phone'),
+    'Service: ' + need,
+    '',
+    val('f-msg')
+  ];
+  return lines.join('\n');
+}
+
+function validate(){
+  var err = document.getElementById('form-error');
+  var f = GRASSO_FORM[CURRENT] || GRASSO_FORM.en;
+  if(!val('f-company') || !val('f-name') || !val('f-email')){
+    err.textContent = f.f_fill;
+    err.classList.add('show');
+    return false;
+  }
+  err.classList.remove('show');
+  return true;
+}
+
+document.getElementById('send-email').addEventListener('click', function(e){
+  e.preventDefault();
+  if(!validate()) return;
+  var f = GRASSO_FORM[CURRENT] || GRASSO_FORM.en;
+  window.location.href = 'mailto:grasso@grasso.aero?subject=' +
+    encodeURIComponent(f.email_subject) + '&body=' + encodeURIComponent(buildMessage());
+});
+
+document.getElementById('send-wa').addEventListener('click', function(e){
+  e.preventDefault();
+  if(!validate()) return;
+  var f = GRASSO_FORM[CURRENT] || GRASSO_FORM.en;
+  window.open('https://wa.me/393452323111?text=' +
+    encodeURIComponent(f.email_subject + '\n\n' + buildMessage()), '_blank');
+});
+</script>
+
+</body>
+</html>
