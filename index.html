@@ -7,7 +7,7 @@
   <meta name="description" content="Independent advisory firm specialising in energy, infrastructure and EPC project management across international markets.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans:wght@300;400;500;600&family=Noto+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans:wght@300;400;500;600&family=Noto+Sans+Arabic:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --navy:   #111820;
@@ -76,6 +76,11 @@
     :lang(el) h1, :lang(el) h2, :lang(el) h3{ font-family:'Noto Sans',sans-serif; font-weight:500; }
     :lang(ar){ font-family:'Noto Sans Arabic',sans-serif; }
     :lang(ar) h1, :lang(ar) h2, :lang(ar) h3{ font-family:'Noto Sans Arabic',sans-serif; font-weight:600; }
+    :lang(zh){ font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif; }
+    :lang(zh) h1, :lang(zh) h2, :lang(zh) h3{ font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif; font-weight:500; }
+    :lang(zh) .hero h1 em, :lang(zh) .value-left h3{ font-style:normal; }
+    :lang(zh) .hero h1{ max-width:24ch; line-height:1.3; }
+    :lang(zh) .contact-title{ max-width:28ch; }
 
     /* topbar */
     .topbar {
@@ -97,6 +102,53 @@
       text-decoration: none;
     }
     .logo span { color: var(--accent); }
+
+    /* main nav */
+    .topnav { display:flex; align-items:center; gap:1.8rem; flex-wrap:wrap; }
+    .topnav a{
+      font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase;
+      color:rgba(248,248,246,0.62); text-decoration:none; transition:color 0.2s;
+    }
+    .topnav a:hover{ color:var(--accent); }
+    .topnav a.nav-highlight{ color:var(--accent); }
+    .topnav a.nav-highlight::before{
+      content:'→'; margin-right:0.45rem; opacity:0.7;
+    }
+    html[dir="rtl"] .topnav a.nav-highlight::before{ content:'←'; }
+
+    /* foreign companies banner */
+    .fx-banner{
+      display:grid; grid-template-columns: 1fr auto; align-items:center; gap:2rem;
+      padding:2.2rem 3.5rem;
+      background:rgba(192,154,80,0.06);
+      border-bottom:1px solid var(--rule);
+      border-left:2px solid var(--accent);
+      opacity:0; animation: fade 0.8s ease forwards 0.3s;
+    }
+    .fx-banner-label{
+      font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase;
+      color:var(--accent); margin-bottom:0.7rem;
+    }
+    .fx-banner h2{
+      font-family:'Libre Baskerville', serif; font-weight:400;
+      font-size:1.15rem; line-height:1.45; margin-bottom:0.6rem;
+    }
+    .fx-banner p{
+      font-size:0.8rem; line-height:1.8; color:rgba(248,248,246,0.55); max-width:70ch;
+    }
+    .fx-cta{
+      display:inline-block; white-space:nowrap;
+      padding:0.95rem 1.7rem;
+      border:1px solid var(--accent); color:var(--accent);
+      font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase;
+      text-decoration:none; transition:background 0.25s, color 0.25s;
+    }
+    .fx-cta:hover{ background:var(--accent); color:var(--navy); }
+
+    @media (max-width: 760px){
+      .fx-banner{ grid-template-columns:1fr; padding:2rem 1.8rem; }
+      .topnav{ gap:1.1rem; }
+    }
 
     .topbar-contact { font-size: 0.72rem; color: var(--mid); }
     .topbar-contact a { color: var(--white); text-decoration: none; transition: color 0.2s; }
@@ -407,10 +459,49 @@
     <button class="lgb" data-l="el">EL</button>
     <button class="lgb" data-l="ru">RU</button>
     <button class="lgb" data-l="ar">AR</button>
+    <button class="lgb" data-l="zh">中文</button>
   </div>
 
   <div class="topbar">
     <a href="/" class="logo">Grasso<span>.aero</span></a>
+    <nav class="topnav">
+      <a href="#services">
+        <span data-lang="en">Services</span>
+        <span data-lang="fr">Services</span>
+        <span data-lang="de">Leistungen</span>
+        <span data-lang="es">Servicios</span>
+        <span data-lang="pt">Serviços</span>
+        <span data-lang="bg">Услуги</span>
+        <span data-lang="el">Υπηρεσίες</span>
+        <span data-lang="ru">Услуги</span>
+        <span data-lang="ar">الخدمات</span>
+        <span data-lang="zh">服务</span>
+      </a>
+      <a href="/en/foreign-companies-support" class="nav-highlight">
+        <span data-lang="en">Foreign Companies</span>
+        <span data-lang="fr">Entreprises Étrangères</span>
+        <span data-lang="de">Ausländische Unternehmen</span>
+        <span data-lang="es">Empresas Extranjeras</span>
+        <span data-lang="pt">Empresas Estrangeiras</span>
+        <span data-lang="bg">Чуждестранни компании</span>
+        <span data-lang="el">Ξένες Εταιρείες</span>
+        <span data-lang="ru">Иностранным компаниям</span>
+        <span data-lang="ar">الشركات الأجنبية</span>
+        <span data-lang="zh">外国企业服务</span>
+      </a>
+      <a href="#contact">
+        <span data-lang="en">Contact</span>
+        <span data-lang="fr">Contact</span>
+        <span data-lang="de">Kontakt</span>
+        <span data-lang="es">Contacto</span>
+        <span data-lang="pt">Contacto</span>
+        <span data-lang="bg">Контакти</span>
+        <span data-lang="el">Επικοινωνία</span>
+        <span data-lang="ru">Контакты</span>
+        <span data-lang="ar">اتصل بنا</span>
+        <span data-lang="zh">联系</span>
+      </a>
+    </nav>
     <div class="topbar-contact">
       <a href="mailto:grasso@grasso.aero">grasso@grasso.aero</a>
       &ensp;·&ensp;
@@ -431,6 +522,7 @@
       <span data-lang="el">Σύμβουλοι Μηχανικής &amp; Υποδομών</span>
       <span data-lang="ru">Инжиниринговый и инфраструктурный консалтинг</span>
       <span data-lang="ar">الاستشارات الهندسية والبنية التحتية</span>
+      <span data-lang="zh">工程与基础设施咨询</span>
     </p>
     <h1>
       <span data-lang="en">Where <em>engineering discipline</em> meets strategic advisory</span>
@@ -442,6 +534,7 @@
       <span data-lang="el">Όπου η <em>μηχανική πειθαρχία</em> συναντά τη στρατηγική συμβουλευτική</span>
       <span data-lang="ru">Там, где <em>инженерная дисциплина</em> встречается со стратегическим консалтингом</span>
       <span data-lang="ar">حيث يلتقي <em>الانضباط الهندسي</em> بالاستشارات الاستراتيجية</span>
+      <span data-lang="zh">当<em>工程严谨</em>遇见战略咨询</span>
     </h1>
     <p class="hero-desc">
       <span data-lang="en">Grasso provides independent advisory and project management services to energy developers, infrastructure investors, industrial operators and public institutions engaged in complex international programmes. Our work is rooted in engineering — and extends across the full spectrum of project development, from feasibility and technical structuring through procurement, construction supervision and long-term asset management.</span>
@@ -453,10 +546,64 @@
       <span data-lang="el">Η Grasso παρέχει ανεξάρτητες συμβουλευτικές υπηρεσίες και υπηρεσίες διαχείρισης έργων σε φορείς ανάπτυξης ενέργειας, επενδυτές υποδομών, βιομηχανικούς φορείς εκμετάλλευσης και δημόσιους οργανισμούς που συμμετέχουν σε σύνθετα διεθνή προγράμματα. Το έργο μας βασίζεται στη μηχανική — και εκτείνεται σε όλο το φάσμα της ανάπτυξης έργων, από τη σκοπιμότητα και τον τεχνικό σχεδιασμό έως τις προμήθειες, την επίβλεψη κατασκευής και τη μακροπρόθεσμη διαχείριση περιουσιακών στοιχείων.</span>
       <span data-lang="ru">Grasso предоставляет независимые консультационные услуги и услуги по управлению проектами для девелоперов в сфере энергетики, инфраструктурных инвесторов, промышленных операторов и государственных учреждений, участвующих в сложных международных программах. Наша работа основана на инженерных принципах и охватывает весь спектр развития проекта — от анализа осуществимости и технической проработки до закупок, надзора за строительством и долгосрочного управления активами.</span>
       <span data-lang="ar">تقدم Grasso خدمات استشارية مستقلة وخدمات إدارة المشاريع لمطوري الطاقة والمستثمرين في البنية التحتية والمشغلين الصناعيين والمؤسسات العامة العاملة في برامج دولية معقدة. يستند عملنا إلى الهندسة، ويمتد عبر كامل نطاق تطوير المشاريع، من دراسات الجدوى والهيكلة الفنية إلى المشتريات والإشراف على البناء وإدارة الأصول على المدى الطويل.</span>
+      <span data-lang="zh">Grasso 为参与复杂国际项目的能源开发商、基础设施投资者、工业运营商及公共机构提供独立咨询与项目管理服务。我们的工作以工程为根基，覆盖项目开发的全过程——从可行性研究与技术架构，到采购、施工监理及长期资产管理。</span>
     </p>
   </section>
 
-  <section class="services">
+  <section class="fx-banner">
+    <div>
+      <p class="fx-banner-label">
+        <span data-lang="en">Foreign Companies Operating in Italy</span>
+        <span data-lang="fr">Entreprises étrangères opérant en Italie</span>
+        <span data-lang="de">Ausländische Unternehmen in Italien</span>
+        <span data-lang="es">Empresas extranjeras que operan en Italia</span>
+        <span data-lang="pt">Empresas estrangeiras a operar em Itália</span>
+        <span data-lang="bg">Чуждестранни компании, работещи в Италия</span>
+        <span data-lang="el">Ξένες εταιρείες που δραστηριοποιούνται στην Ιταλία</span>
+        <span data-lang="ru">Иностранные компании, работающие в Италии</span>
+        <span data-lang="ar">الشركات الأجنبية العاملة في إيطاليا</span>
+        <span data-lang="zh">在意大利开展业务的外国企业</span>
+      </p>
+      <h2>
+        <span data-lang="en">Are you a foreign company operating in Italy?</span>
+        <span data-lang="fr">Vous êtes une entreprise étrangère opérant en Italie ?</span>
+        <span data-lang="de">Sind Sie ein ausländisches Unternehmen mit Tätigkeit in Italien?</span>
+        <span data-lang="es">¿Es una empresa extranjera que opera en Italia?</span>
+        <span data-lang="pt">É uma empresa estrangeira a operar em Itália?</span>
+        <span data-lang="bg">Вие сте чуждестранна компания, работеща в Италия?</span>
+        <span data-lang="el">Είστε ξένη εταιρεία που δραστηριοποιείται στην Ιταλία;</span>
+        <span data-lang="ru">Вы иностранная компания, работающая в Италии?</span>
+        <span data-lang="ar">هل أنتم شركة أجنبية تعمل في إيطاليا؟</span>
+        <span data-lang="zh">您是在意大利开展业务的外国企业吗？</span>
+      </h2>
+      <p>
+        <span data-lang="en">Discover our fast, turnkey services for construction sites, transnational posting of workers and regulatory compliance — POS, DVR, patente a crediti, medico competente. Active throughout Italy.</span>
+        <span data-lang="fr">Découvrez nos services rapides et clés en main pour les chantiers, le détachement transnational de travailleurs et la conformité réglementaire — POS, DVR, patente a crediti, medico competente. Opérationnels partout en Italie.</span>
+        <span data-lang="de">Entdecken Sie unsere schnellen Turnkey-Leistungen für Baustellen, die transnationale Arbeitnehmerentsendung und die Einhaltung von Vorschriften — POS, DVR, patente a crediti, medico competente. Italienweit im Einsatz.</span>
+        <span data-lang="es">Descubra nuestros servicios rápidos y llave en mano para obras, desplazamiento transnacional de trabajadores y cumplimiento normativo: POS, DVR, patente a crediti, medico competente. Operativos en toda Italia.</span>
+        <span data-lang="pt">Descubra os nossos serviços rápidos e turnkey para obras, destacamento transnacional de trabalhadores e conformidade regulatória — POS, DVR, patente a crediti, medico competente. Operacionais em toda a Itália.</span>
+        <span data-lang="bg">Открийте нашите бързи услуги „до ключ“ за строителни обекти, транснационално командироване на работници и регулаторно съответствие — POS, DVR, patente a crediti, medico competente. Работим в цяла Италия.</span>
+        <span data-lang="el">Ανακαλύψτε τις ταχείες, ολοκληρωμένες υπηρεσίες μας για εργοτάξια, διακρατική απόσπαση εργαζομένων και κανονιστική συμμόρφωση — POS, DVR, patente a crediti, medico competente. Δραστηριοποιούμαστε σε όλη την Ιταλία.</span>
+        <span data-lang="ru">Узнайте о наших быстрых решениях «под ключ» для строительных объектов, транснационального командирования работников и соблюдения нормативных требований — POS, DVR, patente a crediti, medico competente. Работаем по всей Италии.</span>
+        <span data-lang="ar">تعرّفوا على خدماتنا السريعة والمتكاملة للمواقع الإنشائية، وإيفاد العمال عبر الحدود، والامتثال التنظيمي — POS وDVR ورخصة النقاط والطبيب المختص. نعمل في جميع أنحاء إيطاليا.</span>
+        <span data-lang="zh">了解我们为工地作业、跨国派遣工人及法规合规提供的快速交钥匙服务——POS、DVR、信用分许可证、指定医师。业务覆盖意大利全境。</span>
+      </p>
+    </div>
+    <a class="fx-cta" href="/en/foreign-companies-support">
+      <span data-lang="en">Discover the services</span>
+      <span data-lang="fr">Découvrir les services</span>
+      <span data-lang="de">Leistungen entdecken</span>
+      <span data-lang="es">Descubrir los servicios</span>
+      <span data-lang="pt">Descobrir os serviços</span>
+      <span data-lang="bg">Вижте услугите</span>
+      <span data-lang="el">Δείτε τις υπηρεσίες</span>
+      <span data-lang="ru">Узнать об услугах</span>
+      <span data-lang="ar">اكتشف الخدمات</span>
+      <span data-lang="zh">查看服务</span>
+    </a>
+  </section>
+
+  <section class="services" id="services">
     <div class="service">
       <span class="service-num">01</span>
       <h2>
@@ -469,6 +616,7 @@
         <span data-lang="el">Τεχνικός Έλεγχος Αξιοπιστίας &amp; Σκοπιμότητα</span>
         <span data-lang="ru">Техническая экспертиза и оценка осуществимости</span>
         <span data-lang="ar">الفحص الفني الشامل ودراسة الجدوى</span>
+        <span data-lang="zh">技术尽职调查与可行性研究</span>
       </h2>
       <p>
         <span data-lang="en">Before capital is committed, the engineering and regulatory basis of a project must be sound. We provide independent technical assessment, feasibility review and site evaluation across energy generation, industrial infrastructure and civil works. Where applicable, this extends to the review of existing supply arrangements and procurement structures — assessing whether the specification, sourcing and qualification of critical equipment meets the standards that the asset class, the operating environment and the financing structure require.</span>
@@ -480,6 +628,7 @@
         <span data-lang="el">Πριν από τη δέσμευση κεφαλαίου, η τεχνική και κανονιστική βάση ενός έργου πρέπει να είναι στέρεη. Παρέχουμε ανεξάρτητη τεχνική αξιολόγηση, έλεγχο σκοπιμότητας και αξιολόγηση χώρων εγκατάστασης σε τομείς παραγωγής ενέργειας, βιομηχανικών υποδομών και τεχνικών έργων. Όπου απαιτείται, αυτό επεκτείνεται στην εξέταση των υφιστάμενων ρυθμίσεων προμήθειας και των δομών προμηθειών — αξιολογώντας εάν η προδιαγραφή, η προμήθεια και η πιστοποίηση κρίσιμου εξοπλισμού πληρούν τα πρότυπα που απαιτεί η κατηγορία περιουσιακού στοιχείου, το λειτουργικό περιβάλλον και η χρηματοδοτική δομή.</span>
         <span data-lang="ru">Прежде чем капитал будет вложен, техническая и нормативная база проекта должна быть надёжной. Мы предоставляем независимую техническую оценку, анализ осуществимости и оценку площадок в сферах генерации энергии, промышленной инфраструктуры и гражданского строительства. При необходимости это распространяется на анализ существующих схем поставок и закупочных структур — с оценкой того, соответствуют ли спецификация, источники поставки и квалификация критически важного оборудования стандартам, которые требуются классом активов, условиями эксплуатации и структурой финансирования.</span>
         <span data-lang="ar">قبل الالتزام برأس المال، يجب أن تكون الأسس الفنية والتنظيمية للمشروع متينة. نقدم تقييماً فنياً مستقلاً، ودراسة جدوى، وتقييماً للمواقع في مجالات توليد الطاقة والبنية التحتية الصناعية والأعمال المدنية. وعند الاقتضاء، يمتد ذلك إلى مراجعة ترتيبات التوريد القائمة وهياكل المشتريات، لتقييم ما إذا كانت مواصفات المعدات الحيوية ومصادرها والتأهيل الخاص بها تفي بالمعايير التي تتطلبها فئة الأصول وبيئة التشغيل وهيكل التمويل.</span>
+        <span data-lang="zh">在资本投入之前，项目的工程与法规基础必须稳固。我们在能源发电、工业基础设施及土建工程领域提供独立技术评估、可行性审查与场址评估。在适用情况下，这一工作还延伸至对现有供应安排与采购结构的审查——评估关键设备的技术规格、采购来源与资质认证是否符合资产类别、运营环境及融资结构所要求的标准。</span>
       </p>
     </div>
     <div class="service">
@@ -494,6 +643,7 @@
         <span data-lang="el">Διαχείριση EPC &amp; Μηχανική Κυρίου του Έργου</span>
         <span data-lang="ru">Управление EPC-проектами и инжиниринг в интересах заказчика</span>
         <span data-lang="ar">إدارة مشاريع EPC والهندسة لصالح المالك</span>
+        <span data-lang="zh">EPC 管理与业主方工程服务</span>
       </h2>
       <p>
         <span data-lang="en">From contract structuring and procurement strategy through construction supervision and commissioning, we represent the owner's technical and commercial interest at every stage. This includes the management of complex supply chains for critical industrial systems — where vendor qualification, technical specification integrity, certification compliance and long-lead item control are as consequential as the works themselves. Our oversight encompasses scope control, quality assurance, schedule management and interface coordination across multidisciplinary contractors.</span>
@@ -505,6 +655,7 @@
         <span data-lang="el">Από τη διαμόρφωση συμβάσεων και τη στρατηγική προμηθειών έως την επίβλεψη κατασκευής και τη θέση σε λειτουργία, εκπροσωπούμε το τεχνικό και εμπορικό συμφέρον του κυρίου του έργου σε κάθε στάδιο. Αυτό περιλαμβάνει τη διαχείριση σύνθετων αλυσίδων εφοδιασμού για κρίσιμα βιομηχανικά συστήματα — όπου η πιστοποίηση προμηθευτών, η ακεραιότητα των τεχνικών προδιαγραφών, η συμμόρφωση με πιστοποιήσεις και ο έλεγχος εξοπλισμού μεγάλου χρόνου παράδοσης είναι εξίσου καθοριστικά με τα ίδια τα έργα. Η επίβλεψή μας καλύπτει τον έλεγχο αντικειμένου, τη διασφάλιση ποιότητας, τη διαχείριση χρονοδιαγράμματος και τον συντονισμό διεπαφών μεταξύ πολυκλαδικών εργολάβων.</span>
         <span data-lang="ru">От структурирования контрактов и стратегии закупок до строительного надзора и ввода в эксплуатацию — мы представляем технические и коммерческие интересы заказчика на каждом этапе. Это включает управление сложными цепочками поставок для критически важных промышленных систем, где квалификация поставщиков, целостность технических спецификаций, соответствие сертификации и контроль оборудования с длительным сроком поставки не менее важны, чем сами строительные работы. Наш надзор охватывает контроль объёма работ, обеспечение качества, управление графиком и координацию взаимодействия между многопрофильными подрядчиками.</span>
         <span data-lang="ar">من هيكلة العقود واستراتيجية المشتريات إلى الإشراف على البناء والتشغيل، نمثّل المصلحة الفنية والتجارية للمالك في كل مرحلة. ويشمل ذلك إدارة سلاسل توريد معقدة للأنظمة الصناعية الحيوية، حيث يكون تأهيل الموردين وسلامة المواصفات الفنية والامتثال لشهادات الاعتماد والتحكم في المعدات ذات مدة التوريد الطويلة على نفس القدر من الأهمية التي تحظى بها الأعمال الإنشائية نفسها. ويشمل إشرافنا التحكم في النطاق وضمان الجودة وإدارة الجدول الزمني وتنسيق الواجهات بين المقاولين متعددي التخصصات.</span>
+        <span data-lang="zh">从合同架构与采购策略，到施工监理与试运行，我们在每一阶段代表业主的技术与商务利益。这包括对关键工业系统复杂供应链的管理——供应商资质审核、技术规格完整性、认证合规及长周期设备管控，其重要性与工程施工本身同等关键。我们的监理涵盖范围控制、质量保证、进度管理，以及多专业承包商之间的界面协调。</span>
       </p>
     </div>
     <div class="service">
@@ -519,6 +670,7 @@
         <span data-lang="el">Διαχείριση Περιουσιακών Στοιχείων &amp; Συμβουλευτική O&amp;M</span>
         <span data-lang="ru">Управление активами и консалтинг по эксплуатации (О&amp;М)</span>
         <span data-lang="ar">إدارة الأصول والاستشارات التشغيلية (O&amp;M)</span>
+        <span data-lang="zh">资产管理与运维（O&amp;M）咨询</span>
       </h2>
       <p>
         <span data-lang="en">Operational performance over the life of an asset is determined as much by the quality of its management framework as by its design. We support clients in establishing O&amp;M structures, maintenance protocols, performance monitoring systems and regulatory compliance programmes suited to the asset class and operating environment. Where assets depend on complex industrial supply chains — aerospace-grade components, subsea equipment, platform systems or specialised instrumentation — we extend our support to the qualification and management of the supply base, ensuring that procurement decisions through the operational phase maintain the technical and regulatory standards established at project delivery.</span>
@@ -530,6 +682,7 @@
         <span data-lang="el">Η λειτουργική απόδοση καθ' όλη τη διάρκεια ζωής ενός περιουσιακού στοιχείου καθορίζεται εξίσου από την ποιότητα του πλαισίου διαχείρισής του όσο και από τον σχεδιασμό του. Υποστηρίζουμε τους πελάτες στη δημιουργία δομών O&amp;M, πρωτοκόλλων συντήρησης, συστημάτων παρακολούθησης απόδοσης και προγραμμάτων κανονιστικής συμμόρφωσης προσαρμοσμένων στην κατηγορία του περιουσιακού στοιχείου και στο λειτουργικό περιβάλλον. Όπου τα περιουσιακά στοιχεία εξαρτώνται από σύνθετες βιομηχανικές αλυσίδες εφοδιασμού — εξαρτήματα αεροδιαστημικής ποιότητας, υποθαλάσσιο εξοπλισμό, συστήματα εξεδρών ή εξειδικευμένη οργανολογία — επεκτείνουμε την υποστήριξή μας στην πιστοποίηση και διαχείριση της βάσης προμηθευτών, διασφαλίζοντας ότι οι αποφάσεις προμηθειών κατά τη λειτουργική φάση διατηρούν τα τεχνικά και κανονιστικά πρότυπα που καθορίστηκαν κατά την παράδοση του έργου.</span>
         <span data-lang="ru">Эксплуатационные показатели на протяжении всего срока службы актива определяются в равной степени качеством системы управления и его проектированием. Мы помогаем клиентам выстраивать структуры эксплуатации и обслуживания (О&amp;М), протоколы технического обслуживания, системы мониторинга показателей и программы соответствия нормативным требованиям, адаптированные к классу активов и условиям эксплуатации. Когда активы зависят от сложных промышленных цепочек поставок — компонентов аэрокосмического класса, подводного оборудования, платформенных систем или специализированного приборного оснащения — мы также обеспечиваем квалификацию и управление базой поставщиков, гарантируя, что закупочные решения на всех этапах эксплуатации сохраняют технические и нормативные стандарты, установленные при сдаче проекта.</span>
         <span data-lang="ar">يتحدد الأداء التشغيلي على مدى عمر الأصل بمدى جودة إطار إدارته بقدر ما يتحدد بتصميمه. نساعد العملاء في إنشاء هياكل التشغيل والصيانة، وبروتوكولات الصيانة، وأنظمة مراقبة الأداء، وبرامج الامتثال التنظيمي المناسبة لفئة الأصل وبيئة التشغيل. وحيثما تعتمد الأصول على سلاسل توريد صناعية معقدة — مكونات بمعايير الطيران والفضاء، أو معدات تحت سطح البحر، أو أنظمة منصات، أو أجهزة قياس متخصصة — نوسّع دعمنا ليشمل تأهيل وإدارة قاعدة الموردين، بما يضمن أن قرارات الشراء طوال المرحلة التشغيلية تحافظ على المعايير الفنية والتنظيمية التي تم إرساؤها عند تسليم المشروع.</span>
+        <span data-lang="zh">资产在全生命周期内的运营表现，既取决于设计质量，也同样取决于管理体系的质量。我们协助客户建立与资产类别及运营环境相适应的运维架构、维护规程、绩效监测系统与法规合规方案。当资产依赖复杂的工业供应链时——航空级部件、水下设备、平台系统或专用仪表——我们的支持将延伸至供应商资质审核与供应体系管理，确保运营阶段的采购决策始终维持项目交付时所确立的技术与法规标准。</span>
       </p>
     </div>
     <div class="service">
@@ -544,6 +697,7 @@
         <span data-lang="el">Είσοδος στην Αγορά &amp; Θεσμικές Σχέσεις</span>
         <span data-lang="ru">Выход на рынок и работа с государственными институтами</span>
         <span data-lang="ar">دخول السوق والعلاقات المؤسسية</span>
+        <span data-lang="zh">市场准入与机构关系</span>
       </h2>
       <p>
         <span data-lang="en">Operating across jurisdictions with distinct regulatory regimes, procurement cultures and institutional frameworks requires sustained local engagement. We provide the country-level intelligence, permitting support and government interface that credible international project development demands.</span>
@@ -555,6 +709,7 @@
         <span data-lang="el">Η δραστηριοποίηση σε δικαιοδοσίες με διαφορετικά κανονιστικά καθεστώτα, κουλτούρες προμηθειών και θεσμικά πλαίσια απαιτεί διαρκή τοπική παρουσία. Παρέχουμε τη γνώση σε επίπεδο χώρας, την υποστήριξη αδειοδότησης και τη διεπαφή με τις κρατικές αρχές που απαιτεί η αξιόπιστη διεθνής ανάπτυξη έργων.</span>
         <span data-lang="ru">Работа в разных юрисдикциях с различными регуляторными режимами, культурой закупок и институциональными рамками требует постоянного присутствия на местах. Мы обеспечиваем экспертизу на уровне страны, поддержку в получении разрешений и взаимодействие с государственными органами, необходимые для реализации авторитетных международных проектов.</span>
         <span data-lang="ar">يتطلب العمل عبر ولايات قضائية ذات أنظمة تنظيمية وثقافات مشتريات وأطر مؤسسية مختلفة مشاركة محلية مستمرة. نوفر المعرفة على مستوى الدولة والدعم في إجراءات التصاريح والتواصل مع الجهات الحكومية التي يتطلبها تطوير مشاريع دولية ذات مصداقية.</span>
+        <span data-lang="zh">在监管制度、采购文化与机构框架各异的司法辖区内开展业务，需要持续的本地参与。我们提供可信的国际项目开发所必需的国别情报、许可支持与政府对接。</span>
       </p>
     </div>
     <div class="service">
@@ -569,6 +724,7 @@
         <span data-lang="el">Περιβαλλοντική &amp; Βιομηχανική Μηχανική</span>
         <span data-lang="ru">Экологический и промышленный инжиниринг</span>
         <span data-lang="ar">الهندسة البيئية والصناعية</span>
+        <span data-lang="zh">环境与工业工程</span>
       </h2>
       <p>
         <span data-lang="en">Complex projects carry environmental obligations that extend well beyond compliance. We advise on environmental impact assessment, site remediation, industrial permitting and the integration of environmental management systems into project governance — across both greenfield development and brownfield rehabilitation.</span>
@@ -580,6 +736,7 @@
         <span data-lang="el">Τα σύνθετα έργα φέρουν περιβαλλοντικές υποχρεώσεις που εκτείνονται πολύ πέρα από την απλή συμμόρφωση. Παρέχουμε συμβουλές σχετικά με τη μελέτη περιβαλλοντικών επιπτώσεων, την αποκατάσταση χώρων, τις βιομηχανικές αδειοδοτήσεις και την ενσωμάτωση συστημάτων περιβαλλοντικής διαχείρισης στη διακυβέρνηση έργων — τόσο σε νέες αναπτύξεις όσο και σε αποκατάσταση υφιστάμενων βιομηχανικών χώρων.</span>
         <span data-lang="ru">Сложные проекты влекут за собой экологические обязательства, выходящие далеко за рамки простого соответствия нормам. Мы консультируем по вопросам оценки воздействия на окружающую среду, рекультивации участков, промышленного лицензирования и интеграции систем экологического менеджмента в управление проектом — как при освоении новых площадок, так и при восстановлении существующих промышленных территорий.</span>
         <span data-lang="ar">تحمل المشاريع المعقدة التزامات بيئية تتجاوز مجرد الامتثال. نقدم الاستشارات في تقييم الأثر البيئي، ومعالجة المواقع، والتراخيص الصناعية، ودمج أنظمة الإدارة البيئية في حوكمة المشروع — سواء في المشاريع الجديدة أو في إعادة تأهيل المواقع الصناعية القائمة.</span>
+        <span data-lang="zh">复杂项目所承担的环境义务远超单纯的合规要求。我们就环境影响评价、场地修复、工业许可，以及将环境管理体系纳入项目治理提供咨询——涵盖新建项目开发与既有工业场地的整治更新。</span>
       </p>
     </div>
     <div class="service">
@@ -594,6 +751,7 @@
         <span data-lang="el">Διακυβέρνηση HSE &amp; Μηχανική Κινδύνου</span>
         <span data-lang="ru">Управление HSE и инжиниринг рисков</span>
         <span data-lang="ar">حوكمة الصحة والسلامة والبيئة (HSE) وهندسة المخاطر</span>
+        <span data-lang="zh">HSE 治理与风险工程</span>
       </h2>
       <p>
         <span data-lang="en">Safety management in high-hazard and remote environments demands engineering rigour, not administrative routine. We design and implement HSE governance frameworks, conduct risk assessments and support clients in building safety cultures appropriate to the operational complexity they face.</span>
@@ -605,6 +763,7 @@
         <span data-lang="el">Η διαχείριση της ασφάλειας σε περιβάλλοντα υψηλού κινδύνου και απομακρυσμένες τοποθεσίες απαιτεί μηχανολογική αυστηρότητα, όχι διοικητική ρουτίνα. Σχεδιάζουμε και υλοποιούμε πλαίσια διακυβέρνησης HSE, διενεργούμε αξιολογήσεις κινδύνου και υποστηρίζουμε τους πελάτες στην οικοδόμηση κουλτούρας ασφάλειας κατάλληλης για τη λειτουργική πολυπλοκότητα που αντιμετωπίζουν.</span>
         <span data-lang="ru">Управление безопасностью в условиях повышенной опасности и удалённых локациях требует инженерной строгости, а не административной рутины. Мы разрабатываем и внедряем системы управления HSE, проводим оценку рисков и помогаем клиентам формировать культуру безопасности, соответствующую операционной сложности, с которой они сталкиваются.</span>
         <span data-lang="ar">تتطلب إدارة السلامة في البيئات عالية الخطورة والنائية صرامة هندسية، لا روتيناً إدارياً. نقوم بتصميم وتنفيذ أطر حوكمة الصحة والسلامة والبيئة، وإجراء تقييمات المخاطر، ومساعدة العملاء في بناء ثقافة سلامة تتناسب مع التعقيد التشغيلي الذي يواجهونه.</span>
+        <span data-lang="zh">高危及偏远环境中的安全管理需要工程上的严谨，而非行政流程上的例行公事。我们设计并实施 HSE 治理体系，开展风险评估，并协助客户建立与其运营复杂度相匹配的安全文化。</span>
       </p>
     </div>
     <div class="service">
@@ -619,6 +778,7 @@
         <span data-lang="el">Νόμιμη Εκπροσώπηση για Αποσπασμένους Εργαζομένους</span>
         <span data-lang="ru">Официальное представительство при командировании работников</span>
         <span data-lang="ar">التمثيل القانوني للعمال الموفدين</span>
+        <span data-lang="zh">派遣工人法定代表服务</span>
       </h2>
       <p>
         <span data-lang="en">Foreign companies posting workers to Italian project sites are required, under Art. 10 of D.Lgs. 136/2016, to appoint a documentary referent and a union referent for the duration of the posting. We assume these statutory roles on the client's behalf, managing the UNI_Distacco_UE filing, maintaining the required worker documentation, and acting as the point of contact for the Italian Labour Inspectorate and trade unions. The engagement is structured as a remote service, allowing rapid onboarding ahead of a posting's start date.</span>
@@ -630,6 +790,7 @@
         <span data-lang="el">Οι αλλοδαπές εταιρείες που αποσπούν εργαζομένους σε εργοτάξια στην Ιταλία υποχρεούνται, βάσει του άρθρου 10 του D.Lgs. 136/2016, να ορίσουν έναν υπεύθυνο τεκμηρίωσης και έναν συνδικαλιστικό εκπρόσωπο για τη διάρκεια της απόσπασης. Αναλαμβάνουμε αυτούς τους νόμιμους ρόλους για λογαριασμό του πελάτη, διαχειριζόμενοι την κατάθεση UNI_Distacco_UE, τηρώντας την απαιτούμενη τεκμηρίωση των εργαζομένων και λειτουργώντας ως σημείο επαφής με την ιταλική Επιθεώρηση Εργασίας και τα συνδικάτα. Η ανάθεση είναι δομημένη ως υπηρεσία εξ αποστάσεως, επιτρέποντας ταχεία έναρξη πριν από την ημερομηνία έναρξης της απόσπασης.</span>
         <span data-lang="ru">Иностранные компании, командирующие работников на итальянские строительные объекты, обязаны, согласно ст. 10 Законодательного декрета № 136/2016, назначить документального представителя и профсоюзного представителя на весь период командирования. Мы берём на себя эти официальные функции от имени клиента, ведём подачу UNI_Distacco_UE, поддерживаем необходимую документацию работников и выступаем контактным лицом для итальянской трудовой инспекции и профсоюзов. Услуга оказывается дистанционно, что позволяет быстро подготовиться до начала командирования.</span>
         <span data-lang="ar">يتعين على الشركات الأجنبية التي توفد عمالاً إلى مواقع المشاريع في إيطاليا، بموجب المادة 10 من المرسوم التشريعي رقم 136/2016، تعيين ممثل وثائقي وممثل نقابي طوال مدة الإيفاد. نتولى هذه الأدوار القانونية نيابة عن العميل، ونتولى تقديم طلب UNI_Distacco_UE، والاحتفاظ بالوثائق المطلوبة للعمال، والعمل كجهة اتصال مع مفتشية العمل الإيطالية والنقابات العمالية. وتُقدَّم هذه الخدمة عن بُعد، مما يتيح الإعداد السريع قبل بدء الإيفاد.</span>
+        <span data-lang="zh">根据第136/2016号立法令第10条，向意大利项目现场派遣工人的外国企业须在派遣期间指定一名文件负责人和一名工会联络人。我们代表客户承担这些法定职责，负责办理 UNI_Distacco_UE 申报、保管所需的工人文件，并作为意大利劳动监察部门与工会的联络窗口。该服务以远程方式提供，可在派遣开始前快速完成部署。</span>
       </p>
     </div>
     <div class="service">
@@ -644,6 +805,7 @@
         <span data-lang="el">Τεκμηρίωση Ασφάλειας Εργοταξίου &amp; Συμμόρφωση</span>
         <span data-lang="ru">Документация по безопасности на объекте и соответствие требованиям</span>
         <span data-lang="ar">وثائق السلامة في الموقع والامتثال</span>
+        <span data-lang="zh">工地安全文件与合规</span>
       </h2>
       <p>
         <span data-lang="en">We prepare and review the safety documentation required to operate legally on an Italian site: Piani Operativi di Sicurezza (POS) and Documenti di Valutazione dei Rischi (DVR), in line with D.Lgs. 81/08. This extends to managing the patente a crediti — verifying eligibility, handling the application through the Ispettorato Nazionale del Lavoro portal, and monitoring the credit score over the life of the project — together with the training attestations and machine-use certifications required of site personnel.</span>
@@ -655,6 +817,7 @@
         <span data-lang="el">Προετοιμάζουμε και ελέγχουμε την τεκμηρίωση ασφάλειας που απαιτείται για τη νόμιμη λειτουργία σε εργοτάξιο στην Ιταλία: τα Piani Operativi di Sicurezza (POS) και τα Documenti di Valutazione dei Rischi (DVR), σύμφωνα με το D.Lgs. 81/08. Αυτό επεκτείνεται στη διαχείριση της patente a crediti — επαλήθευση επιλεξιμότητας, διεκπεραίωση της αίτησης μέσω της πύλης του Ispettorato Nazionale del Lavoro και παρακολούθηση της βαθμολογίας καθ' όλη τη διάρκεια του έργου — μαζί με τα πιστοποιητικά κατάρτισης και τις πιστοποιήσεις χειρισμού μηχανημάτων που απαιτούνται για το προσωπικό του εργοταξίου.</span>
         <span data-lang="ru">Мы готовим и проверяем документацию по безопасности, необходимую для законной работы на итальянском строительном объекте: Piani Operativi di Sicurezza (POS) и Documenti di Valutazione dei Rischi (DVR), в соответствии с законодательным декретом № 81/08. Это включает управление patente a crediti — проверку соответствия требованиям, подачу заявки через портал Ispettorato Nazionale del Lavoro и контроль баллов на протяжении всего проекта — а также подтверждения о прохождении обучения и сертификаты на право работы с оборудованием, требуемые для персонала объекта.</span>
         <span data-lang="ar">نقوم بإعداد ومراجعة وثائق السلامة اللازمة للعمل بشكل قانوني في موقع إيطالي: خطط التشغيل الآمن (POS) ووثائق تقييم المخاطر (DVR)، وفقاً للمرسوم التشريعي رقم 81/08. ويمتد ذلك إلى إدارة رخصة النقاط (patente a crediti) — من التحقق من الأهلية، ومعالجة الطلب عبر بوابة مفتشية العمل الوطنية، ومراقبة الرصيد طوال مدة المشروع — إلى جانب شهادات التدريب وتراخيص تشغيل الآلات المطلوبة لموظفي الموقع.</span>
+        <span data-lang="zh">我们依据第81/08号立法令，编制并审核在意大利工地合法作业所需的安全文件：作业安全计划（POS）与风险评估文件（DVR）。工作范围还包括信用分许可证（patente a crediti）的办理——资格核验、通过国家劳动监察局门户提交申请，以及在项目全程监控信用分——以及工地人员所需的培训证明与机械操作资格证书。</span>
       </p>
     </div>
     <div class="service">
@@ -669,6 +832,7 @@
         <span data-lang="el">Περιβαλλοντική &amp; Επιχειρησιακή Υποστήριξη Εργοταξίου</span>
         <span data-lang="ru">Экологическая и операционная поддержка на объекте</span>
         <span data-lang="ar">الدعم البيئي والتشغيلي في الموقع</span>
+        <span data-lang="zh">环境与现场运营支持</span>
       </h2>
       <p>
         <span data-lang="en">Beyond documentation, we support the operational side of an Italian site: identifying and formally engaging the medico competente required for statutory health surveillance, managing construction waste in line with Italian environmental regulation, and coordinating on-site security and surveillance arrangements. We also support supplier qualification and the preparation of tender documentation for clients bidding into the Italian market.</span>
@@ -680,6 +844,7 @@
         <span data-lang="el">Πέρα από την τεκμηρίωση, υποστηρίζουμε τη λειτουργική πλευρά ενός εργοταξίου στην Ιταλία: τον εντοπισμό και την επίσημη ανάθεση στον medico competente που απαιτείται για τη θεσμοθετημένη ιατρική επιτήρηση, τη διαχείριση των αποβλήτων εργοταξίου σύμφωνα με την ιταλική περιβαλλοντική νομοθεσία, και τον συντονισμό των μέτρων ασφάλειας και επιτήρησης στο εργοτάξιο. Υποστηρίζουμε επίσης την πιστοποίηση προμηθευτών και την προετοιμασία τευχών διαγωνισμού για πελάτες που διεκδικούν έργα στην ιταλική αγορά.</span>
         <span data-lang="ru">Помимо документации, мы поддерживаем операционную сторону работы на итальянском объекте: поиск и официальное назначение medico competente, необходимого для обязательного медицинского надзора, управление строительными отходами в соответствии с итальянским экологическим законодательством, а также координацию мер безопасности и охраны на площадке. Мы также оказываем поддержку в квалификации поставщиков и подготовке тендерной документации для клиентов, участвующих в тендерах на итальянском рынке.</span>
         <span data-lang="ar">بالإضافة إلى الوثائق، ندعم الجانب التشغيلي للموقع في إيطاليا: تحديد وتكليف طبيب مختص رسمياً (medico competente) اللازم للمراقبة الصحية القانونية، وإدارة نفايات البناء وفقاً للتنظيمات البيئية الإيطالية، وتنسيق ترتيبات الأمن والمراقبة في الموقع. كما ندعم تأهيل الموردين وإعداد وثائق المناقصات للعملاء المتقدمين للعمل في السوق الإيطالية.</span>
+        <span data-lang="zh">除文件工作之外，我们还支持意大利工地的运营层面：寻找并正式委任法定健康监护所需的指定医师（medico competente）、依据意大利环境法规管理建筑废弃物，以及协调现场安保与监控安排。我们同时为参与意大利市场投标的客户提供供应商资质审核与投标文件编制支持。</span>
       </p>
     </div>
   </section>
@@ -696,6 +861,7 @@
         <span data-lang="el">Η Προσέγγισή μας</span>
         <span data-lang="ru">Наш подход</span>
         <span data-lang="ar">نهجنا</span>
+        <span data-lang="zh">我们的方式</span>
       </p>
       <h3>
         <span data-lang="en">Substance over presentation.<br><em>Continuity</em> over delegation.</span>
@@ -707,6 +873,7 @@
         <span data-lang="el">Ουσία πριν από την παρουσίαση.<br><em>Συνέχεια</em> πριν από την ανάθεση.</span>
         <span data-lang="ru">Суть важнее презентации.<br><em>Непрерывность</em> важнее делегирования.</span>
         <span data-lang="ar">الجوهر قبل العرض.<br><em>الاستمرارية</em> قبل التفويض.</span>
+        <span data-lang="zh">实质重于形式。<br><em>连续性</em>重于层层转委。</span>
       </h3>
     </div>
     <div class="value-right">
@@ -721,6 +888,7 @@
           <span data-lang="el">Η μηχανική στον πυρήνα</span>
           <span data-lang="ru">Инженерия в основе</span>
           <span data-lang="ar">الهندسة في صميم عملنا</span>
+          <span data-lang="zh">以工程为核心</span>
         </p>
         <p>
           <span data-lang="en">Our advisory is grounded in engineering practice — not in management consulting abstraction. Every recommendation we make is informed by technical understanding of what is feasible, what is certifiable and what will actually perform in the field.</span>
@@ -732,6 +900,7 @@
           <span data-lang="el">Η συμβουλευτική μας βασίζεται στην πρακτική της μηχανικής — όχι στην αφαίρεση της συμβουλευτικής διαχείρισης. Κάθε σύσταση που κάνουμε βασίζεται στην τεχνική κατανόηση του τι είναι εφικτό, τι μπορεί να πιστοποιηθεί και τι θα αποδώσει πραγματικά στο πεδίο.</span>
           <span data-lang="ru">Наш консалтинг основан на инженерной практике, а не на абстракциях управленческого консалтинга. Каждая наша рекомендация опирается на техническое понимание того, что осуществимо, что может быть сертифицировано и что действительно будет работать на объекте.</span>
           <span data-lang="ar">تستند استشاراتنا إلى الممارسة الهندسية، لا إلى التجريد النظري لاستشارات الإدارة. كل توصية نقدمها مبنية على فهم فني لما هو قابل للتنفيذ، وما يمكن اعتماده رسمياً، وما سيعمل فعلياً في الميدان.</span>
+          <span data-lang="zh">我们的咨询建立在工程实践之上，而非管理咨询的抽象理论。我们提出的每一项建议，都基于对何者可行、何者可获认证、何者能在现场真正发挥作用的技术理解。</span>
         </p>
       </div>
       <div class="promise">
@@ -745,6 +914,7 @@
           <span data-lang="el">Ανεξάρτητοι εξ ορισμού</span>
           <span data-lang="ru">Независимость как принцип</span>
           <span data-lang="ar">مستقلون بحكم التصميم</span>
+          <span data-lang="zh">独立是我们的设计原则</span>
         </p>
         <p>
           <span data-lang="en">As an independent firm, our only obligation is to the quality of our work and the interests of our clients. We carry no conflicting mandates, no supply chain relationships, no institutional agendas.</span>
@@ -756,6 +926,7 @@
           <span data-lang="el">Ως ανεξάρτητη εταιρεία, η μόνη μας υποχρέωση είναι προς την ποιότητα της εργασίας μας και τα συμφέροντα των πελατών μας. Δεν φέρουμε συγκρουόμενες εντολές, σχέσεις με αλυσίδα εφοδιασμού ή θεσμικές ατζέντες.</span>
           <span data-lang="ru">Как независимая компания, мы обязаны только перед качеством своей работы и интересами клиентов. У нас нет конфликтующих мандатов, связей в цепочке поставок или институциональных интересов.</span>
           <span data-lang="ar">بصفتنا شركة مستقلة، فإن التزامنا الوحيد هو تجاه جودة عملنا ومصالح عملائنا. لا نحمل أي تفويضات متعارضة، ولا علاقات مع سلسلة التوريد، ولا أجندات مؤسسية.</span>
+          <span data-lang="zh">作为一家独立机构，我们唯一的责任是工作质量与客户利益。我们不承担任何利益冲突的委托，不存在供应链关联，也没有机构性议程。</span>
         </p>
       </div>
       <div class="promise">
@@ -769,6 +940,7 @@
           <span data-lang="el">Διαρθρωμένοι για κάθε ανάθεση</span>
           <span data-lang="ru">Гибкая структура для каждого проекта</span>
           <span data-lang="ar">هيكلة مخصصة لكل تكليف</span>
+          <span data-lang="zh">为每项委托量身构建</span>
         </p>
         <p>
           <span data-lang="en">We operate as strategic advisors, embedded technical representatives, or interim project directors — in whatever configuration best serves the client's organisational structure and programme objectives.</span>
@@ -780,6 +952,7 @@
           <span data-lang="el">Λειτουργούμε ως στρατηγικοί σύμβουλοι, ενσωματωμένοι τεχνικοί εκπρόσωποι ή προσωρινοί διευθυντές έργου — σε όποια διαμόρφωση εξυπηρετεί καλύτερα την οργανωτική δομή και τους στόχους του προγράμματος του πελάτη.</span>
           <span data-lang="ru">Мы выступаем в роли стратегических консультантов, встроенных технических представителей или временных директоров проектов — в той конфигурации, которая наилучшим образом соответствует организационной структуре и целям программы клиента.</span>
           <span data-lang="ar">نعمل كمستشارين استراتيجيين، أو ممثلين فنيين مندمجين، أو مديري مشاريع مؤقتين — بأي تشكيل يخدم على أفضل وجه الهيكل التنظيمي للعميل وأهداف برنامجه.</span>
+          <span data-lang="zh">我们可以战略顾问、驻场技术代表或临时项目总监的身份参与——采用最契合客户组织架构与项目目标的形式。</span>
         </p>
       </div>
       <div class="promise">
@@ -793,6 +966,7 @@
           <span data-lang="el">Παρόντες εκεί που έχει σημασία</span>
           <span data-lang="ru">Присутствуем там, где это важно</span>
           <span data-lang="ar">حاضرون حيث يهم الأمر</span>
+          <span data-lang="zh">身处关键之地</span>
         </p>
         <p>
           <span data-lang="en">Effective technical advisory in international markets requires proximity to the project and to the operating environment. We maintain an active presence across our core geographies, ensuring our engagement reflects conditions as they are.</span>
@@ -804,6 +978,7 @@
           <span data-lang="el">Η αποτελεσματική τεχνική συμβουλευτική στις διεθνείς αγορές απαιτεί εγγύτητα με το έργο και με το λειτουργικό περιβάλλον. Διατηρούμε ενεργή παρουσία στις βασικές μας γεωγραφικές περιοχές, διασφαλίζοντας ότι η συμμετοχή μας αντικατοπτρίζει τις πραγματικές συνθήκες.</span>
           <span data-lang="ru">Эффективный технический консалтинг на международных рынках требует непосредственной близости к проекту и условиям эксплуатации. Мы поддерживаем активное присутствие в наших ключевых регионах, гарантируя, что наша работа отражает реальные условия.</span>
           <span data-lang="ar">تتطلب الاستشارات الفنية الفعّالة في الأسواق الدولية قرباً من المشروع ومن بيئة التشغيل. نحافظ على حضور فعّال في مناطقنا الجغرافية الأساسية، بما يضمن أن مشاركتنا تعكس الظروف كما هي فعلياً.</span>
+          <span data-lang="zh">在国际市场上开展有效的技术咨询，需要贴近项目与运营环境。我们在核心业务区域保持活跃的在地存在，确保我们的工作真实反映当地实际条件。</span>
         </p>
       </div>
     </div>
@@ -820,6 +995,7 @@
       <span data-lang="el">Τομείς</span>
       <span data-lang="ru">Отрасли</span>
       <span data-lang="ar">القطاعات</span>
+      <span data-lang="zh">服务领域</span>
     </span>
     <span class="sector-item">
       <span data-lang="en">Oil &amp; Gas</span>
@@ -831,6 +1007,7 @@
       <span data-lang="el">Πετρέλαιο &amp; Φυσικό Αέριο</span>
       <span data-lang="ru">Нефть и газ</span>
       <span data-lang="ar">النفط والغاز</span>
+      <span data-lang="zh">石油与天然气</span>
     </span>
     <span class="sector-item">
       <span data-lang="en">Oilfield Services</span>
@@ -842,6 +1019,7 @@
       <span data-lang="el">Υπηρεσίες Πετρελαιοπηγών</span>
       <span data-lang="ru">Нефтесервисные услуги</span>
       <span data-lang="ar">خدمات حقول النفط</span>
+      <span data-lang="zh">油田服务</span>
     </span>
     <span class="sector-item">
       <span data-lang="en">Renewable Energy / PV</span>
@@ -853,6 +1031,7 @@
       <span data-lang="el">Ανανεώσιμη Ενέργεια / Φ/Β</span>
       <span data-lang="ru">Возобновляемая энергетика / ФЭС</span>
       <span data-lang="ar">الطاقة المتجددة / الطاقة الشمسية</span>
+      <span data-lang="zh">可再生能源 / 光伏</span>
     </span>
     <span class="sector-item">
       <span data-lang="en">EPC Infrastructure</span>
@@ -864,6 +1043,7 @@
       <span data-lang="el">Υποδομές EPC</span>
       <span data-lang="ru">EPC-инфраструктура</span>
       <span data-lang="ar">البنية التحتية EPC</span>
+      <span data-lang="zh">EPC 基础设施</span>
     </span>
     <span class="sector-item">
       <span data-lang="en">Industrial Engineering</span>
@@ -875,6 +1055,7 @@
       <span data-lang="el">Βιομηχανική Μηχανική</span>
       <span data-lang="ru">Промышленный инжиниринг</span>
       <span data-lang="ar">الهندسة الصناعية</span>
+      <span data-lang="zh">工业工程</span>
     </span>
     <span class="sector-item">
       <span data-lang="en">Environmental Engineering</span>
@@ -886,6 +1067,7 @@
       <span data-lang="el">Περιβαλλοντική Μηχανική</span>
       <span data-lang="ru">Экологический инжиниринг</span>
       <span data-lang="ar">الهندسة البيئية</span>
+      <span data-lang="zh">环境工程</span>
     </span>
     <span class="sector-item">
       <span data-lang="en">Civil &amp; Structural Works</span>
@@ -897,6 +1079,7 @@
       <span data-lang="el">Κατασκευαστικά &amp; Δομικά Έργα</span>
       <span data-lang="ru">Гражданское и конструктивное строительство</span>
       <span data-lang="ar">الأعمال المدنية والإنشائية</span>
+      <span data-lang="zh">土建与结构工程</span>
     </span>
     <span class="sector-item">
       <span data-lang="en">Public &amp; Institutional</span>
@@ -908,10 +1091,11 @@
       <span data-lang="el">Δημόσιος &amp; Θεσμικός Τομέας</span>
       <span data-lang="ru">Государственный и институциональный сектор</span>
       <span data-lang="ar">القطاع العام والمؤسسي</span>
+      <span data-lang="zh">公共与机构部门</span>
     </span>
   </div>
 
-  <section class="contact">
+  <section class="contact" id="contact">
     <p class="contact-label">
       <span data-lang="en">Get in Touch</span>
       <span data-lang="fr">Nous Contacter</span>
@@ -922,6 +1106,7 @@
       <span data-lang="el">Επικοινωνήστε Μαζί μας</span>
       <span data-lang="ru">Связаться с нами</span>
       <span data-lang="ar">تواصل معنا</span>
+      <span data-lang="zh">联系我们</span>
     </p>
     <h2 class="contact-title">
       <span data-lang="en">Let's discuss your project</span>
@@ -933,6 +1118,7 @@
       <span data-lang="el">Ας συζητήσουμε για το έργο σας</span>
       <span data-lang="ru">Давайте обсудим ваш проект</span>
       <span data-lang="ar">لنتحدث عن مشروعكم</span>
+      <span data-lang="zh">让我们探讨您的项目</span>
     </h2>
     <p class="contact-desc">
       <span data-lang="en">Reach out by email or WhatsApp — we look forward to hearing about your project.</span>
@@ -944,6 +1130,7 @@
       <span data-lang="el">Επικοινωνήστε μαζί μας μέσω email ή WhatsApp — θα χαρούμε να μάθουμε για το έργο σας.</span>
       <span data-lang="ru">Свяжитесь с нами по электронной почте или WhatsApp — будем рады узнать больше о вашем проекте.</span>
       <span data-lang="ar">تواصلوا معنا عبر البريد الإلكتروني أو واتساب — يسعدنا التعرف على مشروعكم.</span>
+      <span data-lang="zh">欢迎通过电子邮件或 WhatsApp 与我们联系——期待了解您的项目。</span>
     </p>
     <div class="contact-actions">
       <a class="contact-btn" href="mailto:grasso@grasso.aero">
@@ -957,6 +1144,7 @@
           <span data-lang="el">Email</span>
           <span data-lang="ru">Email</span>
           <span data-lang="ar">البريد الإلكتروني</span>
+          <span data-lang="zh">电子邮件</span>
         </span>
         <span class="contact-btn-value">grasso@grasso.aero</span>
       </a>
@@ -971,6 +1159,7 @@
           <span data-lang="el">WhatsApp — Ιταλία</span>
           <span data-lang="ru">WhatsApp — Италия</span>
           <span data-lang="ar">واتساب — إيطاليا</span>
+          <span data-lang="zh">WhatsApp — 意大利</span>
         </span>
         <span class="contact-btn-value">+39 345 232 3111</span>
       </a>
@@ -985,6 +1174,7 @@
           <span data-lang="el">WhatsApp — Λιβύη</span>
           <span data-lang="ru">WhatsApp — Ливия</span>
           <span data-lang="ar">واتساب — ليبيا</span>
+          <span data-lang="zh">WhatsApp — 利比亚</span>
         </span>
         <span class="contact-btn-value">+218 91 655 6045</span>
       </a>
@@ -993,6 +1183,18 @@
 
   <footer>
     <div class="footer-contact">
+      <a href="/en/foreign-companies-support">
+        <span data-lang="en">Foreign Companies</span>
+        <span data-lang="fr">Entreprises Étrangères</span>
+        <span data-lang="de">Ausländische Unternehmen</span>
+        <span data-lang="es">Empresas Extranjeras</span>
+        <span data-lang="pt">Empresas Estrangeiras</span>
+        <span data-lang="bg">Чуждестранни компании</span>
+        <span data-lang="el">Ξένες Εταιρείες</span>
+        <span data-lang="ru">Иностранным компаниям</span>
+        <span data-lang="ar">الشركات الأجنبية</span>
+        <span data-lang="zh">外国企业服务</span>
+      </a>
       <a href="mailto:grasso@grasso.aero">grasso@grasso.aero</a>
       <a href="https://wa.me/393452323111" target="_blank" rel="noopener">WhatsApp IT</a>
       <a href="https://wa.me/218916556045" target="_blank" rel="noopener">WhatsApp LY</a>
@@ -1007,6 +1209,7 @@
       <span data-lang="el">Μιλάνο &nbsp;·&nbsp; Ρώμη &nbsp;·&nbsp; Τρίπολη &nbsp;·&nbsp; Παγκοσμίως</span>
       <span data-lang="ru">Милан &nbsp;·&nbsp; Рим &nbsp;·&nbsp; Триполи &nbsp;·&nbsp; По всему миру</span>
       <span data-lang="ar">ميلانو &nbsp;·&nbsp; روما &nbsp;·&nbsp; طرابلس &nbsp;·&nbsp; حول العالم</span>
+      <span data-lang="zh">米兰 &nbsp;·&nbsp; 罗马 &nbsp;·&nbsp; 的黎波里 &nbsp;·&nbsp; 全球服务</span>
     </span>
   </footer>
 
@@ -1020,7 +1223,8 @@ var GRASSO_I18N = {
   bg: {title:"Grasso – Инженерни и инфраструктурни консултации", desc:"Независима консултантска фирма, специализирана в енергетиката, инфраструктурата и управлението на EPC проекти на международните пазари."},
   el: {title:"Grasso – Σύμβουλοι Μηχανικής & Υποδομών", desc:"Ανεξάρτητη συμβουλευτική εταιρεία εξειδικευμένη στην ενέργεια, τις υποδομές και τη διαχείριση έργων EPC σε διεθνείς αγορές."},
   ru: {title:"Grasso – Инжиниринговый и инфраструктурный консалтинг", desc:"Независимая консалтинговая компания, специализирующаяся на энергетике, инфраструктуре и управлении EPC-проектами на международных рынках."},
-  ar: {title:"Grasso – الاستشارات الهندسية والبنية التحتية", desc:"شركة استشارية مستقلة متخصصة في الطاقة والبنية التحتية وإدارة مشاريع EPC في الأسواق الدولية."}
+  ar: {title:"Grasso – الاستشارات الهندسية والبنية التحتية", desc:"شركة استشارية مستقلة متخصصة في الطاقة والبنية التحتية وإدارة مشاريع EPC في الأسواق الدولية."},
+  zh: {title:"Grasso – 工程与基础设施咨询", desc:"独立咨询机构，专注于国际市场的能源、基础设施及 EPC 项目管理。"}
 };
 
 function setLang(l){
@@ -1045,7 +1249,7 @@ document.querySelectorAll('.lgb').forEach(function(b){
 
 (function(){
   var saved; try{ saved = localStorage.getItem('g-lang'); }catch(e){}
-  var supported = ['en','fr','de','es','pt','bg','el','ru','ar'];
+  var supported = ['en','fr','de','es','pt','bg','el','ru','ar','zh'];
   var initial = saved;
   if(!initial){
     var nav = (navigator.language||'en').slice(0,2).toLowerCase();
