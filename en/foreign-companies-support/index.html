@@ -1277,5 +1277,22 @@ document.getElementById('send-wa').addEventListener('click', function(e){
 });
 </script>
 
+  <script>
+  function setLanguage(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('[data-lang="' + lang + '"]').forEach(el => el.classList.add('active'));
+    document.querySelectorAll('.lgb').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.querySelector('.lgb[data-l="' + lang + '"]');
+    if (activeBtn) activeBtn.classList.add('active');
+    document.documentElement.setAttribute('lang', lang);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setLanguage('en');
+    document.querySelectorAll('.lgb').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-l')));
+    });
+  });
+</script>
 </body>
 </html>
