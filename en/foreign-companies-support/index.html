@@ -1270,5 +1270,35 @@ document.getElementById('send-wa').addEventListener('click', function(e){
     encodeURIComponent(f.email_subject + '\n\n' + buildMessage()), '_blank');
 });
 </script>
+
+  <script>
+function trackAndGo(url, isNewTab){
+  function go(){
+    if(isNewTab){ window.open(url, '_blank'); } else { window.location.href = url; }
+  }
+  if (typeof gtag !== 'function') { go(); return; }
+  var navigated = false;
+  function goOnce(){ if(!navigated){ navigated = true; go(); } }
+  gtag('event', 'conversion', {
+    'send_to': 'AW-18458494121/INSERISCI_QUI_LA_TUA_ETICHETTA',
+    'event_callback': goOnce
+  });
+  setTimeout(goOnce, 1000);
+}
+
+document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    trackAndGo(a.getAttribute('href'), false);
+  });
+});
+
+document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    trackAndGo(a.getAttribute('href'), true);
+  });
+});
+</script>
 </body>
 </html>
