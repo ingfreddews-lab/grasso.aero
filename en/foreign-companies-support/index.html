@@ -6,51 +6,10 @@
   <title>Foreign Companies Support in Italy – Grasso Engineering</title>
   <meta name="description" content="Turnkey compliance and safety support for foreign companies operating in Italy: posting of workers, Art. 10, patente a crediti, POS, DVR, medico competente.">
   <link rel="canonical" href="https://grasso.aero/en/foreign-companies-support">
-  <!-- Preload dei font critici usati above-the-fold (riduce la catena di richieste critiche) -->
-  <link rel="preload" href="/assets/fonts/dmsans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/libre-baskerville-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/libre-baskerville-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans:wght@300;400;500;600&family=Noto+Sans+Arabic:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* DM Sans */
-    @font-face {
-      font-family: 'DM Sans';
-      font-style: normal;
-      font-weight: 300 500;
-      font-display: swap;
-      src: url('/assets/fonts/dmsans-latin.woff2') format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-
-    /* Libre Baskerville Normal */
-    @font-face {
-      font-family: 'Libre Baskerville';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url('/assets/fonts/libre-baskerville-normal.woff2') format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-
-    /* Libre Baskerville Italic */
-    @font-face {
-      font-family: 'Libre Baskerville';
-      font-style: italic;
-      font-weight: 400;
-      font-display: swap;
-      src: url('/assets/fonts/libre-baskerville-italic.woff2') format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-
-  /* Noto Sans */
-    @font-face {
-      font-family: 'Noto Sans';
-      font-style: normal;
-      font-weight: 300 600;
-      font-display: swap;
-      src: url('/assets/fonts/noto-sans-latin.woff2') format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-
     :root {
       --navy:   #111820;
       --white:  #f8f8f6;
@@ -572,7 +531,7 @@
 <body>
 
   <div id="lang-switch">
-    <button class="lgb active" data-l="en">EN</button>
+    <button class="lgb" data-l="en">EN</button>
     <button class="lgb" data-l="fr">FR</button>
     <button class="lgb" data-l="de">DE</button>
     <button class="lgb" data-l="es">ES</button>
@@ -585,10 +544,10 @@
   </div>
 
   <div class="topbar">
-    <a href="/" class="logo">Grasso Engineering<span></span></a>
+    <a href="/" class="logo">Grasso<span>Engineering</span></a>
     <nav class="topnav">
       <a href="/">
-        <span data-lang="en" class="active">Home</span>
+        <span data-lang="en">Home</span>
         <span data-lang="fr">Accueil</span>
         <span data-lang="de">Startseite</span>
         <span data-lang="es">Inicio</span>
@@ -600,7 +559,7 @@
         <span data-lang="zh">首页</span>
       </a>
       <a href="/#services">
-        <span data-lang="en" class="active">Services</span>
+        <span data-lang="en">Services</span>
         <span data-lang="fr">Services</span>
         <span data-lang="de">Leistungen</span>
         <span data-lang="es">Servicios</span>
@@ -612,7 +571,7 @@
         <span data-lang="zh">服务</span>
       </a>
       <a href="/en/foreign-companies-support" class="nav-highlight">
-        <span data-lang="en" class="active">Foreign Companies</span>
+        <span data-lang="en">Foreign Companies</span>
         <span data-lang="fr">Entreprises Étrangères</span>
         <span data-lang="de">Ausländische Unternehmen</span>
         <span data-lang="es">Empresas Extranjeras</span>
@@ -624,7 +583,7 @@
         <span data-lang="zh">外国企业服务</span>
       </a>
       <a href="#contact">
-        <span data-lang="en" class="active">Contact</span>
+        <span data-lang="en">Contact</span>
         <span data-lang="fr">Contact</span>
         <span data-lang="de">Kontakt</span>
         <span data-lang="es">Contacto</span>
@@ -637,7 +596,7 @@
       </a>
     </nav>
     <div class="topbar-contact">
-      <a href="mailto:grasso@grasso">grasso@grasso</a>
+      <a href="mailto:grasso@grasso.aero">grasso@grasso.aero</a>
       &ensp;&middot;&ensp;
       <a href="https://wa.me/393452323111" target="_blank" rel="noopener">WhatsApp IT</a>
       &ensp;&middot;&ensp;
@@ -648,7 +607,7 @@
   <main>
   <section class="hero">
     <p class="hero-label">
-        <span data-lang="en" class="active">Support for Foreign Companies in Italy</span>
+        <span data-lang="en">Support for Foreign Companies in Italy</span>
         <span data-lang="fr">Accompagnement des entreprises étrangères en Italie</span>
         <span data-lang="de">Unterstützung für ausländische Unternehmen in Italien</span>
         <span data-lang="es">Apoyo a empresas extranjeras en Italia</span>
@@ -660,7 +619,7 @@
         <span data-lang="zh">为在意大利经营的外国企业提供支持</span>
     </p>
     <h1>
-        <span data-lang="en" class="active">Compliance, Safety and Statutory Obligations for <em>Foreign Companies</em> in Italy</span>
+        <span data-lang="en">Compliance, Safety and Statutory Obligations for <em>Foreign Companies</em> in Italy</span>
         <span data-lang="fr">Conformité, sécurité et obligations légales pour les <em>entreprises étrangères</em> en Italie</span>
         <span data-lang="de">Compliance, Sicherheit und gesetzliche Pflichten für <em>ausländische Unternehmen</em> in Italien</span>
         <span data-lang="es">Cumplimiento, seguridad y obligaciones legales para <em>empresas extranjeras</em> en Italia</span>
@@ -672,7 +631,7 @@
         <span data-lang="zh">为<em>外国企业</em>在意大利提供合规、安全与法定义务支持</span>
     </h1>
     <p class="hero-desc hero-sub">
-        <span data-lang="en" class="active">Fast, turnkey support for construction sites, transnational posting of workers, POS, DVR and the patente a crediti. Operational throughout Italy.</span>
+        <span data-lang="en">Fast, turnkey support for construction sites, transnational posting of workers, POS, DVR and the patente a crediti. Operational throughout Italy.</span>
         <span data-lang="fr">Un accompagnement rapide et clés en main pour les chantiers, le détachement transnational de travailleurs, le POS, le DVR et la patente a crediti. Opérationnels partout en Italie.</span>
         <span data-lang="de">Schnelle Turnkey-Unterstützung für Baustellen, transnationale Arbeitnehmerentsendung, POS, DVR und die patente a crediti. Italienweit im Einsatz.</span>
         <span data-lang="es">Apoyo rápido y llave en mano para obras, desplazamiento transnacional de trabajadores, POS, DVR y la patente a crediti. Operativos en toda Italia.</span>
@@ -684,8 +643,8 @@
         <span data-lang="zh">为工地作业、跨国派遣工人、POS、DVR 及信用分许可证提供快速的交钥匙支持。业务覆盖意大利全境。</span>
     </p>
     <div class="hero-cta">
-      <a class="btn-primary" href="https://wa.me/393452323111?text=Hello%20Grasso%2C%20we%20are%20a%20foreign%20company%20operating%20in%20Italy%20and%20need%20support." target="_blank" rel="noopener">
-        <span data-lang="en" class="active">Contact us on WhatsApp</span>
+      <a class="btn-primary" href="https://wa.me/393452323111?text=Hello%20Grasso%20Engineering%2C%20we%20are%20a%20foreign%20company%20operating%20in%20Italy%20and%20need%20support." target="_blank" rel="noopener">
+        <span data-lang="en">Contact us on WhatsApp</span>
         <span data-lang="fr">Nous contacter sur WhatsApp</span>
         <span data-lang="de">Kontakt über WhatsApp</span>
         <span data-lang="es">Contáctenos por WhatsApp</span>
@@ -697,7 +656,7 @@
         <span data-lang="zh">通过 WhatsApp 联系我们</span>
       </a>
       <a class="btn-ghost" href="#contact">
-        <span data-lang="en" class="active">Request urgent consultation</span>
+        <span data-lang="en">Request urgent consultation</span>
         <span data-lang="fr">Demander une consultation urgente</span>
         <span data-lang="de">Dringende Beratung anfragen</span>
         <span data-lang="es">Solicitar consulta urgente</span>
@@ -712,7 +671,7 @@
   </section>
 
   <p class="section-label">
-        <span data-lang="en" class="active">Operational Solutions</span>
+        <span data-lang="en">Operational Solutions</span>
         <span data-lang="fr">Solutions opérationnelles</span>
         <span data-lang="de">Operative Lösungen</span>
         <span data-lang="es">Soluciones operativas</span>
@@ -728,7 +687,7 @@
     <div class="service">
       <span class="service-num">01</span>
       <h2>
-        <span data-lang="en" class="active">Transnational Posting &amp; Art. 10</span>
+        <span data-lang="en">Transnational Posting &amp; Art. 10</span>
         <span data-lang="fr">Détachement transnational &amp; Art. 10</span>
         <span data-lang="de">Transnationale Entsendung &amp; Art. 10</span>
         <span data-lang="es">Desplazamiento transnacional y Art. 10</span>
@@ -740,7 +699,7 @@
         <span data-lang="zh">跨国派遣与第10条义务</span>
       </h2>
       <p>
-        <span data-lang="en" class="active">Management of the posting process and formal obligations: UNI_Distacco_UE notification, documentary referent and union referent under Art. 10 of D.Lgs. 136/2016, worker documentation, and liaison with the Italian Labour Inspectorate.</span>
+        <span data-lang="en">Management of the posting process and formal obligations: UNI_Distacco_UE notification, documentary referent and union referent under Art. 10 of D.Lgs. 136/2016, worker documentation, and liaison with the Italian Labour Inspectorate.</span>
         <span data-lang="fr">Gestion des flux de détachement et des obligations formelles : déclaration UNI_Distacco_UE, référent documentaire et référent syndical au titre de l'article 10 du D.Lgs. 136/2016, documentation des travailleurs et interface avec l'Inspection du travail italienne.</span>
         <span data-lang="de">Steuerung des Entsendeprozesses und der formellen Pflichten: UNI_Distacco_UE-Meldung, Dokumentations- und Gewerkschaftsbeauftragter gemäß Art. 10 des D.Lgs. 136/2016, Arbeitnehmerdokumentation und Kontakt zur italienischen Arbeitsaufsichtsbehörde.</span>
         <span data-lang="es">Gestión de los flujos de desplazamiento y de las obligaciones formales: comunicación UNI_Distacco_UE, referente documental y referente sindical según el Art. 10 del D.Lgs. 136/2016, documentación de los trabajadores e interlocución con la Inspección de Trabajo italiana.</span>
@@ -755,7 +714,7 @@
     <div class="service">
       <span class="service-num">02</span>
       <h2>
-        <span data-lang="en" class="active">Site Works &amp; Safety</span>
+        <span data-lang="en">Site Works &amp; Safety</span>
         <span data-lang="fr">Chantiers &amp; Sécurité</span>
         <span data-lang="de">Baustellen &amp; Arbeitssicherheit</span>
         <span data-lang="es">Obras y seguridad</span>
@@ -767,7 +726,7 @@
         <span data-lang="zh">工地作业与安全</span>
       </h2>
       <p>
-        <span data-lang="en" class="active">Patente a crediti, POS, DVR, appointment of the medico competente, training attestations and machine-use certifications — everything required to work legally on an Italian site under D.Lgs. 81/08.</span>
+        <span data-lang="en">Patente a crediti, POS, DVR, appointment of the medico competente, training attestations and machine-use certifications — everything required to work legally on an Italian site under D.Lgs. 81/08.</span>
         <span data-lang="fr">Patente a crediti, POS, DVR, désignation du medico competente, attestations de formation et certifications d'utilisation de machines — tout ce qui est requis pour travailler légalement sur un chantier italien au titre du D.Lgs. 81/08.</span>
         <span data-lang="de">Patente a crediti, POS, DVR, Bestellung des medico competente, Schulungsnachweise und Maschinenbedienungszertifikate — alles, was für die rechtmäßige Arbeit auf einer italienischen Baustelle gemäß D.Lgs. 81/08 erforderlich ist.</span>
         <span data-lang="es">Patente a crediti, POS, DVR, nombramiento del medico competente, certificados de formación y certificaciones de uso de maquinaria: todo lo necesario para trabajar legalmente en una obra en Italia conforme al D.Lgs. 81/08.</span>
@@ -782,7 +741,7 @@
     <div class="service">
       <span class="service-num">03</span>
       <h2>
-        <span data-lang="en" class="active">Waste Management &amp; Site Logistics</span>
+        <span data-lang="en">Waste Management &amp; Site Logistics</span>
         <span data-lang="fr">Gestion des déchets &amp; Logistique de chantier</span>
         <span data-lang="de">Abfallmanagement &amp; Baustellenlogistik</span>
         <span data-lang="es">Gestión de residuos y logística de obra</span>
@@ -794,7 +753,7 @@
         <span data-lang="zh">废弃物管理与工地物流</span>
       </h2>
       <p>
-        <span data-lang="en" class="active">Construction and industrial waste management in line with Italian environmental law, together with site logistics, security and surveillance coordination.</span>
+        <span data-lang="en">Construction and industrial waste management in line with Italian environmental law, together with site logistics, security and surveillance coordination.</span>
         <span data-lang="fr">Gestion des déchets de construction et industriels conformément au droit environnemental italien, ainsi que la logistique de chantier et la coordination de la sécurité et de la surveillance.</span>
         <span data-lang="de">Management von Bau- und Industrieabfällen gemäß italienischem Umweltrecht, zusammen mit Baustellenlogistik sowie Koordination von Sicherheit und Überwachung.</span>
         <span data-lang="es">Gestión de residuos de construcción e industriales conforme a la normativa ambiental italiana, junto con la logística de obra y la coordinación de seguridad y vigilancia.</span>
@@ -809,7 +768,7 @@
     <div class="service">
       <span class="service-num">04</span>
       <h2>
-        <span data-lang="en" class="active">Technical Procurement &amp; Equipment Rental</span>
+        <span data-lang="en">Technical Procurement &amp; Equipment Rental</span>
         <span data-lang="fr">Approvisionnement Technique &amp; Location d'Équipements</span>
         <span data-lang="de">Technische Beschaffung &amp; Gerätevermietung</span>
         <span data-lang="es">Suministro Técnico y Alquiler de Equipos</span>
@@ -821,7 +780,7 @@
         <span data-lang="zh">技术采购与设备租赁</span>
       </h2>
       <p>
-        <span data-lang="en" class="active">Rental of specialised machinery and site equipment, calibration and certification of measuring instruments, qualification of local suppliers and management of certified PPE — so clients can operate without building a local supply network from scratch.</span>
+        <span data-lang="en">Rental of specialised machinery and site equipment, calibration and certification of measuring instruments, qualification of local suppliers and management of certified PPE — so clients can operate without building a local supply network from scratch.</span>
         <span data-lang="fr">Location de machines spécialisées et d'équipements de chantier, étalonnage et certification des instruments de mesure, qualification de fournisseurs locaux et gestion des EPI certifiés — pour opérer sans devoir construire un réseau d'approvisionnement local à partir de zéro.</span>
         <span data-lang="de">Vermietung von Spezialmaschinen und Baustellengeräten, Kalibrierung und Zertifizierung von Messinstrumenten, Qualifizierung lokaler Lieferanten und Verwaltung zertifizierter PSA — damit Kunden arbeiten können, ohne ein lokales Beschaffungsnetzwerk von Grund auf aufzubauen.</span>
         <span data-lang="es">Alquiler de maquinaria especializada y equipos de obra, calibración y certificación de instrumentos de medición, cualificación de proveedores locales y gestión de EPI certificados — para operar sin tener que construir una red de suministro local desde cero.</span>
@@ -836,7 +795,7 @@
     <div class="service">
       <span class="service-num">05</span>
       <h2>
-        <span data-lang="en" class="active">Drone (UAV) Inspections</span>
+        <span data-lang="en">Drone (UAV) Inspections</span>
         <span data-lang="fr">Inspections par Drone (UAV)</span>
         <span data-lang="de">Drohneninspektionen (UAV)</span>
         <span data-lang="es">Inspecciones con Drones (UAV)</span>
@@ -848,7 +807,7 @@
         <span data-lang="zh">无人机（UAV）检测</span>
       </h2>
       <p>
-        <span data-lang="en" class="active">Aerial surveys, site progress monitoring, roof and structural inspections, and photogrammetric mapping carried out by certified UAV pilots — reducing the need for scaffolding, lifts or work at height.</span>
+        <span data-lang="en">Aerial surveys, site progress monitoring, roof and structural inspections, and photogrammetric mapping carried out by certified UAV pilots — reducing the need for scaffolding, lifts or work at height.</span>
         <span data-lang="fr">Relevés aériens, suivi de l'avancement des travaux, inspections de toitures et de structures, et cartographie photogrammétrique réalisés par des pilotes UAV certifiés — réduisant le recours aux échafaudages, nacelles ou travaux en hauteur.</span>
         <span data-lang="de">Luftaufnahmen, Baufortschrittsüberwachung, Dach- und Strukturinspektionen sowie photogrammetrische Kartierung durch zertifizierte UAV-Piloten — reduziert den Bedarf an Gerüsten, Hubarbeitsbühnen oder Höhenarbeiten.</span>
         <span data-lang="es">Levantamientos aéreos, seguimiento del avance de obra, inspecciones de cubiertas y estructuras, y cartografía fotogramétrica realizadas por pilotos UAV certificados — reduciendo la necesidad de andamios, plataformas elevadoras o trabajos en altura.</span>
@@ -863,7 +822,7 @@
     <div class="service">
       <span class="service-num">06</span>
       <h2>
-        <span data-lang="en" class="active">Thermal Imaging &amp; Diagnostics</span>
+        <span data-lang="en">Thermal Imaging &amp; Diagnostics</span>
         <span data-lang="fr">Thermographie &amp; Diagnostic Thermique</span>
         <span data-lang="de">Thermografie &amp; Wärmediagnostik</span>
         <span data-lang="es">Termografía y Diagnóstico Térmico</span>
@@ -875,7 +834,7 @@
         <span data-lang="zh">热成像与热诊断</span>
       </h2>
       <p>
-        <span data-lang="en" class="active">Thermographic inspection of electrical switchboards, photovoltaic installations and building envelopes to detect hotspots, insulation defects and energy losses before they become failures.</span>
+        <span data-lang="en">Thermographic inspection of electrical switchboards, photovoltaic installations and building envelopes to detect hotspots, insulation defects and energy losses before they become failures.</span>
         <span data-lang="fr">Inspection thermographique des tableaux électriques, des installations photovoltaïques et de l'enveloppe du bâtiment pour détecter points chauds, défauts d'isolation et pertes d'énergie avant qu'ils ne deviennent des pannes.</span>
         <span data-lang="de">Thermografische Inspektion von Schaltschränken, Photovoltaikanlagen und Gebäudehüllen zur Erkennung von Hotspots, Dämmfehlern und Energieverlusten, bevor daraus Ausfälle werden.</span>
         <span data-lang="es">Inspección termográfica de cuadros eléctricos, instalaciones fotovoltaicas y envolventes de edificios para detectar puntos calientes, defectos de aislamiento y pérdidas de energía antes de que se conviertan en averías.</span>
@@ -891,7 +850,7 @@
 
   <section class="contact" id="contact">
     <p class="contact-label">
-        <span data-lang="en" class="active">Immediate Contact</span>
+        <span data-lang="en">Immediate Contact</span>
         <span data-lang="fr">Contact immédiat</span>
         <span data-lang="de">Direkter Kontakt</span>
         <span data-lang="es">Contacto inmediato</span>
@@ -903,7 +862,7 @@
         <span data-lang="zh">即时联系</span>
     </p>
     <h2 class="contact-title">
-        <span data-lang="en" class="active">Tell us what you need — we reply quickly</span>
+        <span data-lang="en">Tell us what you need — we reply quickly</span>
         <span data-lang="fr">Dites-nous ce dont vous avez besoin — nous répondons rapidement</span>
         <span data-lang="de">Sagen Sie uns, was Sie brauchen — wir antworten schnell</span>
         <span data-lang="es">Cuéntenos qué necesita: respondemos con rapidez</span>
@@ -915,7 +874,7 @@
         <span data-lang="zh">告诉我们您的需求——我们会尽快回复</span>
     </h2>
     <p class="contact-desc">
-        <span data-lang="en" class="active">Complete the form below or reach us directly by email, phone or WhatsApp. On working days we normally reply within a few hours.</span>
+        <span data-lang="en">Complete the form below or reach us directly by email, phone or WhatsApp. On working days we normally reply within a few hours.</span>
         <span data-lang="fr">Remplissez le formulaire ci-dessous ou contactez-nous directement par e-mail, téléphone ou WhatsApp. Les jours ouvrés, nous répondons généralement en quelques heures.</span>
         <span data-lang="de">Füllen Sie das Formular unten aus oder kontaktieren Sie uns direkt per E-Mail, Telefon oder WhatsApp. An Werktagen antworten wir in der Regel innerhalb weniger Stunden.</span>
         <span data-lang="es">Complete el formulario o contáctenos directamente por correo electrónico, teléfono o WhatsApp. En días laborables respondemos normalmente en pocas horas.</span>
@@ -930,7 +889,7 @@
     <div class="form-grid">
       <div class="field">
         <label for="f-company">
-        <span data-lang="en" class="active">Company</span>
+        <span data-lang="en">Company</span>
         <span data-lang="fr">Société</span>
         <span data-lang="de">Unternehmen</span>
         <span data-lang="es">Empresa</span>
@@ -945,7 +904,7 @@
       </div>
       <div class="field">
         <label for="f-country">
-        <span data-lang="en" class="active">Country</span>
+        <span data-lang="en">Country</span>
         <span data-lang="fr">Pays</span>
         <span data-lang="de">Land</span>
         <span data-lang="es">País</span>
@@ -960,7 +919,7 @@
       </div>
       <div class="field">
         <label for="f-name">
-        <span data-lang="en" class="active">Contact person</span>
+        <span data-lang="en">Contact person</span>
         <span data-lang="fr">Personne de contact</span>
         <span data-lang="de">Ansprechpartner</span>
         <span data-lang="es">Persona de contacto</span>
@@ -975,7 +934,7 @@
       </div>
       <div class="field">
         <label for="f-email">
-        <span data-lang="en" class="active">Email</span>
+        <span data-lang="en">Email</span>
         <span data-lang="fr">E-mail</span>
         <span data-lang="de">E-Mail</span>
         <span data-lang="es">Correo electrónico</span>
@@ -990,7 +949,7 @@
       </div>
       <div class="field">
         <label for="f-phone">
-        <span data-lang="en" class="active">Phone / WhatsApp</span>
+        <span data-lang="en">Phone / WhatsApp</span>
         <span data-lang="fr">Téléphone / WhatsApp</span>
         <span data-lang="de">Telefon / WhatsApp</span>
         <span data-lang="es">Teléfono / WhatsApp</span>
@@ -1005,7 +964,7 @@
       </div>
       <div class="field">
         <label for="f-need">
-        <span data-lang="en" class="active">What do you need?</span>
+        <span data-lang="en">What do you need?</span>
         <span data-lang="fr">De quoi avez-vous besoin ?</span>
         <span data-lang="de">Was benötigen Sie?</span>
         <span data-lang="es">¿Qué necesita?</span>
@@ -1030,7 +989,7 @@
       </div>
       <div class="field full">
         <label for="f-msg">
-        <span data-lang="en" class="active">Message / project details</span>
+        <span data-lang="en">Message / project details</span>
         <span data-lang="fr">Message / détails du projet</span>
         <span data-lang="de">Nachricht / Projektdetails</span>
         <span data-lang="es">Mensaje / detalles del proyecto</span>
@@ -1047,7 +1006,7 @@
 
     <div class="form-actions">
       <a class="btn-primary" href="#" id="send-email">
-        <span data-lang="en" class="active">Send by email</span>
+        <span data-lang="en">Send by email</span>
         <span data-lang="fr">Envoyer par e-mail</span>
         <span data-lang="de">Per E-Mail senden</span>
         <span data-lang="es">Enviar por correo</span>
@@ -1059,7 +1018,7 @@
         <span data-lang="zh">通过电子邮件发送</span>
       </a>
       <a class="btn-ghost" href="#" id="send-wa">
-        <span data-lang="en" class="active">Send via WhatsApp</span>
+        <span data-lang="en">Send via WhatsApp</span>
         <span data-lang="fr">Envoyer via WhatsApp</span>
         <span data-lang="de">Per WhatsApp senden</span>
         <span data-lang="es">Enviar por WhatsApp</span>
@@ -1073,7 +1032,7 @@
     </div>
     <p class="form-error" id="form-error"></p>
     <p class="form-note">
-        <span data-lang="en" class="active">Fields marked * are required. Your data is used only to reply to this enquiry.</span>
+        <span data-lang="en">Fields marked * are required. Your data is used only to reply to this enquiry.</span>
         <span data-lang="fr">Les champs marqués * sont obligatoires. Vos données ne servent qu'à répondre à cette demande.</span>
         <span data-lang="de">Mit * markierte Felder sind erforderlich. Ihre Daten werden ausschließlich zur Beantwortung dieser Anfrage verwendet.</span>
         <span data-lang="es">Los campos marcados con * son obligatorios. Sus datos se utilizan únicamente para responder a esta consulta.</span>
@@ -1086,9 +1045,9 @@
     </p>
 
     <div class="contact-actions">
-      <a class="contact-btn" href="mailto:grasso@grasso">
+      <a class="contact-btn" href="mailto:grasso@grasso.aero">
         <span class="contact-btn-label">
-        <span data-lang="en" class="active">Email</span>
+        <span data-lang="en">Email</span>
         <span data-lang="fr">E-mail</span>
         <span data-lang="de">E-Mail</span>
         <span data-lang="es">Correo electrónico</span>
@@ -1099,11 +1058,11 @@
         <span data-lang="ar">البريد الإلكتروني</span>
         <span data-lang="zh">电子邮件</span>
         </span>
-        <span class="contact-btn-value">grasso@grasso</span>
+        <span class="contact-btn-value">grasso@grasso.aero</span>
       </a>
       <a class="contact-btn" href="https://wa.me/393452323111" target="_blank" rel="noopener">
         <span class="contact-btn-label">
-        <span data-lang="en" class="active">WhatsApp — Italy</span>
+        <span data-lang="en">WhatsApp — Italy</span>
         <span data-lang="fr">WhatsApp — Italie</span>
         <span data-lang="de">WhatsApp — Italien</span>
         <span data-lang="es">WhatsApp — Italia</span>
@@ -1118,7 +1077,7 @@
       </a>
       <a class="contact-btn" href="https://wa.me/218916556045" target="_blank" rel="noopener">
         <span class="contact-btn-label">
-        <span data-lang="en" class="active">WhatsApp — Libya</span>
+        <span data-lang="en">WhatsApp — Libya</span>
         <span data-lang="fr">WhatsApp — Libye</span>
         <span data-lang="de">WhatsApp — Libyen</span>
         <span data-lang="es">WhatsApp — Libia</span>
@@ -1137,13 +1096,13 @@
 
   <footer>
     <div class="footer-contact">
-      <a href="/">Grasso</a>
-      <a href="mailto:grasso@grasso">grasso@grasso</a>
+      <a href="/">Grasso.aero</a>
+      <a href="mailto:grasso@grasso.aero">grasso@grasso.aero</a>
       <a href="https://wa.me/393452323111" target="_blank" rel="noopener">WhatsApp IT</a>
       <a href="https://wa.me/218916556045" target="_blank" rel="noopener">WhatsApp LY</a>
     </div>
     <span class="footer-geo">
-        <span data-lang="en" class="active">Milan &nbsp;·&nbsp; Rome &nbsp;·&nbsp; Tripoli &nbsp;·&nbsp; Worldwide</span>
+        <span data-lang="en">Milan &nbsp;·&nbsp; Rome &nbsp;·&nbsp; Tripoli &nbsp;·&nbsp; Worldwide</span>
         <span data-lang="fr">Milan &nbsp;·&nbsp; Rome &nbsp;·&nbsp; Tripoli &nbsp;·&nbsp; Monde entier</span>
         <span data-lang="de">Mailand &nbsp;·&nbsp; Rom &nbsp;·&nbsp; Tripolis &nbsp;·&nbsp; Weltweit</span>
         <span data-lang="es">Milán &nbsp;·&nbsp; Roma &nbsp;·&nbsp; Trípoli &nbsp;·&nbsp; Todo el mundo</span>
@@ -1158,16 +1117,16 @@
 
 <script>
 var GRASSO_I18N = {
-  en: {title:"Foreign Companies Support in Italy – Grasso Engineering", desc:"Turnkey compliance and safety support for foreign companies operating in Italy: posting of workers, Art. 10, patente a crediti, POS, DVR, medico competente."},
-  fr: {title:"Accompagnement des entreprises étrangères en Italie – Grasso Engineering", desc:"Conformité et sécurité clés en main pour les entreprises étrangères en Italie : détachement, Art. 10, patente a crediti, POS, DVR, medico competente."},
-  de: {title:"Unterstützung für ausländische Unternehmen in Italien – Grasso Engineering", desc:"Turnkey-Compliance und Arbeitssicherheit für ausländische Unternehmen in Italien: Entsendung, Art. 10, patente a crediti, POS, DVR, medico competente."},
-  es: {title:"Apoyo a empresas extranjeras en Italia – Grasso Engineering", desc:"Cumplimiento y seguridad llave en mano para empresas extranjeras en Italia: desplazamiento, Art. 10, patente a crediti, POS, DVR, medico competente."},
-  pt: {title:"Apoio a empresas estrangeiras em Itália – Grasso Engineering", desc:"Conformidade e segurança turnkey para empresas estrangeiras em Itália: destacamento, Art. 10, patente a crediti, POS, DVR, medico competente."},
-  bg: {title:"Подкрепа за чуждестранни компании в Италия – Grasso Engineering", desc:"Съответствие и безопасност „до ключ“ за чуждестранни компании в Италия: командироване, чл. 10, patente a crediti, POS, DVR, medico competente."},
-  el: {title:"Υποστήριξη ξένων εταιρειών στην Ιταλία – Grasso Engineering", desc:"Ολοκληρωμένη συμμόρφωση και ασφάλεια για ξένες εταιρείες στην Ιταλία: απόσπαση, Άρθρο 10, patente a crediti, POS, DVR, medico competente."},
-  ru: {title:"Поддержка иностранных компаний в Италии – Grasso Engineering", desc:"Соответствие требованиям и охрана труда «под ключ» для иностранных компаний в Италии: командирование, ст. 10, patente a crediti, POS, DVR, medico competente."},
-  ar: {title:"دعم الشركات الأجنبية في إيطاليا – Grasso Engineering", desc:"دعم متكامل للامتثال والسلامة للشركات الأجنبية العاملة في إيطاليا: إيفاد العمال، المادة 10، رخصة النقاط، POS، DVR، الطبيب المختص."},
-  zh: {title:"在意大利经营的外国企业支持服务 – Grasso Engineering", desc:"为在意大利经营的外国企业提供交钥匙式合规与安全支持：派遣工人、第10条义务、信用分许可证、POS、DVR、指定医师。"}
+  en: {title:"Foreign Companies Support in Italy – Grasso.aero", desc:"Turnkey compliance and safety support for foreign companies operating in Italy: posting of workers, Art. 10, patente a crediti, POS, DVR, medico competente."},
+  fr: {title:"Accompagnement des entreprises étrangères en Italie – Grasso.aero", desc:"Conformité et sécurité clés en main pour les entreprises étrangères en Italie : détachement, Art. 10, patente a crediti, POS, DVR, medico competente."},
+  de: {title:"Unterstützung für ausländische Unternehmen in Italien – Grasso.aero", desc:"Turnkey-Compliance und Arbeitssicherheit für ausländische Unternehmen in Italien: Entsendung, Art. 10, patente a crediti, POS, DVR, medico competente."},
+  es: {title:"Apoyo a empresas extranjeras en Italia – Grasso.aero", desc:"Cumplimiento y seguridad llave en mano para empresas extranjeras en Italia: desplazamiento, Art. 10, patente a crediti, POS, DVR, medico competente."},
+  pt: {title:"Apoio a empresas estrangeiras em Itália – Grasso.aero", desc:"Conformidade e segurança turnkey para empresas estrangeiras em Itália: destacamento, Art. 10, patente a crediti, POS, DVR, medico competente."},
+  bg: {title:"Подкрепа за чуждестранни компании в Италия – Grasso.aero", desc:"Съответствие и безопасност „до ключ“ за чуждестранни компании в Италия: командироване, чл. 10, patente a crediti, POS, DVR, medico competente."},
+  el: {title:"Υποστήριξη ξένων εταιρειών στην Ιταλία – Grasso.aero", desc:"Ολοκληρωμένη συμμόρφωση και ασφάλεια για ξένες εταιρείες στην Ιταλία: απόσπαση, Άρθρο 10, patente a crediti, POS, DVR, medico competente."},
+  ru: {title:"Поддержка иностранных компаний в Италии – Grasso.aero", desc:"Соответствие требованиям и охрана труда «под ключ» для иностранных компаний в Италии: командирование, ст. 10, patente a crediti, POS, DVR, medico competente."},
+  ar: {title:"دعم الشركات الأجنبية في إيطاليا – Grasso.aero", desc:"دعم متكامل للامتثال والسلامة للشركات الأجنبية العاملة في إيطاليا: إيفاد العمال، المادة 10، رخصة النقاط، POS، DVR، الطبيب المختص."},
+  zh: {title:"在意大利经营的外国企业支持服务 – Grasso.aero", desc:"为在意大利经营的外国企业提供交钥匙式合规与安全支持：派遣工人、第10条义务、信用分许可证、POS、DVR、指定医师。"}
 };
 
 var GRASSO_FORM = {
@@ -1258,20 +1217,23 @@ document.getElementById('send-email').addEventListener('click', function(e){
   e.preventDefault();
   if(!validate()) return;
   var f = GRASSO_FORM[CURRENT] || GRASSO_FORM.en;
-  window.location.href = 'mailto:grasso@grasso.aero?subject=' +
+  var url = 'mailto:grasso@grasso.aero?subject=' +
     encodeURIComponent(f.email_subject) + '&body=' + encodeURIComponent(buildMessage());
+  trackAndGo(url, false);
 });
 
 document.getElementById('send-wa').addEventListener('click', function(e){
   e.preventDefault();
   if(!validate()) return;
   var f = GRASSO_FORM[CURRENT] || GRASSO_FORM.en;
-  window.open('https://wa.me/393452323111?text=' +
-    encodeURIComponent(f.email_subject + '\n\n' + buildMessage()), '_blank');
+  var url = 'https://wa.me/393452323111?text=' +
+    encodeURIComponent(f.email_subject + '\n\n' + buildMessage());
+  trackAndGo(url, true);
 });
 </script>
 
-  <script>
+<script>
+/* Google Ads conversion tracking on contact clicks (email + WhatsApp) */
 function trackAndGo(url, isNewTab){
   function go(){
     if(isNewTab){ window.open(url, '_blank'); } else { window.location.href = url; }
@@ -1287,6 +1249,7 @@ function trackAndGo(url, isNewTab){
 }
 
 document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
+  if(a.id === 'send-email') return;
   a.addEventListener('click', function(e){
     e.preventDefault();
     trackAndGo(a.getAttribute('href'), false);
@@ -1294,11 +1257,13 @@ document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
 });
 
 document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){
+  if(a.id === 'send-wa') return;
   a.addEventListener('click', function(e){
     e.preventDefault();
     trackAndGo(a.getAttribute('href'), true);
   });
 });
 </script>
+
 </body>
 </html>
